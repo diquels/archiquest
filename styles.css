@@ -1,0 +1,169 @@
+/* styles.css */
+
+/* Scrollbar masquée pour les barres horizontales de filtres */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animation fade-in légère */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Animation d'apparition de la modale avec effet de zoom et bordure */
+@keyframes modal-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+  }
+  50% {
+    box-shadow: 0 0 30px 5px rgba(251, 191, 36, 0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px 2px rgba(251, 191, 36, 0.3);
+  }
+}
+.animate-modal-appear {
+  animation: modal-appear 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Fond global */
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(251, 191, 36, 0.08), transparent 28%),
+              radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.08), transparent 26%),
+              linear-gradient(180deg, #060606 0%, #0a0a0a 60%, #050505 100%);
+  color: #e4e4e7;
+}
+
+.smooth-select {
+  appearance: none;
+  background-image: none;
+  transition: transform 0.18s ease, box-shadow 0.25s ease, border-color 0.2s ease, background-color 0.2s ease;
+  transform-origin: top right;
+  padding-right: 2.5rem;
+}
+
+.smooth-select:hover {
+  border-color: #f59e0b;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.smooth-select:focus {
+  transform: translateY(0px) scale(1);
+  box-shadow: 0 26px 90px rgba(251, 191, 36, 0.22), 0 0 0 1px rgba(251, 191, 36, 0.55);
+  border-color: #f59e0b;
+  outline: none;
+  animation: dropdown-slide 0.35s ease;
+}
+
+.smooth-select option {
+  background: #0c0c0c;
+  color: #e4e4e7;
+}
+
+@keyframes dropdown-slide {
+  from {
+    opacity: 0.4;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(6px);
+  }
+}
+
+.dropdown-panel {
+  animation: dropdown-slide 0.4s ease;
+  transform-origin: top right;
+}
+
+.dropdown-option {
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: dropdown-item 0.4s ease forwards;
+}
+
+@keyframes dropdown-item {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles pour les popups Leaflet personnalisés */
+.leaflet-popup-pane {
+  z-index: 700 !important;
+}
+
+.leaflet-pane {
+  z-index: 400 !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background-color: #18181b;
+  color: #e4e4e7;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #3f3f46;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background-color: #18181b;
+  border: 1px solid #3f3f46;
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 8px;
+  font-family: inherit;
+}
+
+.custom-popup a {
+  color: #60a5fa;
+  transition: color 0.2s;
+}
+
+.custom-popup a:hover {
+  color: #93c5fd;
+}
+
+/* Gestion du z-index de la carte Leaflet */
+#archiquest-map {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation de chargement pour la carte */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 2s linear infinite;
+}

@@ -1,0 +1,2343 @@
+{
+  "dataset": {
+    "title": "Morphologie et Métamorphoses de l'Architecture Rennaise (19e-21e Siècle) – Extraction structurée",
+    "city": "Rennes",
+    "country": "France",
+    "source_note": "Données structurées exclusivement à partir du texte fourni dans la conversation (rapport + extrait JSON).",
+    "created_at": "2025-12-13",
+    "schema_version": "1.0",
+    "id_notes": {
+      "original_placeholder_ids": {
+        "ARCH_XX": "Remplacé par ARCH_23 (Berranger & Vincent) + ARCH_24 (Dunne) pour Station Cleunay."
+      }
+    },
+    "controlled_vocab": {
+      "eras": [
+        "Industrial_19e",
+        "Art_Deco_EntreDeuxGuerres",
+        "Reconstruction_1950s",
+        "TrenteGlorieuses_1960_1970",
+        "PostModern_1980s",
+        "HighTech_2000s",
+        "Pritzker_Ere_2000s_2010s",
+        "Metro_Infrastructure_2010s_2020s",
+        "Contemporary_2020s"
+      ],
+      "program_types": [
+        "industrial",
+        "housing",
+        "culture",
+        "religious",
+        "transport",
+        "infrastructure",
+        "administrative",
+        "education",
+        "services"
+      ]
+    }
+  },
+  "architects": [
+    {
+      "id": "ARCH_01",
+      "name": "Christian de Portzamparc",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Concepteur des Champs Libres, il traite le complexe culturel comme un ensemble de volumes autonomes flottant au-dessus d’un rez-de-chaussée traversant conçu comme une « place publique intérieure ».",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "ville archipel",
+        "volumes autonomes",
+        "porosité urbaine",
+        "espace public intérieur",
+        "déambulation"
+      ]
+    },
+    {
+      "id": "ARCH_02",
+      "name": "Jean Nouvel",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Présenté comme un architecte « obsédé par le contexte », il conçoit Cap Mail comme un dispositif de cadrage du paysage, comparable au cinéma (temps et mouvement).",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "architecture-cinéma",
+        "cadrage du paysage",
+        "reflets",
+        "végétalisation",
+        "contextualisme"
+      ]
+    },
+    {
+      "id": "ARCH_03",
+      "name": "Odile Decq",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Au FRAC Bretagne, elle explore la tension spatiale et une expérience sensorielle par l’opposition noir extérieur / rouge intérieur, atrium vertical et passerelles.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "expérience sensorielle",
+        "tension spatiale",
+        "noir/rouge",
+        "déambulation dramatique",
+        "passerelles"
+      ]
+    },
+    {
+      "id": "ARCH_04",
+      "name": "Georges Maillols",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Architecte majeur des années 1960-70 à Rennes, associé à la silhouette blanche et optimiste des Trente Glorieuses. Il privilégie la lumière, la courbe et des dispositifs de façades cinétiques.",
+        "source_coverage": "high",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "lumière",
+        "courbes",
+        "façades cinétiques",
+        "terrasses",
+        "optimisme vertical",
+        "béton blanc"
+      ]
+    },
+    {
+      "id": "ARCH_05",
+      "name": "Louis Arretche",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Décrit comme l’homme des angles et de l’écriture monumentale, il signe au Colombier des objets-signes (Éperon, CPAM) et l’OVNI technologique du Mabilay.",
+        "source_coverage": "high",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "monumentalité",
+        "angles",
+        "signal urbain",
+        "brutalisme",
+        "science-fiction technologique",
+        "ombre/lumière"
+      ]
+    },
+    {
+      "id": "ARCH_06",
+      "name": "MVRDV",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "Avec Ascension Paysagère, l’agence radicalise la densité en concevant des volumes comme des « collines érodées » et des terrasses plantées, pour un « village vertical » verdoyant.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "densité paysagère",
+        "terrasses plantées",
+        "formes géologiques",
+        "village vertical"
+      ]
+    },
+    {
+      "id": "ARCH_07",
+      "name": "AREP (Étienne Tricaud)",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "Pour la gare de Rennes, l’équipe imagine une toiture en ETFE comme un « nuage posé sur la forêt de Brocéliande » afin de recoudre la ville et filtrer la lumière.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "infrastructure-paysage",
+        "recoudre la ville",
+        "toiture ETFE",
+        "lumière douce",
+        "passerelles urbaines"
+      ]
+    },
+    {
+      "id": "ARCH_08",
+      "name": "Jean-Baptiste Martenot",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Architecte de la ville, formé aux Beaux-Arts, il « n’oppose pas l’utile au beau » et anoblit l’architecture industrielle par la brique, le verre et l’acier (Imprimerie Oberthur).",
+        "source_coverage": "high",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "architecture industrielle",
+        "hygiénisme",
+        "lumière naturelle",
+        "brique/verre/acier",
+        "beaux-arts appliqués"
+      ]
+    },
+    {
+      "id": "ARCH_10",
+      "name": "Álvaro Siza",
+      "entity_type": "person",
+      "bio": {
+        "summary": "À Anastasis, il propose un minimalisme sacré en béton blanc et lumière indirecte, avec des volumes primaires (carré, cylindre) invitant au silence.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "minimalisme sacré",
+        "lumière indirecte",
+        "volumes primaires",
+        "béton blanc",
+        "introspection"
+      ]
+    },
+    {
+      "id": "ARCH_11",
+      "name": "Hamonic + Masson",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "Avec Urban Quartz, ils refusent le bureau générique et taillent les volumes comme du quartz pour créer une faille/canyon de lumière, reliée par des passerelles.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "canyon de lumière",
+        "volumes ciselés",
+        "passerelles",
+        "anti-générique tertiaire"
+      ]
+    },
+    {
+      "id": "ARCH_12",
+      "name": "Jean-Paul Viguier",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Identity One se distingue par une double peau en résille d’aluminium anodisé agissant comme exosquelette, sculptant la lumière et protégeant du soleil.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "double peau",
+        "résille",
+        "exosquelette",
+        "lumière/ombre",
+        "texture vibrante"
+      ]
+    },
+    {
+      "id": "ARCH_13",
+      "name": "Lavigne & Chéron",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "Pour le viaduc de la ligne B, ils sculptent le béton (piles en Y et X) afin de minimiser l’impact visuel et donner une esthétique rythmée et « ligne claire ».",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "infrastructure sculptée",
+        "piles en Y/X",
+        "rythme",
+        "impact visuel réduit"
+      ]
+    },
+    {
+      "id": "ARCH_14",
+      "name": "Ibos & Vitart",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "Les Archives départementales deviennent un symbole : la répétition visible des rayonnages en façade produit une esthétique de mémoire infinie et une monumentalité sombre.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "mémoire",
+        "répétition",
+        "monumentalité minimaliste",
+        "ambiguïté coffre/vitrine"
+      ]
+    },
+    {
+      "id": "ARCH_15",
+      "name": "Norman Foster",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Sur la station La Poterie, il applique une écriture High-Tech (acier, verre, béton) ; les auvents en « ailes de papillon » apportent une poésie technologique à l’infrastructure.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "High-Tech",
+        "acier/verre/béton",
+        "légèreté",
+        "infrastructure élégante"
+      ]
+    },
+    {
+      "id": "ARCH_16",
+      "name": "Hyacinthe Perrin",
+      "entity_type": "person",
+      "bio": {
+        "summary": "À Sainte‑Thérèse, il synthétise béton armé, régionalisme (schiste/grès) et géométrie Art Déco ; plan centré et arcs en mitre créent une dynamique ascensionnelle.",
+        "source_coverage": "high",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "béton sacré",
+        "régionalisme moderne",
+        "Art Déco géométrique",
+        "plan centré",
+        "ascension"
+      ]
+    },
+    {
+      "id": "ARCH_17",
+      "name": "Louis Chouinard",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Il intervient en 1956 aux Grands Moulins (béton armé pour charges/silos) et reconstruit l’église de Bruz (1954) dans un régionalisme moderne en schiste local, après 1944.",
+        "source_coverage": "high",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "reconstruction",
+        "fonctionnalisme",
+        "béton pour charges",
+        "régionalisme moderne",
+        "schiste local"
+      ]
+    },
+    {
+      "id": "ARCH_18",
+      "name": "Cabinet Brajon, Nicolas, Ressaussière",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "La Cité Judiciaire (1985) incarne un futurisme années 80 (courbes, vitrages fumés) visant transparence et rupture avec l’austérité judiciaire classique.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "futurisme années 80",
+        "transparence",
+        "formes organiques",
+        "rupture institutionnelle"
+      ]
+    },
+    {
+      "id": "ARCH_19",
+      "name": "Emmanuel Le Ray",
+      "entity_type": "person",
+      "bio": {
+        "summary": "À la Piscine Saint‑Georges, il conçoit l’enveloppe tandis que la collaboration avec Odorico transforme l’intérieur en manifeste Art Déco mêlant hygiénisme et esthétique.",
+        "source_coverage": "high",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "Art Déco",
+        "hygiénisme",
+        "collaboration arts décoratifs",
+        "expérience sensorielle"
+      ]
+    },
+    {
+      "id": "ARCH_20",
+      "name": "AZC",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "La station Saint‑Germain est pensée comme une « place publique intérieure » verticale : un atrium habillé d’aluminium perforé amène la lumière du jour jusqu’aux quais.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "puits de lumière",
+        "atrium",
+        "aluminium perforé",
+        "réduction anxiété souterraine",
+        "place intérieure"
+      ]
+    },
+    {
+      "id": "ARCH_21",
+      "name": "Nicolas Lebunetel",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Avec le Mur Habité, il hybride infrastructure ferroviaire et logements : une contrainte acoustique devient une opportunité urbaine et sociale.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "hybridation",
+        "contrainte → opportunité",
+        "infrastructure habitée",
+        "innovation sociale"
+      ]
+    },
+    {
+      "id": "ARCH_22",
+      "name": "Yves Lemoine",
+      "entity_type": "person",
+      "bio": {
+        "summary": "Associé à la Maison Odorico (1940), il accompagne une enveloppe moderniste/épurée contrastant avec une démonstration intérieure de mosaïques.",
+        "source_coverage": "medium",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "modernisme sobre",
+        "écrin pour arts décoratifs",
+        "contraste extérieur/intérieur"
+      ]
+    },
+    {
+      "id": "ARCH_23",
+      "name": "Berranger & Vincent",
+      "entity_type": "agency",
+      "bio": {
+        "summary": "Cités comme architectes de la station Cleunay, ils utilisent le contraste bois/béton pour « humaniser » l’espace souterrain.",
+        "source_coverage": "low",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "matières chaleureuses",
+        "humaniser le souterrain",
+        "bois/béton"
+      ]
+    },
+    {
+      "id": "ARCH_24",
+      "name": "Dunne",
+      "entity_type": "agency_or_person",
+      "bio": {
+        "summary": "Mentionné comme co-auteur de la station Cleunay (avec Berranger & Vincent) dans l’extrait JSON.",
+        "source_coverage": "low",
+        "needs_enrichment": true
+      },
+      "themes": [
+        "co-conception infrastructure",
+        "bois/béton"
+      ]
+    }
+  ],
+  "buildings": [
+    {
+      "id": "BLD_01",
+      "name": "Les Champs Libres",
+      "architect_id": "ARCH_01",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2006",
+        "start": 2006,
+        "end": 2006
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Centre / Charles-de-Gaulle",
+        "site": "Les Champs Libres",
+        "address": null,
+        "notes": "Complexe culturel (bibliothèque, musée, sciences)."
+      },
+      "program": [
+        "culture",
+        "services"
+      ],
+      "era": "Pritzker_Ere_2000s_2010s",
+      "description_short": "Complexe culturel composé de volumes sculptés (bibliothèque, musée, planétarium) flottant au-dessus d’un rez-de-chaussée vitré et traversant.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Traiter l’équipement culturel comme une « place publique intérieure » : volumes autonomes (dolmen/menhir/galet) séparés par une faille vitrée qui laisse entrer la ville et la lumière.",
+      "why_choose": "Pour comprendre comment Rennes fabrique de la métropole par la culture : ici, l’architecture n’est pas une forteresse mais un passage — on traverse, on se croise, on habite l’espace public à l’intérieur.",
+      "construction_story": "Le programme (bibliothèque + musée + sciences) est volontairement fragmenté : au lieu d’un bloc unique, l’architecte isole des « objets » lisibles et les fait flotter au-dessus d’un socle transparent, afin de créer un lieu de passage autant qu’un lieu de savoir.",
+      "mindset": {
+        "intent": "Transformer un équipement culturel en morceau de ville traversable.",
+        "values": [
+          "porosité",
+          "mixité des usages",
+          "déambulation",
+          "lumière"
+        ],
+        "constraints": [
+          "programme multiple à articuler",
+          "création d’un espace public intérieur"
+        ],
+        "design_principles": [
+          "volumes autonomes",
+          "rez-de-chaussée transparent",
+          "faille vitrée"
+        ],
+        "experience_goals": [
+          "croisement des publics",
+          "impression de place couverte",
+          "lecture claire des fonctions"
+        ],
+        "metaphors": [
+          "dolmen suspendu",
+          "menhir inversé",
+          "galet sombre"
+        ],
+        "keywords": [
+          "ville-archipel",
+          "place intérieure",
+          "faille",
+          "volumes flottants"
+        ]
+      },
+      "citations": [
+        "Ils se vivent à chaque instant comme une 'place publique' permettant le croisement"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_02",
+      "name": "Cap Mail",
+      "architect_id": "ARCH_02",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2013",
+        "start": 2013,
+        "end": 2013
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Mail François Mitterrand (confluence Ille/Vilaine)",
+        "address": null,
+        "notes": "Parcelle en forme de proue."
+      },
+      "program": [
+        "housing"
+      ],
+      "era": "Pritzker_Ere_2000s_2010s",
+      "description_short": "Immeuble résidentiel en forme de proue, grandes baies vitrées et façades végétalisées à la confluence des eaux.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Travailler le « cadrage » du paysage comme au cinéma : sculpture du volume pour préserver certaines vues et offrir des panoramas aux habitants.",
+      "why_choose": "Parce que c’est un exemple très lisible d’architecture « contextuelle » : le bâtiment agit comme un objectif photo, cadrant le paysage et transformant l’habiter en expérience de regard.",
+      "construction_story": "Implanté sur une parcelle de confluence, l’immeuble est orienté et sculpté pour ménager les vues vers le paysage et des éléments existants. La végétalisation et les reflets brouillent la limite entre bâti et ciel.",
+      "mindset": {
+        "intent": "Faire de chaque logement un belvédère, en scénarisant les vues.",
+        "values": [
+          "contexte",
+          "paysage",
+          "mise en scène",
+          "lumière"
+        ],
+        "constraints": [
+          "parcelle en proue",
+          "vues à préserver",
+          "confluence"
+        ],
+        "design_principles": [
+          "sculpture volumétrique",
+          "grandes baies",
+          "végétalisation"
+        ],
+        "experience_goals": [
+          "panoramas",
+          "sensation cinématographique du quotidien"
+        ],
+        "metaphors": [
+          "cadrage cinéma",
+          "proue"
+        ],
+        "keywords": [
+          "cadrage",
+          "belvédère",
+          "reflets",
+          "confluence"
+        ]
+      },
+      "citations": [
+        "Architecture exists, like cinema, in a dimension of time and movement",
+        "Studied in order to free the points of view on the house of the Lock keeper"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_03",
+      "name": "FRAC Bretagne",
+      "architect_id": "ARCH_03",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2012",
+        "start": 2012,
+        "end": 2012
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Beauregard",
+        "site": "FRAC Bretagne",
+        "address": null,
+        "notes": null
+      },
+      "program": [
+        "culture"
+      ],
+      "era": "Pritzker_Ere_2000s_2010s",
+      "description_short": "Monolithe d’acier noir et de verre abritant un cœur rouge vif (auditorium), organisé autour d’un atrium vertical et de passerelles.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Explorer la « gravité en suspension » et une déambulation dynamique : opposition entre l’austérité noire extérieure et l’intensité rouge intérieure, avec tension spatiale dans la faille verticale.",
+      "why_choose": "Parce qu’il montre comment un bâtiment culturel peut devenir une expérience physique : on ne visite pas seulement des œuvres, on traverse une mise en scène spatiale.",
+      "construction_story": "Le projet joue sur une boîte noire énigmatique qui cache un intérieur dramatique. Une faille verticale, des passerelles et des escaliers obligent le corps à ressentir la hauteur, le vide et le mouvement.",
+      "mindset": {
+        "intent": "Faire du parcours intérieur une expérience sensorielle et dynamique.",
+        "values": [
+          "drame spatial",
+          "mouvement",
+          "contraste",
+          "sensation"
+        ],
+        "constraints": [
+          "programme d’art contemporain",
+          "organisation en atrium"
+        ],
+        "design_principles": [
+          "monolithe extérieur",
+          "faille verticale",
+          "passerelles",
+          "opposition chromatique"
+        ],
+        "experience_goals": [
+          "surprise",
+          "tension",
+          "déambulation active"
+        ],
+        "metaphors": [
+          "noir/rouge",
+          "gravité en suspension"
+        ],
+        "keywords": [
+          "atrium",
+          "passerelles",
+          "monolithe",
+          "expérience"
+        ]
+      },
+      "citations": [
+        "Un lieu d'art contemporain traité comme une expérience de sensations... Gravité en suspension",
+        "L'inversion du lourd et du léger"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_04",
+      "name": "Tours des Horizons",
+      "architect_id": "ARCH_04",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1970",
+        "start": 1970,
+        "end": 1970
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Bourg-l'Évesque",
+        "site": "Horizons",
+        "address": null,
+        "notes": "Tours jumelles (96 m et 95 m)."
+      },
+      "program": [
+        "housing"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Tours jumelles résidentielles en béton blanc préfabriqué, plan elliptique (96 m / 95 m).",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Refus des barres rectilignes : forme en ellipse inspirée de Marina City à Chicago, pour maximiser lumière, vues et limiter les vis-à-vis. Premier IGH d’habitation en France.",
+      "why_choose": "Parce que c’est un manifeste de l’optimisme des Trente Glorieuses à Rennes : la hauteur, la lumière et la vue comme promesse de progrès.",
+      "construction_story": "À une époque de forte croissance urbaine, l’ambition est d’inventer une verticalité plus lumineuse et plus habitable que les barres. La courbe devient une solution technique et sociale : soleil, intimité, sculpture urbaine.",
+      "mindset": {
+        "intent": "Faire de la grande hauteur un habitat désirable (lumière, intimité, vues).",
+        "values": [
+          "progrès",
+          "lumière",
+          "habiter en hauteur",
+          "sculpture urbaine"
+        ],
+        "constraints": [
+          "densité",
+          "éviter la monotonie des barres",
+          "limiter les vis-à-vis"
+        ],
+        "design_principles": [
+          "plan elliptique",
+          "béton blanc préfabriqué",
+          "modénature"
+        ],
+        "experience_goals": [
+          "vues dégagées",
+          "appartements ensoleillés"
+        ],
+        "metaphors": [
+          "épis de maïs"
+        ],
+        "keywords": [
+          "IGH",
+          "ellipse",
+          "béton blanc",
+          "Trente Glorieuses"
+        ]
+      },
+      "citations": [
+        "Avec des procédés traditionnels, on n'aurait pu réaliser que des bâtiments rectilignes",
+        "Inspirées par les tours en épi de maïs de Chicago"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_05",
+      "name": "Ascension Paysagère",
+      "architect_id": "ARCH_06",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2022",
+        "start": 2022,
+        "end": 2022
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Confluence",
+        "site": "Ascension Paysagère",
+        "address": null,
+        "notes": "Ensemble résidentiel en terrasses."
+      },
+      "program": [
+        "housing"
+      ],
+      "era": "Contemporary_2020s",
+      "description_short": "Ensemble résidentiel aux silhouettes de collines, strates progressives et terrasses plantées ; façade en céramique grise.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Inspiré par la géologie : le bâtiment s’élève comme une colline érodée, et les retraits deviennent des terrasses pour étendre la nature de la berge vers le ciel.",
+      "why_choose": "Parce que c’est une réponse concrète à la question « densifier sans étouffer » : on construit haut, mais en fabriquant un paysage habité.",
+      "construction_story": "Plutôt que des volumes verticaux nets, le projet empile des strates et recule les étages, transformant chaque retrait en terrasse. La matérialité minérale (céramique grise) renforce l’idée de relief urbain.",
+      "mindset": {
+        "intent": "Réconcilier densité et nature en inventant une topographie artificielle.",
+        "values": [
+          "paysage",
+          "nature en ville",
+          "densité douce",
+          "habiter dehors"
+        ],
+        "constraints": [
+          "densification à la confluence",
+          "qualité d’usage des logements"
+        ],
+        "design_principles": [
+          "strates/gradins",
+          "terrasses plantées",
+          "façade céramique"
+        ],
+        "experience_goals": [
+          "village vertical",
+          "continuité berge→logements"
+        ],
+        "metaphors": [
+          "collines",
+          "géologie",
+          "montagne urbaine"
+        ],
+        "keywords": [
+          "terrasses",
+          "céramique",
+          "géologie",
+          "confluence"
+        ]
+      },
+      "citations": [
+        "Creating an ensemble of two buildings with silhouettes like small hills",
+        "Extend the lush atmosphere of the riverbank upwards to the apartments"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_06",
+      "name": "Gare de Rennes (PEM)",
+      "architect_id": "ARCH_07",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2019",
+        "start": 2019,
+        "end": 2019
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Centre-Gare",
+        "site": "Gare de Rennes",
+        "address": null,
+        "notes": "Extension et passerelle de connexion nord/sud."
+      },
+      "program": [
+        "transport",
+        "services"
+      ],
+      "era": "Metro_Infrastructure_2010s_2020s",
+      "description_short": "Extension de la gare avec une grande toiture translucide en ETFE, évoquant un nuage, et une passerelle reliant les quartiers nord et sud.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Une « toiture-paysage » : un nuage de lumière filtrée qui recoud la ville, et une passerelle qui cicatrise la coupure ferroviaire.",
+      "why_choose": "Parce que c’est un cas d’école de projet d’infrastructure qui devient urbanisme : la gare n’est plus une barrière, mais un lien et une promenade.",
+      "construction_story": "L’enjeu principal est de reconnecter deux morceaux de ville séparés par les voies. La réponse passe par une couverture légère (ETFE) et un franchissement piéton, qui transforment la gare en espace public.",
+      "mindset": {
+        "intent": "Transformer une coupure ferroviaire en continuité urbaine.",
+        "values": [
+          "réparation urbaine",
+          "lumière",
+          "légèreté",
+          "flux piétons"
+        ],
+        "constraints": [
+          "coupure nord/sud",
+          "grande portée de toiture",
+          "infrastructure active"
+        ],
+        "design_principles": [
+          "ETFE translucide",
+          "passerelle",
+          "toiture-paysage"
+        ],
+        "experience_goals": [
+          "lumière douce",
+          "promenade",
+          "orientation intuitive"
+        ],
+        "metaphors": [
+          "nuage",
+          "Brocéliande"
+        ],
+        "keywords": [
+          "ETFE",
+          "passerelle",
+          "recoudre",
+          "gare"
+        ]
+      },
+      "citations": [
+        "Brume matérialisée par des panneaux transparents d'E.T.F.E."
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_07",
+      "name": "La Barre Saint-Just",
+      "architect_id": "ARCH_04",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1969",
+        "start": 1969,
+        "end": 1969
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Rue Jean Guéhenno",
+        "address": null,
+        "notes": "Surnommée le « grand paquebot »."
+      },
+      "program": [
+        "housing"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Immeuble pyramidal avec terrasses en gradins et ailerons de béton, offrant des jardins suspendus à chaque logement.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "La forme suit la fonction et une ambition hédoniste : retraits successifs pour créer des terrasses-jardins ; ailerons latéraux servant à la ventilation et à l’intimité (pare-vue).",
+      "why_choose": "Parce qu’il montre une voie alternative au logement collectif standard : densité + terrasses, comme si on empilait des jardins sur un paquebot urbain.",
+      "construction_story": "Le projet cherche à offrir l’extérieur à chaque appartement. Les ailerons, en plus de signer la silhouette futuriste, abritent les gaines de ventilation et protègent les terrasses des regards.",
+      "mindset": {
+        "intent": "Offrir un « luxe urbain » (terrasse) à grande échelle.",
+        "values": [
+          "hédonisme",
+          "intimité",
+          "air",
+          "extérieur",
+          "innovation de l’habitat"
+        ],
+        "constraints": [
+          "collectif dense",
+          "ventilation",
+          "vis-à-vis"
+        ],
+        "design_principles": [
+          "pyramide/gradins",
+          "ailerons fonctionnels",
+          "terrasses-jardins"
+        ],
+        "experience_goals": [
+          "jardin suspendu",
+          "habitat intermédiaire maison/collectif"
+        ],
+        "metaphors": [
+          "paquebot",
+          "jardins suspendus"
+        ],
+        "keywords": [
+          "terrasses",
+          "pyramide",
+          "ailerons",
+          "logement"
+        ]
+      },
+      "citations": [
+        "La forme est ici pensée en rapport à la fonction",
+        "Une pyramide avec des jardins suspendus"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_08",
+      "name": "Tour de l'Éperon",
+      "architect_id": "ARCH_05",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1975",
+        "start": 1975,
+        "end": 1975
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Colombier",
+        "site": "Tour de l'Éperon",
+        "address": null,
+        "notes": "~92 m, balcons alvéolaires."
+      },
+      "program": [
+        "housing"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Tour résidentielle en béton blanc (~92 m) caractérisée par ses balcons en nid d’abeilles créant une vibration d’ombre et de lumière.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Un « menhir de béton » : sculpture minérale, où l’alvéolaire agit comme piège à lumière, transformant la tour en cadran solaire urbain.",
+      "why_choose": "Parce que c’est un signal urbain : une forme simple mais rendue vivante par la lumière, comme une horloge solaire géante dans la ville.",
+      "construction_story": "Dans la composition verticale du Colombier, la tour est pensée comme un objet solitaire et repère. Le dispositif alvéolaire module la façade selon l’heure et la saison.",
+      "mindset": {
+        "intent": "Créer un repère métropolitain et une façade « vivante » par la lumière.",
+        "values": [
+          "signal",
+          "minéralité",
+          "lumière",
+          "abstraction"
+        ],
+        "constraints": [
+          "IGH sur dalle",
+          "image forte du quartier"
+        ],
+        "design_principles": [
+          "béton blanc",
+          "balcons alvéolaires",
+          "volumétrie abstraite"
+        ],
+        "experience_goals": [
+          "variations d’ombre/lumière",
+          "identité de skyline"
+        ],
+        "metaphors": [
+          "menhir",
+          "cadran solaire"
+        ],
+        "keywords": [
+          "alvéoles",
+          "béton blanc",
+          "Colombier",
+          "repère"
+        ]
+      },
+      "citations": [
+        "L'éperon est un menhir de béton indémodable",
+        "Grand jeu volumétrique abstrait où alternent l'ombre et la lumière"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_09",
+      "name": "Urban Quartz",
+      "architect_id": "ARCH_11",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2019",
+        "start": 2019,
+        "end": 2019
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "EuroRennes",
+        "site": "Urban Quartz",
+        "address": null,
+        "notes": "Trois bâtiments reliés par passerelles."
+      },
+      "program": [
+        "services"
+      ],
+      "era": "Metro_Infrastructure_2010s_2020s",
+      "description_short": "Trois bâtiments de bureaux aux formes cristallines, disposés pour former une faille/canyon où la lumière pénètre, reliés par des passerelles.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Refuser le bureau générique : découpe « lapidaire » des volumes pour créer du vide (canyon) et des échappées visuelles.",
+      "why_choose": "Parce que c’est une leçon de densité tertiaire : on densifie en sculptant le vide pour laisser passer lumière et regards.",
+      "construction_story": "Dans le contexte ferroviaire d’EuroRennes, les volumes sont taillés et espacés pour éviter l’effet bloc. Les passerelles ajoutent une continuité fonctionnelle et une dramaturgie de parcours.",
+      "mindset": {
+        "intent": "Réinventer le bureau par une volumétrie ciselée et lumineuse.",
+        "values": [
+          "lumière",
+          "anti-générique",
+          "urbain",
+          "mouvement"
+        ],
+        "constraints": [
+          "densité autour de la gare",
+          "paysage ferroviaire"
+        ],
+        "design_principles": [
+          "volumes angulaires",
+          "canyon",
+          "passerelles"
+        ],
+        "experience_goals": [
+          "cœurs d’îlot lumineux",
+          "espaces interstitiels qualitatifs"
+        ],
+        "metaphors": [
+          "quartz",
+          "canyon"
+        ],
+        "keywords": [
+          "EuroRennes",
+          "failles",
+          "passerelles",
+          "tertiaire"
+        ]
+      },
+      "citations": [
+        "La découpe lapidaire des volumes révèle une faille, un canyon",
+        "Trois bâtiments ciselés s'imposent dans le paysage ferroviaire"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_10",
+      "name": "Identity One",
+      "architect_id": "ARCH_12",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2019",
+        "start": 2019,
+        "end": 2019
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "EuroRennes",
+        "site": "Identity One",
+        "address": null,
+        "notes": "Immeuble tertiaire avec résille."
+      },
+      "program": [
+        "services"
+      ],
+      "era": "Metro_Infrastructure_2010s_2020s",
+      "description_short": "Immeuble de bureaux doté d’un exosquelette en résille d’aluminium anodisé, créant une texture vibrante et une protection solaire.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Partir d’une « géode éclatée » : la résille bi‑lanières sculpte la lumière, contraste avec la façade vitrée lisse et donne une identité forte.",
+      "why_choose": "Parce qu’il met en scène la « peau » du bâtiment : une architecture de filtre, entre protection climatique et signature visuelle.",
+      "construction_story": "Dans une zone tertiaire dense, le projet cherche une expression propre. La résille devient à la fois dispositif environnemental (soleil) et langage (texture).",
+      "mindset": {
+        "intent": "Donner une identité par une enveloppe performante et expressive.",
+        "values": [
+          "lumière",
+          "performance",
+          "texture",
+          "contraste"
+        ],
+        "constraints": [
+          "protection solaire",
+          "image tertiaire distinctive"
+        ],
+        "design_principles": [
+          "double peau",
+          "résille aluminium",
+          "contraste rugueux/lisse"
+        ],
+        "experience_goals": [
+          "lumière filtrée",
+          "façade cinétique"
+        ],
+        "metaphors": [
+          "géode",
+          "vaisseaux"
+        ],
+        "keywords": [
+          "résille",
+          "exosquelette",
+          "EuroRennes",
+          "filtre"
+        ]
+      },
+      "citations": [
+        "Identity se présente comme une géode dont l'éclatement aurait donné naissance à trois vaisseaux",
+        "Contraste entre la rugosité de l'exosquelette en résille et la facture lisse"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_11",
+      "name": "Piscine Saint-Georges",
+      "architect_id": "ARCH_19",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1926",
+        "start": 1926,
+        "end": 1926
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Rue Gambetta",
+        "address": null,
+        "notes": "Art Déco, mosaïques Odorico, classée MH."
+      },
+      "program": [
+        "services"
+      ],
+      "era": "Art_Deco_EntreDeuxGuerres",
+      "description_short": "Piscine Art Déco célèbre pour ses mosaïques Odorico (frise du bassin) et l’alliance hygiénisme/esthétique.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Matériaux lavables et imputrescibles pour l’hygiène publique, sublimés par une frise de « mer idéale » transformant la natation en expérience sensorielle.",
+      "why_choose": "Parce qu’elle montre que l’architecture publique peut être à la fois politique (hygiène) et poétique (l’émail, la lumière, l’eau).",
+      "construction_story": "À une époque où l’hygiène devient une priorité municipale, la piscine est pensée comme un équipement exemplaire : enveloppe sobre, intérieur spectaculaire. La mosaïque n’est pas décorative seulement : elle rend l’eau, la lumière et le lieu indissociables.",
+      "mindset": {
+        "intent": "Transformer un équipement hygiéniste en expérience esthétique.",
+        "values": [
+          "service public",
+          "hygiène",
+          "beauté",
+          "arts décoratifs"
+        ],
+        "constraints": [
+          "matériaux lavables",
+          "piscine publique"
+        ],
+        "design_principles": [
+          "mosaïque/grès cérame",
+          "frise narrative",
+          "atmosphère immersive"
+        ],
+        "experience_goals": [
+          "sensation de « mer idéale »",
+          "enchantement du quotidien"
+        ],
+        "metaphors": [
+          "eau et émail"
+        ],
+        "keywords": [
+          "Art Déco",
+          "mosaïque",
+          "hygiénisme",
+          "Odorico"
+        ]
+      },
+      "citations": [
+        "Réalisation majeure de l'Art déco en France"
+      ],
+      "collaborators": [
+        {
+          "name": "Isidore Odorico",
+          "role": "mosaïste / arts décoratifs"
+        }
+      ]
+    },
+    {
+      "id": "BLD_12",
+      "name": "Église Sainte-Thérèse",
+      "architect_id": "ARCH_16",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1936",
+        "start": 1936,
+        "end": 1936
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Sud-Gare",
+        "site": "Église Sainte‑Thérèse",
+        "address": null,
+        "notes": "Coupole et arcs en mitre ; mosaïques Odorico."
+      },
+      "program": [
+        "religious"
+      ],
+      "era": "Art_Deco_EntreDeuxGuerres",
+      "description_short": "Église moderne combinant béton armé, grès et schiste, plan centré et coupole ; dynamique intérieure par arcs en mitre.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Synthèse entre modernité technique et régionalisme des matériaux ; la géométrie des arcs et la coupole créent une élévation spirituelle et un volume intérieur unitaire.",
+      "why_choose": "Parce que c’est une démonstration que le béton peut être sacré : la structure devient langage, et les matériaux locaux ancrent la spiritualité dans le terroir.",
+      "construction_story": "Dans l’entre-deux-guerres, l’édifice cherche une synthèse : modernité du béton pour les portées et la coupole, parements de grès/schiste pour la continuité régionale. Le plan centré rapproche les fidèles et renforce l’unité intérieure.",
+      "mindset": {
+        "intent": "Concilier innovation structurelle et ancrage régional pour un sacré moderne.",
+        "values": [
+          "spiritualité",
+          "régionalisme",
+          "modernité",
+          "unité"
+        ],
+        "constraints": [
+          "structure de coupole",
+          "matériaux locaux",
+          "volumétrie liturgique"
+        ],
+        "design_principles": [
+          "béton apparent/esthétisé",
+          "plan centré",
+          "arcs en mitre",
+          "décor intégré (vitraux/mosaïques)"
+        ],
+        "experience_goals": [
+          "élévation",
+          "proximité des fidèles",
+          "lumière colorée"
+        ],
+        "metaphors": [
+          "béton spirituel"
+        ],
+        "keywords": [
+          "coupole",
+          "arcs en mitre",
+          "schiste",
+          "Art Déco"
+        ]
+      },
+      "citations": [
+        "Considérée comme un chef-d'œuvre de l'Art déco",
+        "Une succession d'arcs en mitre ou à trois pans s'élève jusqu'à la coupole"
+      ],
+      "collaborators": [
+        {
+          "name": "Atelier Odorico",
+          "role": "mosaïques"
+        },
+        {
+          "name": "Rault",
+          "role": "vitraux"
+        },
+        {
+          "name": "Garin",
+          "role": "peintures"
+        }
+      ]
+    },
+    {
+      "id": "BLD_13",
+      "name": "Maison Odorico",
+      "architect_id": "ARCH_22",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1940",
+        "start": 1940,
+        "end": 1940
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Rue Joseph Sauveur",
+        "address": null,
+        "notes": "Maison personnelle ; vitrine de mosaïques."
+      },
+      "program": [
+        "housing",
+        "services"
+      ],
+      "era": "Art_Deco_EntreDeuxGuerres",
+      "description_short": "Maison personnelle liée à la dynastie Odorico : volumes extérieurs modernistes sobres, intérieur démonstratif en mosaïques (salle de bain spectaculaire).",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Architecture comme vitrine du savoir-faire : contraste entre modernisme extérieur et art total intérieur conçu en tesselles.",
+      "why_choose": "Parce que c’est une « maison‑manifeste » : l’architecture sert d’écrin et de vitrine à un art décoratif qui a pixelisé Rennes.",
+      "construction_story": "Vers 1940, l’expression extérieure se simplifie vers le modernisme, mais l’intérieur devient showroom : la virtuosité des mosaïques transforme des pièces ordinaires en œuvres totales. La réaffectation récente (crêperie) ouvre ce patrimoine au public.",
+      "mindset": {
+        "intent": "Montrer un savoir-faire artisanal à travers un lieu habité.",
+        "values": [
+          "art total",
+          "artisanat",
+          "démonstration",
+          "contraste"
+        ],
+        "constraints": [
+          "habitat privé",
+          "vitrine du métier"
+        ],
+        "design_principles": [
+          "volumes sobres",
+          "décor intérieur omniprésent",
+          "mosaïque comme surface à conquérir"
+        ],
+        "experience_goals": [
+          "surprise (extérieur/intérieur)",
+          "immersion dans la mosaïque"
+        ],
+        "metaphors": [
+          "Rennes pixelisée",
+          "showroom habité"
+        ],
+        "keywords": [
+          "Odorico",
+          "mosaïque",
+          "modernisme",
+          "art total"
+        ]
+      },
+      "citations": [
+        "L'ensemble de la décoration ayant été conçu et réalisé par le mosaïste",
+        "Cette belle demeure lorgne plus vers le style Moderniste qu'Art déco"
+      ],
+      "collaborators": [
+        {
+          "name": "Famille/atelier Odorico",
+          "role": "mosaïques et décors intérieurs"
+        },
+        {
+          "name": "Galliano Serafini",
+          "role": "chef d’atelier (salle de bains)"
+        }
+      ]
+    },
+    {
+      "id": "BLD_14",
+      "name": "La Caravelle",
+      "architect_id": "ARCH_04",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1969",
+        "start": 1969,
+        "end": 1969
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Bourg-l'Évesque",
+        "site": "La Caravelle",
+        "address": null,
+        "notes": "Barre incurvée au pied des Horizons."
+      },
+      "program": [
+        "housing"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Barre résidentielle incurvée, contrepoint horizontal aux Tours des Horizons, avec façade sud à modénature profonde.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Composer une dialectique verticale/horizontale et animer la barre par un relief de façade (ombres profondes) protecteur et cinétique.",
+      "why_choose": "Parce qu’elle explique le « duo » urbain : tour + barre, vertical + horizontal, comme une phrase avec point d’exclamation et point-virgule.",
+      "construction_story": "Placée en dialogue avec les Horizons, la Caravelle suit le méandre et refuse la façade plane. La modénature capte la lumière et protège du soleil, donnant du mouvement au bâtiment depuis les quais.",
+      "mindset": {
+        "intent": "Faire de l’horizontalité un événement, pas une monotonie.",
+        "values": [
+          "composition urbaine",
+          "cinétique",
+          "lumière",
+          "protection solaire"
+        ],
+        "constraints": [
+          "grande longueur de façade",
+          "dialogue avec des tours"
+        ],
+        "design_principles": [
+          "courbe",
+          "modénature profonde",
+          "jeu d’ombre"
+        ],
+        "experience_goals": [
+          "façade animée en mouvement",
+          "confort d’été"
+        ],
+        "metaphors": [
+          "contrepoint"
+        ],
+        "keywords": [
+          "barre incurvée",
+          "modénature",
+          "ombre",
+          "Bourg-l'Évesque"
+        ]
+      },
+      "citations": [
+        "L'horizontalité de la Caravelle contraste avec la verticalité des Horizons",
+        "Vaste barre dont la façade sud... fait l'objet d'un travail de modénature appuyée"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_15",
+      "name": "Le Mabilay",
+      "architect_id": "ARCH_05",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1973",
+        "start": 1973,
+        "end": 1973
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Quai de la Mabilais",
+        "address": null,
+        "notes": "Ancien centre télécoms ; pilotis ; tour hertzienne en « soucoupe »."
+      },
+      "program": [
+        "services",
+        "administrative"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Ancien centre de télécommunications sur pilotis, tripode surmonté d’une tour hertzienne en forme de soucoupe.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Architecture « vaisseau spatial » : exprimer la fonction technologique et répondre au risque de crue par un bâtiment détaché du sol.",
+      "why_choose": "Parce qu’il incarne l’imaginaire techno des années 70 : un bâtiment qui « parle » de sa fonction comme un logo en 3D.",
+      "construction_story": "Implanté en zone inondable, le bâtiment est soulevé sur pilotis. La tour hertzienne dicte la composition et devient signal d’entrée de ville, assumant une esthétique de science-fiction.",
+      "mindset": {
+        "intent": "Rendre visible une fonction technique et marquer un seuil urbain.",
+        "values": [
+          "technologie",
+          "signal",
+          "imagination",
+          "adaptation au site"
+        ],
+        "constraints": [
+          "zone inondable",
+          "antenne hertzienne à intégrer"
+        ],
+        "design_principles": [
+          "pilotis",
+          "tripode",
+          "plateforme en soucoupe"
+        ],
+        "experience_goals": [
+          "repère",
+          "étonnement",
+          "lecture immédiate de la fonction"
+        ],
+        "metaphors": [
+          "OVNI",
+          "vaisseau spatial",
+          "soucoupe volante"
+        ],
+        "keywords": [
+          "télécoms",
+          "pilotis",
+          "signal",
+          "science-fiction"
+        ]
+      },
+      "citations": [
+        "Antenne hertzienne... qui prit alors la forme d'une soucoupe volante"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_16",
+      "name": "Imprimerie Oberthur",
+      "architect_id": "ARCH_08",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1870",
+        "start": 1870,
+        "end": 1870
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Rue de Paris (Halle Oberthur)",
+        "address": null,
+        "notes": "Ateliers en verre, brique et acier ; parc Bühler."
+      },
+      "program": [
+        "industrial",
+        "services"
+      ],
+      "era": "Industrial_19e",
+      "description_short": "Ancienne usine d’imprimerie en brique, verre et acier, avec verrières inondant les ateliers de lumière ; intégrée à un parc paysager.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Anoblir l’industrie : combiner tradition (brique/pierre) et modernité (métal/verre) pour des conditions de travail hygiénistes et productives.",
+      "why_choose": "Parce que c’est la « cathédrale du labeur » rennaise : un exemple précoce de qualité architecturale au service du travail, et un modèle de reconversion.",
+      "construction_story": "La lumière n’est pas un effet : c’est un outil hygiéniste et productif. L’usine est pensée avec verrières et structure métallique fine, puis intégrée à un parc, préfigurant la notion contemporaine de qualité de vie au travail. La reconversion montre sa résilience d’usage.",
+      "mindset": {
+        "intent": "Faire de l’industrie un lieu digne, lumineux et adaptable.",
+        "values": [
+          "utile et beau",
+          "hygiène",
+          "lumière",
+          "capacité de reconversion"
+        ],
+        "constraints": [
+          "productivité",
+          "conditions de travail",
+          "grandes portées"
+        ],
+        "design_principles": [
+          "verrières",
+          "structure métallique",
+          "brique/pierre d’ancrage"
+        ],
+        "experience_goals": [
+          "ateliers lumineux",
+          "présence urbaine noble"
+        ],
+        "metaphors": [
+          "cathédrale du labeur"
+        ],
+        "keywords": [
+          "industrie",
+          "verre",
+          "acier",
+          "brique",
+          "hygiénisme"
+        ]
+      },
+      "citations": [
+        "Les tout nouveaux ateliers en verre, brique et acier, les spécialités de l'architecture Martenot"
+      ],
+      "collaborators": [
+        {
+          "name": "Frères Bühler",
+          "role": "paysagistes (parc)"
+        }
+      ]
+    },
+    {
+      "id": "BLD_17",
+      "name": "Grands Moulins de Rennes",
+      "architect_id": "ARCH_17",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1896 / 1956 (extension)",
+        "start": 1896,
+        "end": 1956
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Rue Jean‑Marie Duhamel",
+        "address": null,
+        "notes": "Minoterie ; site en collage historique."
+      },
+      "program": [
+        "industrial"
+      ],
+      "era": "Industrial_19e",
+      "description_short": "Minoterie industrielle verticale : premier moulin fin 19e siècle complété par des extensions en béton armé (1956), dictées par le processus gravitaire.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Forme strictement déterminée par la chaîne de production : le grain monte et redescend transformé. Architecture-machine devenant repère monumental.",
+      "why_choose": "Parce qu’il rend visible la logique d’une machine : l’architecture raconte un procédé, et devient malgré tout un repère presque « religieux » dans le paysage.",
+      "construction_story": "Le site se transforme au fil du temps ; l’intervention de 1956 introduit le béton armé pour supporter les charges des silos et des machines. La verticalité résulte du process gravitaire, mais produit une présence monumentale d’« amer » industriel.",
+      "mindset": {
+        "intent": "Servir efficacement un processus industriel gravitaire.",
+        "values": [
+          "fonctionnalisme",
+          "robustesse",
+          "clarté du process"
+        ],
+        "constraints": [
+          "charges colossales",
+          "silos/machines",
+          "évolution par phases"
+        ],
+        "design_principles": [
+          "béton armé pour structures/charges",
+          "volumes verticaux"
+        ],
+        "experience_goals": [
+          "lecture de la chaîne de production",
+          "repère urbain"
+        ],
+        "metaphors": [
+          "architecture-machine",
+          "amer industriel"
+        ],
+        "keywords": [
+          "minoterie",
+          "gravité",
+          "béton armé",
+          "verticalité"
+        ]
+      },
+      "citations": [],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_18",
+      "name": "Viaduc Métro B",
+      "architect_id": "ARCH_13",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2022",
+        "start": 2022,
+        "end": 2022
+      },
+      "location": {
+        "city": "Rennes Métropole",
+        "district": "Cesson-Sévigné / Beaulieu",
+        "site": "Viaduc ligne B",
+        "address": null,
+        "notes": "Ouvrage de 2,4 km ; piles en Y et X."
+      },
+      "program": [
+        "infrastructure",
+        "transport"
+      ],
+      "era": "Metro_Infrastructure_2010s_2020s",
+      "description_short": "Ouvrage d’art en béton (2,4 km) dont le tablier repose sur des piles sculptées en Y et X pour réduire l’impact visuel.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Transformer une infrastructure lourde en ligne claire rythmée : esthétique fluide/sculpturale des piles et intégration urbaine.",
+      "why_choose": "Parce qu’il montre comment l’ingénierie peut faire architecture : même en béton, on peut dessiner léger et lisible.",
+      "construction_story": "Plutôt que dissimuler le béton, le projet le façonne. Les piles en Y/X apportent un rythme et une finesse visuelle qui accompagnent la traversée urbaine.",
+      "mindset": {
+        "intent": "Intégrer une infrastructure lourde avec une esthétique sculptée et minimale.",
+        "values": [
+          "intégration",
+          "clarté",
+          "rythme",
+          "sobriété"
+        ],
+        "constraints": [
+          "longueur 2,4 km",
+          "impact visuel",
+          "ouvrage en béton"
+        ],
+        "design_principles": [
+          "piles en Y/X",
+          "tablier continu",
+          "sculpture du béton"
+        ],
+        "experience_goals": [
+          "traversée agréable",
+          "lecture fluide de la ligne"
+        ],
+        "metaphors": [
+          "ligne claire",
+          "travelling"
+        ],
+        "keywords": [
+          "viaduc",
+          "piles Y/X",
+          "béton",
+          "ligne B"
+        ]
+      },
+      "citations": [
+        "Tablier en béton reposant sur des piles du même matériau"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_19",
+      "name": "Station Saint-Germain",
+      "architect_id": "ARCH_20",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2022",
+        "start": 2022,
+        "end": 2022
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Place Saint-Germain",
+        "site": "Station Saint‑Germain (métro B)",
+        "address": null,
+        "notes": "Station souterraine avec atrium."
+      },
+      "program": [
+        "transport"
+      ],
+      "era": "Metro_Infrastructure_2010s_2020s",
+      "description_short": "Station souterraine dotée d’un atrium habillé d’aluminium (perforé) permettant de voir le ciel depuis les quais et d’amener la lumière du jour.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Créer une « place publique intérieure » verticale : puits de lumière pour réduire l’anxiété du souterrain et reconnecter les usagers au ciel.",
+      "why_choose": "Parce que c’est un antidote au métro anxiogène : la lumière naturelle devient un outil de confort psychologique et d’urbanité.",
+      "construction_story": "Insérée dans un tissu ancien, la station est pensée comme un grand vide vertical. L’atrium diffuse la lumière jusqu’aux quais, transformant la descente en expérience plus ouverte et rassurante.",
+      "mindset": {
+        "intent": "Humaniser le souterrain par lumière, vide et lisibilité.",
+        "values": [
+          "confort",
+          "urbanité",
+          "lumière naturelle",
+          "orientation"
+        ],
+        "constraints": [
+          "station souterraine dense",
+          "tissu urbain contraint"
+        ],
+        "design_principles": [
+          "atrium",
+          "aluminium perforé",
+          "puits de lumière"
+        ],
+        "experience_goals": [
+          "réduction anxiété",
+          "perception du ciel",
+          "fluidité des flux"
+        ],
+        "metaphors": [
+          "place intérieure"
+        ],
+        "keywords": [
+          "atrium",
+          "lumière du jour",
+          "métro B",
+          "Saint‑Germain"
+        ]
+      },
+      "citations": [],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_20",
+      "name": "Station La Poterie",
+      "architect_id": "ARCH_15",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2002",
+        "start": 2002,
+        "end": 2002
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "La Poterie",
+        "site": "Terminus ligne A",
+        "address": null,
+        "notes": "Station aérienne ; auvents papillon."
+      },
+      "program": [
+        "transport"
+      ],
+      "era": "HighTech_2000s",
+      "description_short": "Terminus aérien de la ligne A : structure acier/verre/béton avec auvents en « ailes de papillon ».",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "High-Tech assumé : précision des matériaux et légèreté symbolique de l’envol, prouvant qu’une infrastructure peut devenir élégante.",
+      "why_choose": "Parce que c’est la preuve que la technique peut être poétique : un simple terminus devient un geste léger, presque prêt à décoller.",
+      "construction_story": "En traitant la station comme un objet High-Tech, le projet met en avant la structure et la transparence. Les auvents donnent une signature immédiate et protègent les quais tout en évoquant l’envol.",
+      "mindset": {
+        "intent": "Donner une dignité architecturale à une infrastructure de transport.",
+        "values": [
+          "précision",
+          "légèreté",
+          "transparence",
+          "technique visible"
+        ],
+        "constraints": [
+          "station aérienne",
+          "protection climatique"
+        ],
+        "design_principles": [
+          "acier/verre/béton",
+          "auvents papillon"
+        ],
+        "experience_goals": [
+          "lecture claire",
+          "lumière",
+          "sentiment d’envol"
+        ],
+        "metaphors": [
+          "ailes de papillon"
+        ],
+        "keywords": [
+          "High-Tech",
+          "terminus",
+          "acier verre",
+          "ligne A"
+        ]
+      },
+      "citations": [
+        "Reconnaît la patte de Norman Foster"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_21",
+      "name": "Archives Départementales 35",
+      "architect_id": "ARCH_14",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2006",
+        "start": 2006,
+        "end": 2006
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Beauregard",
+        "site": "Archives départementales d’Ille-et-Vilaine",
+        "address": null,
+        "notes": "Parallélépipède noir et vitré."
+      },
+      "program": [
+        "administrative",
+        "services"
+      ],
+      "era": "HighTech_2000s",
+      "description_short": "Parallélépipède noir, minimaliste, dont la façade vitrée laisse deviner la répétition des rayonnages d’archives.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "La fonction devient symbole : motif infini de mémoire accumulée, ambiguïté entre coffre-fort et vitrine, monumentalité sombre quasi sacrée.",
+      "why_choose": "Parce que c’est un bâtiment qui « montre » l’invisible : la mémoire (les rayonnages) devient façade, motif et idée.",
+      "construction_story": "Le projet assume une sobriété quasi mutique. La répétition des archives, perceptible depuis l’extérieur, transforme un programme technique en représentation : une infinité de mémoire.",
+      "mindset": {
+        "intent": "Rendre la mémoire visible et donner un statut monumental à l’archivage.",
+        "values": [
+          "sobriété",
+          "symbolique",
+          "rigueur",
+          "monumentalité"
+        ],
+        "constraints": [
+          "conservation/archivage",
+          "sécurité",
+          "répétition des rayonnages"
+        ],
+        "design_principles": [
+          "parallélépipède",
+          "noir/miroir",
+          "façade révélant les rayonnages"
+        ],
+        "experience_goals": [
+          "aura sacrée",
+          "lecture du programme",
+          "ambiguïté vitrine/coffre"
+        ],
+        "metaphors": [
+          "mémoire noire",
+          "coffre-fort / vitrine"
+        ],
+        "keywords": [
+          "archives",
+          "répétition",
+          "noir",
+          "Beauregard"
+        ]
+      },
+      "citations": [
+        "La fonction... devient un symbole",
+        "Écriture architecturale précise qui joue de la monumentalité"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_22",
+      "name": "Église Anastasis",
+      "architect_id": "ARCH_10",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2018",
+        "start": 2018,
+        "end": 2018
+      },
+      "location": {
+        "city": "Saint-Jacques-de-la-Lande",
+        "district": null,
+        "site": "Église Anastasis",
+        "address": null,
+        "notes": "Monolithe en béton blanc."
+      },
+      "program": [
+        "religious"
+      ],
+      "era": "Pritzker_Ere_2000s_2010s",
+      "description_short": "Église minimaliste en béton blanc, volumes géométriques et lumière naturelle indirecte, atmosphère de paix et d’introspection.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Minimalisme sacré : manipuler des volumes primaires pour sculpter la lumière et inviter au silence, sans décor.",
+      "why_choose": "Parce qu’elle illustre une spiritualité par la matière et la lumière, sans ornement : une architecture qui fait baisser le volume sonore du monde.",
+      "construction_story": "Le projet refuse la décoration pour laisser la lumière travailler. Les murs courbes et les volumes simples deviennent un instrument optique où la lumière glisse et installe une ambiance contemplative.",
+      "mindset": {
+        "intent": "Créer une pause spirituelle par la lumière et la géométrie.",
+        "values": [
+          "silence",
+          "introspection",
+          "sobriété",
+          "lumière"
+        ],
+        "constraints": [
+          "programme religieux contemporain",
+          "minimalisme sans décor"
+        ],
+        "design_principles": [
+          "béton blanc",
+          "lumière indirecte",
+          "volumes primaires"
+        ],
+        "experience_goals": [
+          "apaisement",
+          "concentration",
+          "lecture claire des volumes"
+        ],
+        "metaphors": [
+          "silence de la lumière"
+        ],
+        "keywords": [
+          "béton blanc",
+          "minimalisme",
+          "lumière indirecte",
+          "Anastasis"
+        ]
+      },
+      "citations": [],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_23",
+      "name": "Tour de la Sécurité Sociale",
+      "architect_id": "ARCH_05",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1973",
+        "start": 1973,
+        "end": 1973
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Colombier",
+        "site": "Tour CPAM",
+        "address": null,
+        "notes": "IGH de bureaux ; brutalisme administratif."
+      },
+      "program": [
+        "administrative",
+        "services"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Immeuble de grande hauteur de bureaux participant à la composition verticale du quartier du Colombier, d’esthétique brutaliste et administrative.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Composer une skyline institutionnelle : masse plus administrative dialoguant avec la Tour de l’Éperon sur l’esplanade Charles de Gaulle.",
+      "why_choose": "Parce qu’il raconte l’ambition métropolitaine des années 70 : même l’administration voulait toucher le ciel.",
+      "construction_story": "Dans le projet urbain du Colombier, la tour complète le dispositif vertical. Plus massive que l’Éperon, elle revendique une matérialité brutale et une présence institutionnelle.",
+      "mindset": {
+        "intent": "Affirmer une centralité administrative par la hauteur et la masse.",
+        "values": [
+          "institution",
+          "monumentalité",
+          "efficacité",
+          "signal urbain"
+        ],
+        "constraints": [
+          "composition sur dalle",
+          "programme bureaux"
+        ],
+        "design_principles": [
+          "volume massif",
+          "écriture brutaliste",
+          "dialogue vertical"
+        ],
+        "experience_goals": [
+          "repère",
+          "présence civique"
+        ],
+        "metaphors": [
+          "brutalisme administratif"
+        ],
+        "keywords": [
+          "IGH",
+          "bureaux",
+          "Colombier",
+          "CPAM"
+        ]
+      },
+      "citations": [
+        "Immeuble de grande hauteur (IGH) situé dans le quartier du Colombier"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_24",
+      "name": "Resto U L'Étoile",
+      "architect_id": "ARCH_04",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1963",
+        "start": 1963,
+        "end": 1963
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Beaulieu",
+        "site": "Campus Beaulieu",
+        "address": null,
+        "notes": "Plan en étoile, service de masse."
+      },
+      "program": [
+        "education",
+        "services"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Restaurant universitaire en plan centré en forme d’étoile, optimisé pour servir environ 1000 repas simultanément.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Le diagramme de flux devient forme : une cuisine centrale et des branches radiales minimisent les distances et organisent les circulations.",
+      "why_choose": "Parce que c’est de l’architecture comme logistique : un plan qui ressemble à un schéma… parce que c’en est un.",
+      "construction_story": "Sur un campus en croissance, l’enjeu est la capacité et l’efficacité. Le plan radial répond à une contrainte de service massif en optimisant les parcours entre production (cuisine) et distribution.",
+      "mindset": {
+        "intent": "Optimiser les flux d’un programme de restauration de masse.",
+        "values": [
+          "efficacité",
+          "clarté",
+          "fonctionnalisme",
+          "service public"
+        ],
+        "constraints": [
+          "fort débit de repas",
+          "circulations multiples"
+        ],
+        "design_principles": [
+          "plan centré",
+          "branches radiales",
+          "cuisine centrale"
+        ],
+        "experience_goals": [
+          "fluidité",
+          "réduction des distances",
+          "lisibilité"
+        ],
+        "metaphors": [
+          "étoile",
+          "diagramme de flux"
+        ],
+        "keywords": [
+          "campus",
+          "fonctionnalisme",
+          "flux",
+          "restauration"
+        ]
+      },
+      "citations": [
+        "La fonction qui détermine la forme en étoile"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_25",
+      "name": "Cité Judiciaire",
+      "architect_id": "ARCH_18",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1985",
+        "start": 1985,
+        "end": 1985
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Arsenal-Redon",
+        "site": "Cité Judiciaire",
+        "address": null,
+        "notes": "Courbes, vitrages fumés ; « soucoupe »."
+      },
+      "program": [
+        "administrative"
+      ],
+      "era": "PostModern_1980s",
+      "description_short": "Bâtiment judiciaire aux formes courbes et vitrées (souvent comparé à un vaisseau), cherchant transparence et rupture avec l’austérité classique.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Futurisme des années 80 : formes libres et vitrages pour rendre la justice moins intimidante et plus ouverte.",
+      "why_choose": "Parce que c’est un moment « design » de l’institution : la justice tente un changement d’image par l’architecture.",
+      "construction_story": "Dans la décennie post-moderniste, le projet s’éloigne de l’orthogonalité moderniste. Courbes et vitrages fumés construisent une figure reconnaissable, comme un objet posé.",
+      "mindset": {
+        "intent": "Humaniser et moderniser l’image d’une institution.",
+        "values": [
+          "transparence",
+          "accessibilité",
+          "rupture",
+          "design"
+        ],
+        "constraints": [
+          "programme judiciaire",
+          "sécurité/solennité à préserver"
+        ],
+        "design_principles": [
+          "formes organiques",
+          "vitrages",
+          "silhouette-objet"
+        ],
+        "experience_goals": [
+          "moins d’intimidation",
+          "lisibilité contemporaine"
+        ],
+        "metaphors": [
+          "vaisseau",
+          "champignon",
+          "soucoupe"
+        ],
+        "keywords": [
+          "justice",
+          "années 80",
+          "transparence",
+          "formes courbes"
+        ]
+      },
+      "citations": [],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_26",
+      "name": "Le Trimaran",
+      "architect_id": "ARCH_04",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1977",
+        "start": 1977,
+        "end": 1977
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Rue de Brest",
+        "address": null,
+        "notes": "Balcons prismatiques."
+      },
+      "program": [
+        "housing"
+      ],
+      "era": "TrenteGlorieuses_1960_1970",
+      "description_short": "Ensemble de logements dont la façade est animée par des balcons prismatiques triangulaires, générant un jeu d’ombre changeant.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Recherche cinétique : les prismes brisent la monotonie, multiplient les orientations et protègent du vent tout en captant la lumière.",
+      "why_choose": "Parce que c’est une façade qui bouge sans bouger : la géométrie fait le spectacle, simplement avec le soleil.",
+      "construction_story": "Dans la continuité des recherches sur la lumière, le projet utilise des balcons triangulaires comme dispositif climatique et perceptif. La façade devient un instrument d’ombre et d’orientation.",
+      "mindset": {
+        "intent": "Rendre la façade active (lumière/vent/vues) par la géométrie.",
+        "values": [
+          "cinétique",
+          "lumière",
+          "confort",
+          "variation"
+        ],
+        "constraints": [
+          "monotonie des façades",
+          "vent",
+          "orientation"
+        ],
+        "design_principles": [
+          "balcons prismatiques",
+          "multiplication des orientations"
+        ],
+        "experience_goals": [
+          "jeux d’ombre",
+          "vues variées",
+          "protection"
+        ],
+        "metaphors": [
+          "façade cinétique"
+        ],
+        "keywords": [
+          "balcons",
+          "prismes",
+          "ombre/lumière",
+          "Rue de Brest"
+        ]
+      },
+      "citations": [
+        "Jeu de balcons prismatiques en façade"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_27",
+      "name": "Station Cleunay",
+      "architect_id": "ARCH_23",
+      "co_architect_ids": [
+        "ARCH_24"
+      ],
+      "years": {
+        "label": "2022",
+        "start": 2022,
+        "end": 2022
+      },
+      "location": {
+        "city": "Rennes",
+        "district": "Cleunay",
+        "site": "Station Cleunay (métro B)",
+        "address": null,
+        "notes": "Bois au plafond, béton brut aux murs."
+      },
+      "program": [
+        "transport"
+      ],
+      "era": "Metro_Infrastructure_2010s_2020s",
+      "description_short": "Station de métro utilisant le contraste bois (plafond) et béton pour créer une ambiance plus chaleureuse et domestique.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Humaniser le souterrain par les matières : le bois adoucit l’expérience du métro, en dialogue avec le béton brut.",
+      "why_choose": "Parce qu’elle rappelle une règle simple : sous terre, la matière fait la psychologie. Le bois, c’est un « pull en laine » contre le béton brut.",
+      "construction_story": "Le choix du bois au plafond n’est pas décoratif : il vise une perception plus chaude et rassurante dans un environnement souterrain. Le contraste met en valeur la structure et rend l’espace plus habitable.",
+      "mindset": {
+        "intent": "Réduire la dureté perçue du souterrain par une palette matérielle chaleureuse.",
+        "values": [
+          "confort",
+          "humanisation",
+          "matière",
+          "ambiance"
+        ],
+        "constraints": [
+          "station souterraine",
+          "matériaux robustes"
+        ],
+        "design_principles": [
+          "plafond bois",
+          "banc/murs béton",
+          "contraste"
+        ],
+        "experience_goals": [
+          "chaleur",
+          "réassurance",
+          "identité de station"
+        ],
+        "metaphors": [
+          "pull en laine"
+        ],
+        "keywords": [
+          "bois",
+          "béton",
+          "métro B",
+          "Cleunay"
+        ]
+      },
+      "citations": [
+        "L'architecture de la station fait appel au bois pour le plafond"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_28",
+      "name": "Église Saint-Martin de Bruz",
+      "architect_id": "ARCH_17",
+      "co_architect_ids": [],
+      "years": {
+        "label": "1954",
+        "start": 1954,
+        "end": 1954
+      },
+      "location": {
+        "city": "Bruz",
+        "district": null,
+        "site": "Église Saint‑Martin",
+        "address": null,
+        "notes": "Reconstruction après bombardements 1944 ; schiste violet."
+      },
+      "program": [
+        "religious"
+      ],
+      "era": "Reconstruction_1950s",
+      "description_short": "Église de la reconstruction en schiste violet local, associant ancrage régional et technique moderne, plan repensé pour visibilité.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Régionalisme moderne : refuser le pastiche néo-gothique comme le modernisme radical ; matériaux du terroir et plan adapté à une liturgie renouvelée.",
+      "why_choose": "Parce qu’elle raconte la résilience : reconstruire sans copier le passé, mais sans le nier non plus — une architecture qui guérit.",
+      "construction_story": "Après les destructions de 1944, le projet choisit le schiste local pour ancrer la reconstruction dans la géologie et la mémoire. Le plan est adapté pour offrir une meilleure visibilité, anticipant des évolutions liturgiques.",
+      "mindset": {
+        "intent": "Reconstruire en conciliant mémoire locale et modernité d’usage.",
+        "values": [
+          "résilience",
+          "ancrage",
+          "sobriété",
+          "visibilité"
+        ],
+        "constraints": [
+          "reconstruction post-bombardements",
+          "éviter pastiche",
+          "matériaux disponibles"
+        ],
+        "design_principles": [
+          "schiste local",
+          "plan plus lisible",
+          "modernité technique"
+        ],
+        "experience_goals": [
+          "protection",
+          "rassemblement",
+          "clarté liturgique"
+        ],
+        "metaphors": [
+          "résurrection par la pierre"
+        ],
+        "keywords": [
+          "reconstruction",
+          "schiste",
+          "Bruz",
+          "régionalisme"
+        ]
+      },
+      "citations": [
+        "Les matériaux... jouent sur la polychromie : un schiste mauve"
+      ],
+      "collaborators": []
+    },
+    {
+      "id": "BLD_29",
+      "name": "Le Mur Habité",
+      "architect_id": "ARCH_21",
+      "co_architect_ids": [],
+      "years": {
+        "label": "2010",
+        "start": 2010,
+        "end": 2010
+      },
+      "location": {
+        "city": "Rennes",
+        "district": null,
+        "site": "Rue Gisèle Freund",
+        "address": null,
+        "notes": "Mur anti-bruit habité (logements)."
+      },
+      "program": [
+        "housing",
+        "infrastructure"
+      ],
+      "era": "Metro_Infrastructure_2010s_2020s",
+      "description_short": "Mur anti-bruit ferroviaire épaissi pour accueillir des logements et activités : une infrastructure transformée en lieu de vie.",
+      "architectural_features": [],
+      "materials": [],
+      "concept": "Hybridation contrainte/usage : répondre au bruit en construisant un « mur » habité plutôt qu’un écran aveugle, créant une solution sociale et urbaine.",
+      "why_choose": "Parce que c’est de l’architecture comme judo urbain : utiliser la force du problème (le bruit) pour produire une forme utile.",
+      "construction_story": "Face à la nuisance ferroviaire, le projet refuse la barrière muette. Il épaissit la limite et y installe des logements, transformant une contrainte technique en opportunité de programme et de front bâti.",
+      "mindset": {
+        "intent": "Convertir une contrainte infrastructurelle en ressource urbaine habitable.",
+        "values": [
+          "ingéniosité",
+          "social",
+          "hybridation",
+          "pragmatisme"
+        ],
+        "constraints": [
+          "bruit ferroviaire",
+          "continuité urbaine",
+          "épaisseur minimale"
+        ],
+        "design_principles": [
+          "mur épais",
+          "mixité logements/activités",
+          "interface avec infrastructure"
+        ],
+        "experience_goals": [
+          "protection acoustique",
+          "habiter une limite",
+          "réhabilitation du bord"
+        ],
+        "metaphors": [
+          "infrastructure hybride",
+          "judo urbain"
+        ],
+        "keywords": [
+          "anti-bruit",
+          "hybridation",
+          "logements",
+          "ferroviaire"
+        ]
+      },
+      "citations": [
+        "Cette interprétation contemporaine et sociale du mur antibruit"
+      ],
+      "collaborators": []
+    }
+  ]
+}
