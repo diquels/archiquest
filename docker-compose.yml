@@ -1,0 +1,15 @@
+services:
+  archiquest:
+    image: nginx:alpine
+    container_name: archiquest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: false

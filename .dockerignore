@@ -1,0 +1,31 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Fichiers batch/scripts de développement
+*.bat
+!docker-*.bat
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Documentation locale
+README.local.md
+NOTES.md
