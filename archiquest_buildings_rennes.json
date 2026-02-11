@@ -1,0 +1,587 @@
+{
+  "generated_at": "2026-02-11T21:25:07.139Z",
+  "source": {
+    "data": "data.js",
+    "details": "detailsById.js"
+  },
+  "count": 24,
+  "city": "Rennes",
+  "buildings": [
+    {
+      "id": 416,
+      "city": "Rennes",
+      "type": "Culture",
+      "name": "FRAC Bretagne",
+      "architect": "Odile Decq",
+      "year": "2012",
+      "address": "19 Avenue André Mussat, 35000 Rennes",
+      "location_display": "Beauregard",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Frac_Bretagne_Rennes.jpg/800px-Frac_Bretagne_Rennes.jpg",
+      "details": {
+        "why_shoot": "Pour son monolithe noir intense et son dialogue brutaliste avec le parc environnant.",
+        "story": "Le Fonds Régional d'Art Contemporain de Bretagne, conçu par Odile Decq, est un bâtiment signal qui affirme sa présence. Sa forme sombre et énigmatique, entrecoupée de failles rouges, crée une tension visuelle forte. Il abrite des espaces d'exposition, un auditorium et les réserves du fonds.",
+        "concept": "Un monolithe silencieux et mystérieux qui attire et questionne, servant d'écrin à la création contemporaine.",
+        "keywords": [
+          "brutalisme",
+          "monolithe",
+          "tension",
+          "art contemporain",
+          "signal"
+        ],
+        "architect_bio": "Odile Decq est une architecte et urbaniste française de renommée internationale, connue pour son style radical et son utilisation audacieuse de la couleur, notamment le noir et le rouge.",
+        "photo_tips": "Jouer avec les reflets du ciel sur les façades sombres et lisses. Utiliser les 'failles' rouges comme des points de fuite graphiques. La silhouette se détache particulièrement bien sur un ciel gris et lumineux (temps couvert).",
+        "photo_plans": [
+          "Silhouette sur le parc",
+          "Détail des façades noires",
+          "Intérieur lumineux"
+        ],
+        "moments": "Temps couvert, fin de journée"
+      }
+    },
+    {
+      "id": 417,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Le Belvédère",
+      "architect": "a/LTA architectes",
+      "year": "2021",
+      "address": "Rue de Fougères, 35700 Rennes",
+      "location_display": "Jeanne d'Arc",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour sa structure en gradins qui réinterprète la colline et offre une vue unique.",
+        "story": "Le Belvédère est un immeuble de logements qui s'inscrit dans la pente du quartier Jeanne d'Arc. Sa volumétrie en terrasses successives permet de dégager de grands espaces extérieurs pour chaque appartement et de s'intégrer dans le paysage urbain.",
+        "concept": "Habiter la pente. Créer une topographie artificielle qui prolonge le paysage environnant.",
+        "keywords": [
+          "gradins",
+          "topographie",
+          "intégration paysagère",
+          "vue",
+          "terrasses"
+        ],
+        "architect_bio": "a/LTA architectes est une agence nantaise qui cherche à développer une architecture contextuelle, attentive aux usages et aux spécificités de chaque site.",
+        "photo_tips": "Prendre de la distance pour capturer l'effet de 'colline habitée'. Se concentrer sur le rythme des terrasses et des garde-corps. La lumière du matin ou du soir accentuera les reliefs.",
+        "photo_plans": [
+          "Vue d'ensemble depuis le parc",
+          "Rythme des terrasses",
+          "Jeu d'ombres sur les façades"
+        ],
+        "moments": "Matin, Soir"
+      }
+    },
+    {
+      "id": 418,
+      "city": "Rennes",
+      "type": "Bureaux",
+      "name": "Samsic Siège",
+      "architect": "Jean-Paul Viguier",
+      "year": "2021",
+      "address": "Rue de la Frébardière, 35000 Rennes",
+      "location_display": "Atalante-ViaSilva",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour sa façade cinétique et ses reflets changeants qui animent le bâtiment.",
+        "story": "Le siège du groupe Samsic est un bâtiment totem à l'entrée de la métropole. Sa double peau en verre sérigraphié et lames d'aluminium verticales crée un effet moiré et vibrant qui change selon l'angle de vue et la lumière.",
+        "concept": "Un bâtiment-paysage dont la perception est en mouvement constant, à l'image d'une entreprise dynamique.",
+        "keywords": [
+          "cinétique",
+          "double peau",
+          "vibration",
+          "signal",
+          "reflets"
+        ],
+        "architect_bio": "Jean-Paul Viguier est un architecte français dont les réalisations (Parc André-Citroën, siège de France Télévisions) se caractérisent par une grande rigueur de conception et une attention portée à la lumière et à la transparence.",
+        "photo_tips": "Utiliser un téléobjectif pour isoler des fragments de la façade et créer des compositions abstraites. La pose longue en soirée peut capturer le mouvement des lumières des voitures à travers la résille.",
+        "photo_plans": [
+          "Abstrait sur la façade",
+          "Reflets du ciel",
+          "Pose longue de nuit"
+        ],
+        "moments": "Pleine journée, Heure bleue"
+      }
+    },
+    {
+      "id": 419,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Wonderland",
+      "architect": "a/LTA architectes",
+      "year": "2019",
+      "address": "ZAC de la Courrouze, 35136 Saint-Jacques-de-la-Lande",
+      "location_display": "La Courrouze",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour son jeu de volumes décalés et sa couleur blanche éclatante.",
+        "story": "Situé dans l'écoquartier de la Courrouze, Wonderland est un ensemble de logements qui déconstruit le bloc monolithique. Les appartements sont pensés comme des 'maisons sur le toit', avec des volumes qui s'empilent et se désaxent pour créer des terrasses et des vues variées.",
+        "concept": "Réinventer le logement collectif en offrant les qualités de la maison individuelle : espace extérieur, lumière et individualité.",
+        "keywords": [
+          "fragmentation",
+          "empilement",
+          "maisons sur le toit",
+          "blanc",
+          "terrasses"
+        ],
+        "architect_bio": "a/LTA architectes est une agence nantaise qui cherche à développer une architecture contextuelle, attentive aux usages et aux spécificités de chaque site.",
+        "photo_tips": "Jouer avec la géométrie des ombres portées par les volumes décalés. Le contraste du blanc sur un ciel bleu intense est particulièrement efficace. Chercher les angles qui soulignent l'effet 'Jenga'.",
+        "photo_plans": [
+          "Jeu d'ombres et de volumes",
+          "Contraste sur ciel bleu",
+          "Détails des terrasses"
+        ],
+        "moments": "Midi (ombres fortes), Golden hour"
+      }
+    },
+    {
+      "id": 420,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Identity",
+      "architect": "Jean-Paul Viguier",
+      "year": "2019",
+      "address": "Rue de l'Alma, 35000 Rennes",
+      "location_display": "EuroRennes",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour sa façade plissée et son dialogue avec les bâtiments voisins du quartier d'affaires.",
+        "story": "Identity est un programme mixte (logements, bureaux) qui participe au nouveau visage du quartier d'affaires EuroRennes. Sa façade se caractérise par un jeu de plis verticaux en aluminium qui captent la lumière différemment au cours de la journée.",
+        "concept": "Créer une façade animée et sculpturale qui dialogue avec la vitesse et le mouvement du contexte ferroviaire.",
+        "keywords": [
+          "plissé",
+          "sculptural",
+          "aluminium",
+          "verticalité",
+          "EuroRennes"
+        ],
+        "architect_bio": "Jean-Paul Viguier est un architecte français dont les réalisations se caractérisent par une grande rigueur de conception et une attention portée à la lumière et à la transparence.",
+        "photo_tips": "La lumière rasante du matin ou du soir est idéale pour révéler le relief des plis. Se concentrer sur les reflets et les variations de teintes de l'aluminium.",
+        "photo_plans": [
+          "Lumière rasante sur les plis",
+          "Reflets abstraits",
+          "Intégration dans la skyline"
+        ],
+        "moments": "Matin, Soir"
+      }
+    },
+    {
+      "id": 421,
+      "city": "Rennes",
+      "type": "Enseignement",
+      "name": "Pôle associatif de la Marbaudais",
+      "architect": "Atelier 56S",
+      "year": "2021",
+      "address": "32 Rue de la Marbaudais, 35700 Rennes",
+      "location_display": "Maurepas",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour sa matérialité brute et honnête (béton, bois) et sa simplicité fonctionnelle.",
+        "story": "Ce pôle associatif est un bâtiment sobre et économique qui met en avant la structure et les matériaux. Les murs en béton préfabriqué sont laissés bruts, et le bois apporte une touche de chaleur. Le bâtiment s'organise autour d'un patio central qui amène la lumière au cœur du projet.",
+        "concept": "Une architecture 'essentielle' qui trouve sa qualité dans la justesse des assemblages et la vérité des matériaux.",
+        "keywords": [
+          "brutalisme",
+          "honnêteté constructive",
+          "béton",
+          "patio",
+          "simplicité"
+        ],
+        "architect_bio": "Atelier 56S est une jeune agence rennaise qui prône une architecture frugale, contextuelle et inventive, souvent avec une approche de réemploi.",
+        "photo_tips": "Se concentrer sur les textures : le grain du béton, les veines du bois. Le patio offre des jeux de lumière intéressants. Le style se prête bien au noir et blanc à fort contraste.",
+        "photo_plans": [
+          "Textures des matériaux",
+          "Lumière dans le patio",
+          "Noir et blanc contrasté"
+        ],
+        "moments": "Journée lumineuse"
+      }
+    },
+    {
+      "id": 422,
+      "city": "Rennes",
+      "type": "Bureaux",
+      "name": "Le Pixel",
+      "architect": "Stéphane Kervyn",
+      "year": "2013",
+      "address": "ZAC Beauregard-Quincé, 35000 Rennes",
+      "location_display": "Beauregard",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour sa façade pixellisée et colorée, véritable manifeste d'une architecture ludique.",
+        "story": "Le Pixel est un immeuble de bureaux dont la façade est composée d'une mosaïque de panneaux de verre colorés, créant une image abstraite et vibrante. Le bâtiment joue avec la perception et change d'aspect en fonction de la distance et de la lumière.",
+        "concept": "Transformer la façade en une œuvre d'art cinétique, un écran géant qui communique la créativité des entreprises qu'il abrite.",
+        "keywords": [
+          "pixel",
+          "couleur",
+          "ludique",
+          "cinétique",
+          "mosaïque"
+        ],
+        "architect_bio": "Stéphane Kervyn est un architecte belge dont le travail explore souvent la relation entre l'art et l'architecture, avec un goût prononcé pour la couleur et les motifs.",
+        "photo_tips": "Utiliser un téléobjectif pour créer des compositions abstraites avec les carrés de couleur. Tenter de capturer les reflets d'autres bâtiments dans les panneaux de verre.",
+        "photo_plans": [
+          "Composition abstraite colorée",
+          "Reflets",
+          "Vue d'ensemble"
+        ],
+        "moments": "Journée (lumière uniforme)"
+      }
+    },
+    {
+      "id": 423,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Le Premium",
+      "architect": "Périphériques Architectes",
+      "year": "2014",
+      "address": "Mail François Mitterrand, 35000 Rennes",
+      "location_display": "Mail Mitterrand",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour sa résille dorée et son élégance qui dialogue avec le Cap Mail de Jean Nouvel.",
+        "story": "Le Premium et son voisin le Majorelle forment un duo architectural sur le Mail François Mitterrand. Le Premium se distingue par sa vêture en aluminium doré qui lui donne une préciosité et une élégance discrète. Il abrite des logements de standing.",
+        "concept": "Créer un écrin précieux et lumineux, un contrepoint chaleureux à la rigueur des autres bâtiments du mail.",
+        "keywords": [
+          "doré",
+          "résille",
+          "précieux",
+          "élégance",
+          "dialogue"
+        ],
+        "architect_bio": "Périphériques Architectes est une agence parisienne connue pour ses projets innovants et son approche expérimentale des formes et des matériaux.",
+        "photo_tips": "La lumière du coucher de soleil enflamme littéralement la façade dorée. C'est le moment à ne pas manquer. Jouer avec la transparence de la résille qui laisse deviner les balcons.",
+        "photo_plans": [
+          "Façade à la golden hour",
+          "Transparence de la résille",
+          "Duo avec le Majorelle"
+        ],
+        "moments": "Coucher de soleil"
+      }
+    },
+    {
+      "id": 424,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Le Majorelle",
+      "architect": "Périphériques Architectes",
+      "year": "2014",
+      "address": "Mail François Mitterrand, 35000 Rennes",
+      "location_display": "Mail Mitterrand",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour sa façade en moucharabieh bleu et son inspiration venue d'ailleurs.",
+        "story": "Inspiré par le Jardin Majorelle de Marrakech, cet immeuble de logements se pare d'une résille métallique d'un bleu profond. Ce moucharabieh moderne filtre la lumière, préserve l'intimité des habitants et donne au bâtiment une identité unique.",
+        "concept": "Transposer un élément vernaculaire fort (le moucharabieh) dans un contexte urbain contemporain pour créer une atmosphère.",
+        "keywords": [
+          "moucharabieh",
+          "bleu majorelle",
+          "filtre",
+          "intimité",
+          "voyage"
+        ],
+        "architect_bio": "Périphériques Architectes est une agence parisienne connue pour ses projets innovants et son approche expérimentale des formes et des matériaux.",
+        "photo_tips": "Le bleu de la façade est particulièrement intense par temps ensoleillé. Chercher les ombres graphiques projetées par la résille sur les murs des balcons. Contraste fort avec le Premium doré à côté.",
+        "photo_plans": [
+          "Motifs du moucharabieh",
+          "Ombres projetées",
+          "Contraste bleu/doré"
+        ],
+        "moments": "Pleine journée (soleil)"
+      }
+    },
+    {
+      "id": 425,
+      "city": "Rennes",
+      "type": "Bureaux",
+      "name": "Tribunal Administratif",
+      "architect": "Barbarit & Brossard",
+      "year": "2014",
+      "address": "3 Contour de la Motte, 35000 Rennes",
+      "location_display": "Hôtel de la Préfecture",
+      "img": null,
+      "details": {
+        "why_shoot": "Pour son insertion respectueuse dans un site historique et sa façade en marbre diaphane.",
+        "story": "Le Tribunal Administratif s'insère avec délicatesse à côté de l'Hôtel de la Préfecture. Sa façade est constituée de grands panneaux de marbre de Carrare qui, une fois rétroéclairés la nuit, révèlent leur translucidité et transforment le bâtiment en une 'lanterne' institutionnelle.",
+        "concept": "Exprimer la sérénité et la dignité de la justice par un volume pur et une matérialité noble et diaphane.",
+        "keywords": [
+          "marbre",
+          "diaphane",
+          "lanterne",
+          "insertion",
+          "sérénité"
+        ],
+        "architect_bio": "L'agence Barbarit & Brossard est reconnue pour son travail sur des équipements publics, avec une écriture architecturale sobre et contextuelle.",
+        "photo_tips": "Le bâtiment a deux visages : très minéral et opaque le jour, il devient translucide et léger la nuit. Les deux moments sont à photographier. Utiliser un trépied à l'heure bleue pour capturer l'effet de lanterne.",
+        "photo_plans": [
+          "Façade de jour (opaque)",
+          "Façade de nuit (lanterne)",
+          "Dialogue avec le bâtiment historique"
+        ],
+        "moments": "Jour, Heure bleue"
+      }
+    },
+    {
+      "id": 401,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Tours Horizons",
+      "architect": "G. Maillols",
+      "year": "1970",
+      "address": "Rue de Brest, 35000 Rennes",
+      "location_display": "Bourg-l'Évesque",
+      "time": "Matin/Soir",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Tours_Les_Horizons_-_Rennes.jpg/800px-Tours_Les_Horizons_-_Rennes.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Motifs 'épis de maïs'. Ciel bleu profond (filtre rouge) pour contraste.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 402,
+      "city": "Rennes",
+      "type": "Culture",
+      "name": "Champs Libres",
+      "architect": "Portzamparc",
+      "year": "2006",
+      "address": "10 Cours des Alliés, 35000 Rennes",
+      "location_display": "Esp. Charles de Gaulle",
+      "time": "Midi",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Les_Champs_Libres_-_Rennes.jpg/800px-Les_Champs_Libres_-_Rennes.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Géométrie des volumes imbriqués. Contraste verre/béton coloré.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 403,
+      "city": "Rennes",
+      "type": "Bureaux",
+      "name": "Le Mabilay",
+      "architect": "Louis Arretche",
+      "year": "1973",
+      "address": "2 Rue de la Mabilais, 35000 Rennes",
+      "location_display": "Quai de la Prévalaye",
+      "time": "Heure Bleue",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Mabilay_Rennes_2014.jpg/800px-Mabilay_Rennes_2014.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Silhouette 'soucoupe volante'. Reflets dans la Vilaine indispensables.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 404,
+      "city": "Rennes",
+      "type": "Bureaux",
+      "name": "Urban Quartz",
+      "architect": "Hamonic+Masson",
+      "year": "2018",
+      "address": "Rue de l'Alma, 35000 Rennes",
+      "location_display": "Gare EuroRennes",
+      "time": "Variable",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Urban_Quartz_Rennes.jpg/800px-Urban_Quartz_Rennes.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Reflets urbains dans les facettes angulaires. Abstraction.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 405,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Barre Saint-Just",
+      "architect": "G. Maillols",
+      "year": "1969",
+      "address": "Rue Jean Boucher, 35000 Rennes",
+      "location_display": "Thabor",
+      "time": "Après-midi",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Barre_Saint-Just_Rennes.jpg/800px-Barre_Saint-Just_Rennes.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Forme pyramidale. Contre-plongée pour accentuer la pente.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 406,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Cap Mail",
+      "architect": "Jean Nouvel",
+      "year": "2015",
+      "address": "Mail François Mitterrand, 35000 Rennes",
+      "location_display": "Bord de Vilaine",
+      "time": "Coucher de soleil",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cap_Mail_Rennes.jpg/800px-Cap_Mail_Rennes.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Façades vitrées et terrasses végétalisées. Aspect 'Proue de navire'.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 407,
+      "city": "Rennes",
+      "type": "Culture",
+      "name": "Couvent des Jacobins",
+      "architect": "Jean Guervilly",
+      "year": "2018",
+      "address": "Place Sainte-Anne, 35000 Rennes",
+      "location_display": "Centre historique",
+      "time": "Journée",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Couvent_des_Jacobins_Rennes_sud.jpg/800px-Couvent_des_Jacobins_Rennes_sud.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Dialogue pierre ancienne / extensions modernes minimalistes.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 408,
+      "city": "Rennes",
+      "type": "Culture",
+      "name": "TNB",
+      "architect": "Antoine Stinco",
+      "year": "2008",
+      "address": "1 Rue Saint-Hélier, 35000 Rennes",
+      "location_display": "Centre-ville",
+      "time": "Temps gris",
+      "img": null,
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Façade en damier anthracite. Graphique, haute densité des noirs.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 409,
+      "city": "Rennes",
+      "type": "Bureaux",
+      "name": "Tour de l'Éperon",
+      "architect": "Louis Arretche",
+      "year": "1970",
+      "address": "Rue du Puits Mauger, 35000 Rennes",
+      "location_display": "Colombier",
+      "time": "Matin",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tour_de_l%27%C3%89peron_-_Rennes.jpg/640px-Tour_de_l%27%C3%89peron_-_Rennes.jpg",
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Verticalité vertigineuse depuis le pied de la tour.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 410,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Ascension Paysagère",
+      "architect": "Bertrand Schippan",
+      "year": "2022",
+      "address": "Rue de l'Alma, 35000 Rennes",
+      "location_display": "Octroi",
+      "time": "Golden Hour",
+      "img": null,
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Courbes progressives et terrasses. Défi de fluidité.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 411,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "Immeuble Chromosome",
+      "architect": "Mille Architectes",
+      "year": "2021",
+      "address": "Boulevard de la Robiquette, 35000 Rennes",
+      "location_display": "Beauregard",
+      "time": "Midi",
+      "img": null,
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Forme organique blanche. Détacher la silhouette sur ciel sombre.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 413,
+      "city": "Rennes",
+      "type": "Logement",
+      "name": "La Caravelle",
+      "architect": "G. Maillols",
+      "year": "1969",
+      "address": "Quai d'Ille-et-Rance, 35000 Rennes",
+      "location_display": "Bourg-l'Évesque",
+      "time": "Matin",
+      "img": null,
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Horizontalité marquée. Contraste avec la verticalité des Horizons.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 414,
+      "city": "Rennes",
+      "type": "Bureaux",
+      "name": "Cap Courrouze",
+      "architect": "Jacques Ferrier",
+      "year": "2015",
+      "address": "Rue Samuel de Champlain, 35000 Rennes",
+      "location_display": "La Courrouze",
+      "time": "Après-midi",
+      "img": null,
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Rythme régulier des brise-soleil. Géométrie répétitive.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    },
+    {
+      "id": 415,
+      "city": "Rennes",
+      "type": "Enseignement",
+      "name": "Campus Santé",
+      "architect": "ENIA",
+      "year": "2025",
+      "address": "Avenue du Professeur Léon Bernard, 35000 Rennes",
+      "location_display": "Villejean",
+      "time": "Soir",
+      "img": null,
+      "details": {
+        "description": "À compléter via detailsById.",
+        "photoTips": "Volumes massifs rénovés. Lumière rasante sur les nouvelles façades.",
+        "architectBio": "À compléter via detailsById.",
+        "citations": [],
+        "links": []
+      }
+    }
+  ]
+}
