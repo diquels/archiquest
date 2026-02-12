@@ -1,0 +1,2429 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-12",
+    "scope": "Metz + environs (0–45 km), exception documentée pour le plan incliné (~70 km)",
+    "sources_policy": "Priorité : sources officielles (metz.fr, POP/Mérimée, DoCoMoMo), agences d'architecture, Wikipedia FR vérifié, presse architecture (Chroniques-architecture, ArchDaily, Archistorm). Recoupement 2 sources pour GPS/année/architecte quand possible.",
+    "notes": [
+      "18 bâtiments enrichis depuis le JSON draft du 2026-02-12",
+      "GPS dérivés de sources cartographiques ou coordonnées publiées (Wikipedia, sites officiels, Structurae)",
+      "Les champs from_doc sont conservés dans doc_evidence et original_from_doc",
+      "Maison Heler : ouverture mars 2025, non 2024 comme indiqué dans le draft"
+    ]
+  },
+  "buildings": [
+    {
+      "id": "parking-mazelle",
+      "name": "Parking Mazelle",
+      "aliases": [
+        "Parking Q-Park Mazelle",
+        "Parking Indigo Mazelle"
+      ],
+      "tier": 1,
+      "score": 9.5,
+      "type_usage": "Parking aérien couvert (270 places)",
+      "original_from_doc": {
+        "year_built": "2012",
+        "architect": "Paulin & Mariotti (architecture) + Esther Stocker (1% artistique)"
+      },
+      "location": {
+        "address_text": "48 place Mazelle, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1078,
+          "lng": 6.1818,
+          "source_url": "https://fr.mappy.com/poi/5bfd76ad0351d14768ca2b98",
+          "confidence": "medium",
+          "method": "Dérivé de l'adresse via Mappy"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=parking+Mazelle+Metz+Esther+Stocker+noir+blanc+g%C3%A9om%C3%A9trique",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2012",
+        "source_url": "https://www.petitfute.com/v22106-metz-57000/c1122-voyage-transports/c1145-avion-bateau-bus-train-taxi-parking/c916-stationnement/698989-parking-metz-mazelle.html",
+        "confidence": "high",
+        "notes": "Achevé en août 2012 selon Petit Futé. Confirmé par la Maison de l'architecture de Lorraine."
+      },
+      "architect": [
+        {
+          "name": "Paulin & Mariotti",
+          "role": "architect",
+          "source_url": "https://maisondelarchi-lorraine.com/site1/wp-content/uploads/2015/11/2011-Metz-Depliant-720-final-Fulltext-20110917.pdf",
+          "confidence": "high"
+        },
+        {
+          "name": "Esther Stocker",
+          "role": "artist",
+          "source_url": "https://www.petitfute.com/v22106-metz-57000/c1122-voyage-transports/c1145-avion-bateau-bus-train-taxi-parking/c916-stationnement/698989-parking-metz-mazelle.html",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Esther Stocker, artiste autrichienne spécialiste de l'abstraction géométrique Op Art, a conçu la façade comme une œuvre d'art intégrée (1% artistique) explorant la tension entre présence et absence de forme dans un langage strictement noir et blanc.",
+        "evidence": [
+          {
+            "quote": "La présence d'une forme peut être aussi puissante que l'absence de forme",
+            "source_url": null,
+            "date": null,
+            "type": "primary"
+          },
+          {
+            "quote": "Décor extérieur composé de formes géométriques en noir et blanc, conçu par l'artiste autrichienne Esther Stocker",
+            "source_url": "https://www.petitfute.com/v22106-metz-57000/c1122-voyage-transports/c1145-avion-bateau-bus-train-taxi-parking/c916-stationnement/698989-parking-metz-mazelle.html",
+            "date": "2025",
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Parking aérien de 270 places dont la façade est une œuvre d'art Op Art signée Esther Stocker : plaques noires géométriques sur fond blanc en acier perforé. L'abstraction géométrique crée des trames graphiques exploitables à toutes les focales. Le duo Paulin & Mariotti a également réalisé le parking Paixhans à Metz.",
+      "photographic_advantages": [
+        "Façade Op Art N&B géométrique (Esther Stocker), peau acier perforé",
+        "Plaques noires sur fond blanc = déjà du N&B natif",
+        "Trames exploitables à toutes les focales",
+        "Façade ondule en perspective depuis l'angle sud-est = effet de profondeur Op Art"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Tôt le matin (6h–8h), dimanche idéal",
+            "type": "from_doc",
+            "why": "Éviter les voitures garées devant la façade côté place",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison (façade indépendante de la végétation)",
+            "type": "hypothesis",
+            "why": "La façade en acier perforé n'est pas affectée par la végétation saisonnière ; un ciel couvert peut renforcer le contraste N&B en supprimant les ombres parasites",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale parvis",
+            "where": "Depuis le parvis de la place Mazelle, recul ≈ 30-40 m",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Vue complète de la trame Stocker, ciel propre au-dessus, motif lisible dans son ensemble",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail longue focale",
+            "where": "Depuis le trottoir d'en face, côté est",
+            "lens_hint": "135-200 mm",
+            "why_it_works": "Isoler un fragment de la grille géométrique, compression des plans, abstraction maximale",
+            "type": "from_doc"
+          },
+          {
+            "label": "Contre-plongée 3/4 sud-est",
+            "where": "Depuis l'angle sud-est du parking, en contre-plongée",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "La façade ondule en perspective, effet de profondeur Op Art, lignes convergentes",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail macro-trame",
+            "where": "Au pied de la façade, à moins de 5 m",
+            "lens_hint": "85-135 mm",
+            "why_it_works": "Texture de l'acier perforé en gros plan, jeu de lumière à travers les perforations",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Voitures garées devant la façade côté place",
+        "Panneaux signalétique parking",
+        "Cadrer en contre-plongée pour exclure le sol, ou isoler des sections de la trame en longue focale"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "La façade EST déjà du N&B — plaques noires géométriques sur fond blanc, abstraction Op Art. Peau d'acier perforé qui crée des trames à toutes les focales.",
+          "section_hint": "TIER 1 — 1. Parking Mazelle — 9.5/10"
+        },
+        {
+          "quote": "\"La présence d'une forme peut être aussi puissante que l'absence de forme\" (Stocker).",
+          "section_hint": "TIER 1 — 1. Parking Mazelle — Pourquoi ça marche en N&B"
+        }
+      ],
+      "notes": [],
+      "sources": [
+        "https://www.petitfute.com/v22106-metz-57000/c1122-voyage-transports/c1145-avion-bateau-bus-train-taxi-parking/c916-stationnement/698989-parking-metz-mazelle.html",
+        "https://maisondelarchi-lorraine.com/site1/wp-content/uploads/2015/11/2011-Metz-Depliant-720-final-Fulltext-20110917.pdf",
+        "https://metz.fr/lieux/lieu-371.php",
+        "https://fr.mappy.com/poi/5bfd76ad0351d14768ca2b98"
+      ]
+    },
+    {
+      "id": "centre-pompidou-metz",
+      "name": "Centre Pompidou-Metz",
+      "aliases": [
+        "Pompidou-Metz",
+        "Pompidou",
+        "CPM"
+      ],
+      "tier": 1,
+      "score": 9.0,
+      "type_usage": "Musée d'art contemporain (antenne Centre Pompidou)",
+      "original_from_doc": {
+        "year_built": "2010",
+        "architect": "Shigeru Ban + Jean de Gastines"
+      },
+      "location": {
+        "address_text": "1 parvis des Droits-de-l'Homme, 57020 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1087,
+          "lng": 6.1836,
+          "source_url": "https://metzprestige.fr/le-centre-pompidou",
+          "confidence": "high"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=Centre+Pompidou-Metz+Shigeru+Ban+architecture",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2006–2010",
+        "source_url": "https://metz.fr/lieux/lieu-282.php",
+        "confidence": "high",
+        "notes": "Concours 2003, chantier 2006, ouverture au public printemps 2010."
+      },
+      "architect": [
+        {
+          "name": "Shigeru Ban",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Centre_Pompidou-Metz",
+          "confidence": "high"
+        },
+        {
+          "name": "Jean de Gastines",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Centre_Pompidou-Metz",
+          "confidence": "high"
+        },
+        {
+          "name": "Philip Gumuchdjian",
+          "role": "architect",
+          "source_url": "https://www.jeanmichelleglise.fr/la-plume-culturelle/centre-pompidou-metz-se-coiffe-chapeau-chinois/",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Shigeru Ban s'est inspiré d'un chapeau chinois en paille tressée acheté à Paris, séduit par son motif hexagonal évoquant la France. La toiture-chapeau en bois lamellé-collé + membrane PTFE crée un espace couvert fluide et lumineux.",
+        "evidence": [
+          {
+            "quote": "Des paysagistes ont dessiné un jardin et moi j'ai posé un chapeau chinois dessus",
+            "source_url": "http://www1.rfi.fr/actufr/articles/083/article_47312.asp",
+            "date": "2006-11-05",
+            "type": "primary"
+          },
+          {
+            "quote": "Après de nombreuses réunions, il avait tourné l'architecte Ban Shigeru avec un chapeau de paille tissée chinois. À partir de ce moment, il a commencé à travailler sérieusement sur le projet",
+            "source_url": "https://fr.wikiarquitectura.com/b%C3%A2timent/centre-pompidou-metz/",
+            "date": null,
+            "type": "secondary"
+          },
+          {
+            "quote": "Séduit par son côté isolant et son tressage mais surtout par le motif hexagonal qui ressemble à la France, il imagine un concept sous forme de toit",
+            "source_url": "https://www.jeanmichelleglise.fr/la-plume-culturelle/centre-pompidou-metz-se-coiffe-chapeau-chinois/",
+            "date": "2009-03-06",
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Musée d'art contemporain dont la toiture hexagonale en bois tressé (16 000 pièces lamellé-collé, 16 km de poutres) est couverte d'une membrane PTFE blanche. Trois galeries en porte-à-faux de 90 m découpent le ciel en lignes nettes. La flèche culmine à 77 m (clin d'œil à 1977, date de création du Centre Pompidou). Plus de 10 000 m² de surface.",
+      "photographic_advantages": [
+        "Toiture hexagonale bois tressé + membrane PTFE blanche = motif graphique organique unique",
+        "16 000 pièces lamellé-collé en maillage = 16 km de poutres",
+        "3 galeries en porte-à-faux de 90 m découpent le ciel en lignes nettes",
+        "Flèche 77 m",
+        "Hexagones de bois tressé en contre-plongée créent un motif abstrait pur"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Tôt le matin avant 10h (ouverture musée)",
+            "type": "from_doc",
+            "why": "Éviter piétons et vélos sur le parvis",
+            "source_url": null
+          },
+          {
+            "value": "Nuit / blue hour",
+            "type": "hypothesis",
+            "why": "La membrane PTFE translucide laisse transparaître la charpente en bois éclairée de l'intérieur — effet spectaculaire documenté par l'architecte",
+            "source_url": "https://www.jeanmichelleglise.fr/la-plume-culturelle/centre-pompidou-metz-se-coiffe-chapeau-chinois/"
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Automne–hiver",
+            "type": "hypothesis",
+            "why": "Arbres dénudés côté Parc de la Seille = silhouette dégagée ; ciels dramatiques en N&B",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale parvis nord",
+            "where": "Depuis le parvis nord, recul ≈ 80-100 m",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Toiture déploie sa courbe complète, flèche centrée, grand ciel disponible",
+            "type": "from_doc"
+          },
+          {
+            "label": "3/4 sud-ouest Parc de la Seille",
+            "where": "Depuis le Parc de la Seille au sud-ouest",
+            "lens_hint": "35-70 mm",
+            "why_it_works": "Membrane blanche se détache sur le ciel ; possibilité d'intégrer la Flamme de la Liberté (sculpture 25 m) comme premier plan graphique",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail sous toiture (hexagones)",
+            "where": "Sous la toiture, à l'entrée ou dans les galeries",
+            "lens_hint": "16-24 mm grand angle",
+            "why_it_works": "Les hexagones de bois tressé en contre-plongée créent un motif abstrait pur",
+            "type": "from_doc"
+          },
+          {
+            "label": "Galeries en porte-à-faux",
+            "where": "Depuis le jardin sud, cadrage latéral",
+            "lens_hint": "70-135 mm",
+            "why_it_works": "Les 3 galeries superposées créent des lignes horizontales nettes découpant le ciel",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Parvis souvent occupé (piétons, vélos)",
+        "Arbres du Parc de la Seille peuvent 'mordre' la silhouette côté sud en été",
+        "Enseignes bâtiment limitées"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Le Centre Pompidou-Metz offre la trame hexagonale la plus spectaculaire de la région — 16 km de poutres lamellé-collé en maillage, membrane PTFE blanche, 3 galeries en porte-à-faux de 90 m.",
+          "section_hint": "1. Synthèse décisionnelle — point 2"
+        }
+      ],
+      "notes": [],
+      "sources": [
+        "https://metz.fr/lieux/lieu-282.php",
+        "https://metzprestige.fr/le-centre-pompidou",
+        "http://www1.rfi.fr/actufr/articles/083/article_47312.asp",
+        "https://www.jeanmichelleglise.fr/la-plume-culturelle/centre-pompidou-metz-se-coiffe-chapeau-chinois/",
+        "https://fr.wikiarquitectura.com/b%C3%A2timent/centre-pompidou-metz/"
+      ]
+    },
+    {
+      "id": "tour-sechage-caserne-ranconval",
+      "name": "Tour de séchage — Caserne Ranconval",
+      "aliases": [
+        "Tour de séchage Pingusson",
+        "Caserne des pompiers Metz",
+        "CIS Metz",
+        "Centre d'incendie et de secours de Metz"
+      ],
+      "tier": 1,
+      "score": 9.0,
+      "type_usage": "Ancienne caserne de pompiers (désaffectée depuis nov. 2025)",
+      "original_from_doc": {
+        "year_built": "1965-1978",
+        "architect": "Georges-Henri Pingusson"
+      },
+      "location": {
+        "address_text": "2 rue Henry de Ranconval, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1135,
+          "lng": 6.186,
+          "source_url": "https://www.docomomo.fr/batiment/centre-dincendie-et-de-secours-de-metz",
+          "confidence": "medium",
+          "method": "Dérivé de l'adresse ; confirmé par localisation DoCoMoMo"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=tour+s%C3%A9chage+caserne+pompiers+Pingusson+Metz+Ranconval",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1950–1978 (études 1950, construction par phases)",
+        "source_url": "https://www.docomomo.fr/sites/default/files/fiches-batiments/Fichier%20DoCoMoMo_Caserne_Metz_2022.pdf",
+        "confidence": "high",
+        "notes": "Premières études de Pingusson en 1950. Construction s'est étalée sur plus de 20 ans. La fiche DoCoMoMo (2022) documente les phases. Le JSON draft indique 1965-1978 ce qui correspond à la phase principale de construction."
+      },
+      "architect": [
+        {
+          "name": "Georges-Henri Pingusson",
+          "role": "architect",
+          "source_url": "https://www.docomomo.fr/batiment/centre-dincendie-et-de-secours-de-metz",
+          "confidence": "high"
+        },
+        {
+          "name": "Jean Marie",
+          "role": "architect",
+          "source_url": "https://www.docomomo.fr/batiment/centre-dincendie-et-de-secours-de-metz",
+          "confidence": "medium"
+        },
+        {
+          "name": "Louis Pitet",
+          "role": "architect",
+          "source_url": "https://www.docomomo.fr/batiment/centre-dincendie-et-de-secours-de-metz",
+          "confidence": "medium"
+        },
+        {
+          "name": "Robert Ochs",
+          "role": "architect",
+          "source_url": "https://www.docomomo.fr/batiment/centre-dincendie-et-de-secours-de-metz",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stéphane du Château",
+          "role": "engineer",
+          "source_url": "https://www.docomomo.fr/batiment/centre-dincendie-et-de-secours-de-metz",
+          "confidence": "medium"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Pingusson conçoit la tour de séchage (59 m) comme le « point névralgique de la composition », exploitant le contraste entre volume plein et cage d'escalier ouverte. L'ensemble de la caserne est pensé comme un assemblage de volumes variés mis en tension.",
+        "evidence": [
+          {
+            "quote": "La tour de séchage est le point névralgique de la composition de la caserne, mais elle constitue aussi un point de repère à l'échelle de la ville, devenu aujourd'hui familier pour l'ensemble des Messins.",
+            "source_url": "https://www.docomomo.fr/sites/default/files/fiches-batiments/Fichier%20DoCoMoMo_Caserne_Metz_2022.pdf",
+            "date": "2022-11-30",
+            "type": "secondary"
+          },
+          {
+            "quote": "Pingusson s'attache à concevoir un assemblage de volumes variés, mis en tension les uns par rapport aux autres. Par sa finesse et son élégance, la tour de séchage répond ainsi au parallélépipède très étiré du bâtiment technique.",
+            "source_url": "https://www.docomomo.fr/sites/default/files/fiches-batiments/Fichier%20DoCoMoMo_Caserne_Metz_2022.pdf",
+            "date": "2022-11-30",
+            "type": "secondary"
+          },
+          {
+            "quote": "La tour de séchage, élément emblématique d'une caserne de pompiers, est l'occasion de symboliser la modernité de ce programme dans la ville. Culminant à 59 mètres, elle est composée à partir d'un contraste entre volume plein et cage d'escaliers ouverte.",
+            "source_url": "https://www.docomomo.fr/sites/default/files/fiches-batiments/Fichier%20DoCoMoMo_Caserne_Metz_2022.pdf",
+            "date": "2022-11-30",
+            "type": "primary"
+          }
+        ]
+      },
+      "description": "Tour de séchage de 59 m en béton brut, exercice de contraste plein/vide : volume monolithique vs cage d'escalier ouverte avec paliers successifs. Conçue par Georges-Henri Pingusson, figure majeure du mouvement moderne, elle est le point de repère de la caserne et de la ville. Site désaffecté depuis fin 2025, futur écoquartier en réflexion.",
+      "photographic_advantages": [
+        "Tour béton 59 m, verticalité pure, contraste plein/vide",
+        "Volume monolithique en béton vs cage d'escalier ouverte avec paliers successifs",
+        "Béton brut = texture N&B naturelle",
+        "Site désaffecté = calme acquis"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Matin (lumière est) ou fin d'après-midi (lumière ouest rasante)",
+            "type": "hypothesis",
+            "why": "La lumière rasante accentue le relief du béton brut et le jeu plein/vide de la cage d'escalier ; orientation est-ouest de la façade principale",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Automne–hiver",
+            "type": "hypothesis",
+            "why": "Végétation basse, structure nue maximise la lecture des volumes ; ciel gris = fond N&B idéal pour le béton",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale rue de Ranconval",
+            "where": "Depuis la rue Henry de Ranconval, recul ≈ 50 m",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Vue directe sur la tour, contraste entre la tour et le ciel, lecture du contraste plein/vide",
+            "type": "from_doc"
+          },
+          {
+            "label": "Contre-plongée au pied",
+            "where": "Au pied de la tour, côté cage d'escalier ouverte",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "Les paliers de la cage d'escalier ouverte créent un rythme vertical spectaculaire — vertige ascendant",
+            "type": "from_doc"
+          },
+          {
+            "label": "Panoramique rive Seille",
+            "where": "Depuis la rive opposée de la Seille",
+            "lens_hint": "70-135 mm",
+            "why_it_works": "La tour s'inscrit dans le skyline avec la Porte des Allemands à proximité — contexte urbain",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail texture béton",
+            "where": "À distance rapprochée sur les murs latéraux",
+            "lens_hint": "85-135 mm",
+            "why_it_works": "Le béton brut offre des textures riches en N&B : coffrage, patine, fissures",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Câbles électriques possibles dans l'environnement urbain",
+        "Bâtiments annexes bas autour de la tour",
+        "Site en transition (futur écoquartier évoqué), état des bâtiments annexes dégradé",
+        "Site désaffecté depuis fin 2025 — accès au pied de la tour à vérifier (clôture de chantier possible)",
+        "La tour reste visible depuis l'espace public"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "La Tour de séchage Pingusson (Caserne Ranconval) est un pur totem brutaliste — 59 m de béton, contraste plein/vide, cage d'escalier ouverte.",
+          "section_hint": "1. Synthèse décisionnelle — point 3"
+        },
+        {
+          "quote": "C'est \"le point névralgique de la composition\" selon DoCoMoMo.",
+          "section_hint": "TIER 1 — 3. Tour de séchage — Pourquoi ça marche en N&B"
+        }
+      ],
+      "notes": [
+        "Les architectes associés (Jean Marie, Louis Pitet, Robert Ochs) sont mentionnés par DoCoMoMo mais peu documentés individuellement.",
+        "L'ingénieur Stéphane du Château a contribué à la structure."
+      ],
+      "sources": [
+        "https://www.docomomo.fr/batiment/centre-dincendie-et-de-secours-de-metz",
+        "https://www.docomomo.fr/sites/default/files/fiches-batiments/Fichier%20DoCoMoMo_Caserne_Metz_2022.pdf",
+        "https://www.republicain-lorrain.fr/culture-loisirs/2023/07/21/tour-de-sechage-les-gardiens-de-pingusson-soulages-et-maintenant"
+      ]
+    },
+    {
+      "id": "eglise-sainte-therese",
+      "name": "Église Sainte-Thérèse-de-l'Enfant-Jésus",
+      "aliases": [
+        "Église Sainte-Thérèse",
+        "Notre-Dame du Béton"
+      ],
+      "tier": 1,
+      "score": 8.5,
+      "type_usage": "Église catholique en activité, classée MH (1997)",
+      "original_from_doc": {
+        "year_built": "1938-1954 (flèche 1963)",
+        "architect": "Roger-Henri Expert + Théophile Dedun"
+      },
+      "location": {
+        "address_text": "Place Sainte-Thérèse, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1033,
+          "lng": 6.169,
+          "source_url": "https://metz.fr/lieux/lieu-16.php",
+          "confidence": "medium",
+          "method": "Dérivé de l'adresse metz.fr"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=%C3%A9glise+Sainte-Th%C3%A9r%C3%A8se+Metz+b%C3%A9ton+Expert",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1937–1954, flèche 1963",
+        "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/PA00107056",
+        "confidence": "high",
+        "notes": "Base Mérimée : dates 1937 ; 1953 ; 1963. Travaux commencés 1937, interrompus par la guerre, reprise 1950, achèvement 1954. Flèche 1963. Le draft indique 1938 : la base Mérimée cite 1937."
+      },
+      "architect": [
+        {
+          "name": "Roger-Henri Expert",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/PA00107056",
+          "confidence": "high"
+        },
+        {
+          "name": "Théophile Dedun",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/PA00107056",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Expert a voulu employer le béton armé au maximum dans l'art sacré, innovation à l'époque. L'église est pensée comme une démonstration des possibilités expressives du béton pour le sacré.",
+        "evidence": [
+          {
+            "quote": "L'un des traits majeurs de l'église Sainte-Thérèse est l'utilisation du béton armé, que l'architecte a voulu employer au maximum. L'église est d'ailleurs surnommée 'Notre-Dame-du-Béton'.",
+            "source_url": "https://metz.fr/lieux/lieu-16.php",
+            "date": null,
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Surnommée « Notre-Dame du Béton », entièrement en béton armé avec 78 m de nef découpée en 8 travées d'arcs ogivaux culminant à 30 m et une flèche de 70 m. Construite par Expert (architecte parisien) et Dedun (architecte messin). Classée MH en 1997. Texture du béton et couvertures cuivre vert-de-gris offrent une palette tonale riche en N&B.",
+      "photographic_advantages": [
+        "Béton armé monolithique, flèche 70 m, 8 arcs ogivaux à 30 m",
+        "Texture du béton + couvertures cuivre vert-de-gris = palette tonale riche en N&B",
+        "MH classé = pas de signalétique commerciale",
+        "Contreforts de béton créent une alternance ombre/lumière spectaculaire"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Matin ou fin de journée (lumière rasante)",
+            "type": "from_doc",
+            "why": "Lumière rasante pour les contreforts latéraux = alternance ombre/lumière spectaculaire",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Automne–hiver",
+            "type": "hypothesis",
+            "why": "Arbres nus le long de la rue de Verdun, le béton se détache mieux ; ciels dramatiques en N&B",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale parvis",
+            "where": "Depuis le parvis, recul ≈ 40-50 m",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Les arcs ogivaux visibles depuis l'extérieur donnent le rythme",
+            "type": "from_doc"
+          },
+          {
+            "label": "Profil latéral contreforts",
+            "where": "Depuis le côté (rue latérale)",
+            "lens_hint": "35-70 mm",
+            "why_it_works": "Les contreforts de béton créent une alternance ombre/lumière spectaculaire en lumière rasante",
+            "type": "from_doc"
+          },
+          {
+            "label": "Contre-plongée flèche",
+            "where": "Au pied de l'édifice, sous la flèche",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "La flèche en béton de 70 m se détache dans le ciel comme un obélisque",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail texture béton",
+            "where": "Rapproché sur les contreforts ou arcs",
+            "lens_hint": "85-135 mm",
+            "why_it_works": "Texture béton brut + patine cuivre = dégradés de gris riches",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Quartier résidentiel dense autour",
+        "Arbres possibles le long de la rue de Verdun"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Surnommée \"Notre-Dame du Béton\" — entièrement en béton armé, 78 m de nef découpée en 8 travées d'arcs ogivaux culminant à 30 m. Flèche de 70 m.",
+          "section_hint": "TIER 1 — 4. Église Sainte-Thérèse"
+        }
+      ],
+      "notes": [
+        "Base Mérimée indique 1937 pour le début des travaux, le draft indique 1938. Divergence mineure (base Mérimée fait foi)."
+      ],
+      "sources": [
+        "https://www.pop.culture.gouv.fr/notice/merimee/PA00107056",
+        "https://metz.fr/lieux/lieu-16.php",
+        "https://monumentum.fr/monument-historique/pa00107056/metz-eglise-sainte-therese-de-lenfant-jesus"
+      ]
+    },
+    {
+      "id": "haut-fourneau-u4-uckange",
+      "name": "Haut-fourneau U4 — Uckange",
+      "aliases": [
+        "Parc du Haut-fourneau U4",
+        "HF-U4"
+      ],
+      "tier": 1,
+      "score": 9.0,
+      "type_usage": "Patrimoine industriel, site muséal ouvert au public, inscrit MH",
+      "original_from_doc": {
+        "year_built": "1890 (fondation usine) / 1976 (reconstruction U4), éteint 1991, ouvert public 2007",
+        "architect": null
+      },
+      "location": {
+        "address_text": "1 rue du Jardin des Traces, 57270 Uckange",
+        "city": "Uckange",
+        "country": "France",
+        "gps": {
+          "lat": 49.3057,
+          "lng": 6.1601,
+          "source_url": "https://www.hf-u4.com/en-us/useful-information/map",
+          "confidence": "high"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=haut-fourneau+U4+Uckange+Moselle+sid%C3%A9rurgie",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1890 (fondation usine) / U4 reconstruit années 1960–1980 / éteint 1991 / ouvert public 2007",
+        "source_url": "https://www.hf-u4.com/fr/le-lieu/lieu-patrimonial",
+        "confidence": "high",
+        "notes": "Fondation usine 1890 par frères Stumm. 6 hauts-fourneaux. U4 est le dernier subsistant. Éteint 1991, inscrit MH, travaux 2005-2007, ouvert public 2007."
+      },
+      "architect": [
+        {
+          "name": "Frères Stumm (industriels fondateurs)",
+          "role": "firm",
+          "source_url": "https://www.hf-u4.com/fr/le-lieu/lieu-patrimonial",
+          "confidence": "high"
+        },
+        {
+          "name": "Claude Lévêque",
+          "role": "artist",
+          "source_url": "https://www.lavoiebleue.com/loisirs/sites-et-monuments-historiques/parc-du-haut-fourneau-u4",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Infrastructure industrielle sans intention architecturale formelle. La mise en lumière contemporaine de Claude Lévêque donne « l'illusion d'une usine en fonctionnement » la nuit.",
+        "evidence": [
+          {
+            "quote": "Sa mise en lumière à la nuit tombée, œuvre d'art contemporaine de Claude Lévêque, vous donnera l'illusion d'une usine en fonctionnement.",
+            "source_url": "https://www.lavoiebleue.com/loisirs/sites-et-monuments-historiques/parc-du-haut-fourneau-u4",
+            "date": null,
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Cathédrale industrielle de métal et béton. Cheminée 82 m, nacelle 71 m. 12 hectares de friches avec installations annexes (cowpers, halle de coulée, épuration). Le dernier des six hauts-fourneaux de l'usine d'Uckange (fondée 1890). Inscrit MH. ≈ 20 km de Metz.",
+      "photographic_advantages": [
+        "Cathédrale industrielle, cheminée 82 m, nacelle 71 m",
+        "12 ha de friche = site très dégagé",
+        "Métal oxydé et structures tubulaires = trames graphiques",
+        "Cowpers (tours cylindriques), tuyauteries et passerelles = compositions abstraites en longue focale",
+        "Inscrit MH"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Tôt le matin (avant groupes de visite)",
+            "type": "from_doc",
+            "why": "Éviter les groupes ; lumière matinale rasante sur le métal",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Hiver",
+            "type": "from_doc",
+            "why": "Herbe rase, structures nues, végétation sauvage réduite ; pas de feuillage masquant",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale parvis entrée",
+            "where": "Depuis le parvis d'entrée, recul ≈ 100+ m",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Le haut-fourneau en silhouette complète, grand ciel industriel",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détails structures",
+            "where": "Parmi les cowpers et tuyauteries",
+            "lens_hint": "100-200 mm",
+            "why_it_works": "Compositions abstraites : tours cylindriques, passerelles, tuyauteries",
+            "type": "from_doc"
+          },
+          {
+            "label": "Contre-plongée au pied",
+            "where": "Au pied du fourneau",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "Nacelle et cheminée créent un vertige vertical typiquement industriel",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Quelques panneaux d'information",
+        "Végétation sauvage en été",
+        "≈ 20 km de Metz",
+        "Horaires d'ouverture réduits hors saison"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Le Haut-fourneau U4 d'Uckange (≈ 20 km) est une cathédrale industrielle classée MH — cheminée 82 m, nacelle 71 m, 12 ha de friche.",
+          "section_hint": "1. Synthèse décisionnelle — point 5"
+        }
+      ],
+      "notes": [
+        "Pas d'architecte au sens classique : infrastructure industrielle. Claude Lévêque est l'auteur de l'installation lumineuse contemporaine."
+      ],
+      "sources": [
+        "https://www.hf-u4.com/fr/le-lieu/lieu-patrimonial",
+        "https://www.hf-u4.com/en-us/useful-information/map",
+        "https://www.lavoiebleue.com/loisirs/sites-et-monuments-historiques/parc-du-haut-fourneau-u4",
+        "https://monumentum.fr/monument-historique/pa00135420/uckange-usine-siderurgique"
+      ]
+    },
+    {
+      "id": "arsenal-jean-marie-rausch",
+      "name": "Arsenal Jean-Marie Rausch",
+      "aliases": [
+        "Arsenal Metz",
+        "Arsenal Bofill",
+        "Arsenal Ney",
+        "Cité musicale-Metz"
+      ],
+      "tier": 2,
+      "score": 8.0,
+      "type_usage": "Salle de spectacles / expositions (Cité musicale-Metz), label ACR 2024",
+      "original_from_doc": {
+        "year_built": "1860-64 (construction militaire) / 1989 (transformation)",
+        "architect": "Ricardo Bofill + Gibert, Hypolite, Longo"
+      },
+      "location": {
+        "address_text": "3 avenue Ney, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1144,
+          "lng": 6.1703,
+          "source_url": "https://fr.wikipedia.org/wiki/Arsenal-Jean-Marie-Rausch",
+          "confidence": "high"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=Arsenal+Jean-Marie+Rausch+Metz+Ricardo+Bofill",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1861–1863 (arsenal militaire) / 1986–1989 (transformation Bofill)",
+        "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001934",
+        "confidence": "high",
+        "notes": "Arsenal militaire d'origine 1861-1863. Concours 1984. Travaux de transformation 1986-1989. Inauguré 26 février 1989."
+      },
+      "architect": [
+        {
+          "name": "Ricardo Bofill",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001934",
+          "confidence": "high"
+        },
+        {
+          "name": "Jean-Luc Gibert",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001934",
+          "confidence": "high"
+        },
+        {
+          "name": "Gérard Hypolite",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001934",
+          "confidence": "high"
+        },
+        {
+          "name": "Albert Longo",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001934",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Bofill a voulu « allier l'histoire et la modernité » en transformant un arsenal militaire en « instrument comme un violon, un temple » pour la musique. Son parti pris : retourner la composition du U vers les jardins et la citadelle historique.",
+        "evidence": [
+          {
+            "quote": "Nous n'avons pas voulu faire une salle polyvalente, mais un instrument comme un violon, un temple où les exécutants sont au centre de l'espace et du public, et celui-ci reçoit de partout la musique ; un lieu de communion entre tous les assistants.",
+            "source_url": "https://www.republicain-lorrain.fr/magazine-lifestyle/2022/03/18/l-arsenal-de-metz-une-salle-de-concert-exceptionnelle-pensee-par-l-architecte-catalan-ricardo-bofill",
+            "date": "1989-02-28",
+            "type": "primary"
+          },
+          {
+            "quote": "Bofill prend le parti, en démolissant l'aile principale de l'arsenal, de retourner la composition et d'ouvrir son architecture, non plus sur l'avenue Ney mais sur le cœur de la citadelle.",
+            "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001934",
+            "date": "2024-09-18",
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Volume monumental avec arcades néoclassiques revisitées par Bofill. Pierre claire et rehauts en pierre de Jaumont. Grande salle de 1 311 places à l'acoustique exceptionnelle (Rostropovitch la qualifia de « fantastique »). Label ACR 2024. Ouverture sur les jardins et Saint-Pierre-aux-Nonnains (IVe siècle).",
+      "photographic_advantages": [
+        "Volume néoclassique monumental, arcades, pierre + pierre de Jaumont",
+        "Pierre claire et textures contrastées",
+        "Label ACR 2024",
+        "Ouverture sur jardins et Saint-Pierre-aux-Nonnains = contexte graphique"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Fin d'après-midi (lumière dorée sur pierre de Jaumont)",
+            "type": "hypothesis",
+            "why": "La pierre de Jaumont prend des teintes dorées en lumière chaude ; en N&B = gradation tonale riche côté avenue Ney (façade ouest)",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Hiver–printemps",
+            "type": "hypothesis",
+            "why": "Arbres matures dans les jardins adjacents sont dénudés, façades dégagées",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale esplanade",
+            "where": "Depuis l'esplanade, recul ≈ 60 m",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Volume complet, arcades lisibles, emmarchement monumental",
+            "type": "from_doc"
+          },
+          {
+            "label": "3/4 jardins Saint-Pierre",
+            "where": "Depuis les jardins côté Saint-Pierre-aux-Nonnains",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Mise en relation Arsenal + basilique IVe siècle, profondeur historique",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail arcades",
+            "where": "Depuis l'avenue Ney",
+            "lens_hint": "100-200 mm",
+            "why_it_works": "Rythme des arcades, chapiteaux simplifiés, placage pierre claire",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Arbres matures dans les jardins adjacents (masquent partiellement les façades en été)",
+        "Piétons/événements culturels"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Volume monumental avec arcades néoclassiques revisitées par Bofill. La pierre et la brique créent des textures et contrastes. Label ACR attribué en 2024.",
+          "section_hint": "TIER 2 — 6. Arsenal Jean-Marie Rausch — 8/10"
+        }
+      ],
+      "notes": [
+        "Le draft mentionne 'pierre et brique' ; la fiche ACR/POP précise 'pierre claire avec rehauts en pierre de Jaumont'. La brique est d'origine (arsenal militaire), la pierre est le placage de Bofill."
+      ],
+      "sources": [
+        "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001934",
+        "https://fr.wikipedia.org/wiki/Arsenal-Jean-Marie-Rausch",
+        "https://www.republicain-lorrain.fr/magazine-lifestyle/2022/03/18/l-arsenal-de-metz-une-salle-de-concert-exceptionnelle-pensee-par-l-architecte-catalan-ricardo-bofill"
+      ]
+    },
+    {
+      "id": "gare-de-metz",
+      "name": "Gare de Metz-Ville",
+      "aliases": [
+        "Gare de Metz"
+      ],
+      "tier": 2,
+      "score": 8.0,
+      "type_usage": "Gare ferroviaire SNCF, inscrite MH",
+      "original_from_doc": {
+        "year_built": "1905-1908",
+        "architect": "Jürgen Kröger"
+      },
+      "location": {
+        "address_text": "3 place du Général-de-Gaulle, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1098,
+          "lng": 6.1775,
+          "source_url": "https://fr.aroundus.com/p/7377087-metz-ville",
+          "confidence": "high"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=gare+de+Metz+J%C3%BCrgen+Kr%C3%B6ger+n%C3%A9o-roman+architecture",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1905–1908",
+        "source_url": "https://fr.wikipedia.org/wiki/Gare_de_Metz-Ville",
+        "confidence": "high",
+        "notes": "Concours 1901. Chantier 1905, inauguration 17 août 1908. Le site metz.fr mentionne 1904-1908 pour la construction."
+      },
+      "architect": [
+        {
+          "name": "Jürgen Kröger",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Gare_de_Metz-Ville",
+          "confidence": "high"
+        },
+        {
+          "name": "Peter Jürgensen",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Gare_de_Metz-Ville",
+          "confidence": "high"
+        },
+        {
+          "name": "Jürgen Bachmann",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Gare_de_Metz-Ville",
+          "confidence": "high"
+        },
+        {
+          "name": "Schirmer",
+          "role": "artist",
+          "source_url": "https://fr.wikipedia.org/wiki/Gare_de_Metz-Ville",
+          "confidence": "medium"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Le projet lauréat de Kröger, « Licht und Luft » (Lumière et Air), exprimait initialement une facture Art nouveau. Jugé fonctionnel, il dut évoluer vers un style néo-roman rhénan pour satisfaire Guillaume II, puisant dans la gloire passée du Saint-Empire.",
+        "evidence": [
+          {
+            "quote": "Le projet architectural lauréat de Jürgen Kröger, 'Licht und Luft' (Lumière et Air), exprimait initialement une facture franchement Art nouveau. Jugé 'clair, précis et fonctionnel', son projet dut évoluer pour se conformer à une stylistique romane rhénane qui recueillait l'assentiment de Guillaume II.",
+            "source_url": "https://fr.wikipedia.org/wiki/Gare_de_Metz-Ville",
+            "date": null,
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Colosse néo-roman rhénan en grès (plus longue gare de France : 300 m), tour horloge 40 m. Construite pendant l'annexion allemande comme porte d'entrée impériale. Détails sculptés, grands vitraux, logement impérial dans la tour. Inscrite MH. Le projet « Licht und Luft » de Kröger a été infléchi vers le roman rhénan par la volonté de Guillaume II.",
+      "photographic_advantages": [
+        "Colosse néo-roman, tour horloge 40 m, grès",
+        "Détails sculptés, grands vitraux",
+        "Masse imposante et motifs répétitifs (arcatures, fenêtres en arc) très graphiques",
+        "Plus longue gare de France (300 m)"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Très tôt le matin (avant 7h)",
+            "type": "from_doc",
+            "why": "Place très fréquentée ; le matin tôt offre un parvis vide et une lumière rasante sur la façade principale (orientée ouest)",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison",
+            "type": "hypothesis",
+            "why": "Édifice en pierre, peu affecté par la végétation ; en hiver les ciels gris renforcent le caractère monumental en N&B",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale place du Général-de-Gaulle",
+            "where": "Depuis la demi-lune, recul ≈ 80 m",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Façade principale complète, tour horloge centrée, 300 m de longueur",
+            "type": "from_doc"
+          },
+          {
+            "label": "Profil latéral côté voies",
+            "where": "Depuis le côté sud (quais)",
+            "lens_hint": "35-70 mm",
+            "why_it_works": "Répétition des arcatures, rythme architectural, perspective fuyante",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail tour horloge",
+            "where": "Depuis la place, en contre-plongée",
+            "lens_hint": "135-200 mm",
+            "why_it_works": "Isoler la tour et ses détails sculptés",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Place très fréquentée (voitures, bus, taxis, piétons)",
+        "Mobilier Starck (réverbères tournesol) = éléments parasites potentiels"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Colosse néo-roman rhénan en grès jaune de Jaumont, tour horloge 40 m.",
+          "section_hint": "TIER 2 — 7. Gare de Metz — 8/10"
+        }
+      ],
+      "notes": [
+        "Le draft mentionne 'grès jaune de Jaumont', WikiMetz précise 'grès gris d'Allemagne'. Le grès de Jaumont (jaune) est utilisé sur certaines parties mais la majorité est en grès gris importé. Confiance : medium sur la couleur exacte du grès."
+      ],
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Gare_de_Metz-Ville",
+        "https://metz.fr/lieux/lieu-33.php",
+        "https://www.wikimetz.fr/Gare_de_Metz-Ville",
+        "https://fr.aroundus.com/p/7377087-metz-ville"
+      ]
+    },
+    {
+      "id": "maison-heler",
+      "name": "Maison Heler",
+      "aliases": [
+        "Maison Heler Starck",
+        "Maison Heler Metz"
+      ],
+      "tier": 2,
+      "score": 8.0,
+      "type_usage": "Hôtel 4 étoiles (Curio Collection by Hilton), 104 chambres",
+      "original_from_doc": {
+        "year_built": "2024",
+        "architect": "Philippe Starck"
+      },
+      "location": {
+        "address_text": "Quartier de l'Amphithéâtre, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1093,
+          "lng": 6.1828,
+          "source_url": "https://hospitality-on.com/fr/ouverture/maison-heler-lhotel-surrealiste-de-philippe-starck-ouvre-ses-portes-metz",
+          "confidence": "medium",
+          "method": "Quartier Amphithéâtre, estimation depuis sources presse"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=Maison+Heler+Metz+Philippe+Starck+h%C3%B4tel+architecture",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2018–2025 (chantier démarré 2018, ouverture mars 2025)",
+        "source_url": "https://moselle.tv/decouvrez-quand-ouvrira-la-maison-heler-lhotel-dessine-par-philippe-starck/",
+        "confidence": "high",
+        "notes": "DIVERGENCE : le draft indique 2024, mais l'hôtel a ouvert en mars 2025. Le chantier a démarré en 2018, première annonce en 2015."
+      },
+      "architect": [
+        {
+          "name": "Philippe Starck",
+          "role": "architect",
+          "source_url": "https://www.dezeen.com/2025/03/31/maison-heler-philippe-starck-metz-sureal-hotel/",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Starck a conçu l'hôtel comme une « œuvre d'art vivante » inspirée d'un roman fictif (La Vie Minutieuse de Manfred Heler). La maison lorraine du XVIIIe siècle perchée au sommet symbolise l'histoire surréaliste d'un homme dont la maison fut projetée 9 étages dans les airs.",
+        "evidence": [
+          {
+            "quote": "Philippe Starck has unveiled the surreal nine-storey Maison Heler hotel in Metz, which is topped with what appears to be a 19th-century mansion.",
+            "source_url": "https://www.dezeen.com/2025/03/31/maison-heler-philippe-starck-metz-sureal-hotel/",
+            "date": "2025-03-31",
+            "type": "secondary"
+          },
+          {
+            "quote": "Ce lieu unique s'inspire du roman La Vie Minutieuse de Manfred Heler de Philippe Starck, créateur de l'hôtel. [...] Philippe Starck a conçu l'hôtel comme une œuvre d'art vivante.",
+            "source_url": "https://hospitality-on.com/fr/ouverture/maison-heler-lhotel-surrealiste-de-philippe-starck-ouvre-ses-portes-metz",
+            "date": "2025-03-27",
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Bloc monolithique de 9 étages en pierre grise texturée surmonté d'une maison lorraine traditionnelle en zinc. Silhouette surréaliste immédiatement lisible. 104 chambres, bar-restaurants, vitrail d'Ara Starck. Ouvert mars 2025.",
+      "photographic_advantages": [
+        "Bloc monolithique 9 étages + maison lorraine zinc sur toit = silhouette unique",
+        "Pierre grise texturée = gris moyen parfait en N&B",
+        "Juxtaposition ancien/contemporain = sujet graphique unique"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Matin ou blue hour",
+            "type": "hypothesis",
+            "why": "Le bâtiment orienté est/sud capte la lumière matinale ; la blue hour accentue la silhouette surréaliste",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison",
+            "type": "hypothesis",
+            "why": "Pierre et zinc ne changent pas avec les saisons ; le ciel couvert breton/lorrain crée un fond uniforme idéal en N&B",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale parvis Amphithéâtre",
+            "where": "Depuis le parvis, recul ≈ 50-80 m",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Silhouette complète : bloc + maison sommitale en un seul cadre",
+            "type": "from_doc"
+          },
+          {
+            "label": "Contre-plongée maison sur toit",
+            "where": "Au pied du bâtiment, côté rue",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "Accentue l'effet surréaliste de la maison perchée, lignes convergentes",
+            "type": "from_doc"
+          },
+          {
+            "label": "Cadrage serré maison zinc",
+            "where": "À distance moyenne, en contre-plongée modérée",
+            "lens_hint": "135-200 mm",
+            "why_it_works": "Isoler la maison lorraine sommitale en zinc contre le ciel",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Quartier Amphithéâtre en développement = chantiers possibles autour",
+        "Stores fixes sur façade (peuvent casser la pureté)"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "La Maison Heler (Starck, 2024) est un ajout récent et spectaculaire — bloc monolithique 9 étages surmonté d'une maison lorraine en zinc.",
+          "section_hint": "1. Synthèse décisionnelle — point 11"
+        }
+      ],
+      "notes": [
+        "DIVERGENCE année : le draft indique 2024, l'hôtel a ouvert en mars 2025 (Moselle.tv déc 2024, Dezeen mars 2025). Le chantier a démarré 2018. Valeur corrigée.",
+        "L'adresse précise '31 rue Jacques-Chirac' du draft n'est pas confirmée dans les sources presse ; le quartier Amphithéâtre est confirmé."
+      ],
+      "sources": [
+        "https://moselle.tv/decouvrez-quand-ouvrira-la-maison-heler-lhotel-dessine-par-philippe-starck/",
+        "https://hospitality-on.com/fr/ouverture/maison-heler-lhotel-surrealiste-de-philippe-starck-ouvre-ses-portes-metz",
+        "https://www.dezeen.com/2025/03/31/maison-heler-philippe-starck-metz-sureal-hotel/",
+        "https://ideat.fr/maison-heler-a-metz-un-reve-architectural-signe-philippe-starck/"
+      ]
+    },
+    {
+      "id": "metz-congres-robert-schuman",
+      "name": "Metz Congrès Robert Schuman",
+      "aliases": [
+        "Centre de Congrès Metz",
+        "Metz Congrès Wilmotte"
+      ],
+      "tier": 2,
+      "score": 7.5,
+      "type_usage": "Centre de congrès (auditorium 1 200 places)",
+      "original_from_doc": {
+        "year_built": "2018",
+        "architect": "Wilmotte & Associés"
+      },
+      "location": {
+        "address_text": "100 rue aux Arènes, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1093,
+          "lng": 6.1793,
+          "source_url": "https://fr.wikipedia.org/wiki/Metz_Congr%C3%A8s_Robert_Schuman",
+          "confidence": "medium"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=Metz+Congr%C3%A8s+Robert+Schuman+Wilmotte+pierre+Jaumont",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2015–2018 (chantier fin 2015, ouverture sept. 2018)",
+        "source_url": "https://metz.fr/projets/metz-congres-robert-schuman.php",
+        "confidence": "high",
+        "notes": ""
+      },
+      "architect": [
+        {
+          "name": "Wilmotte & Associés (Jean-Michel Wilmotte)",
+          "role": "firm",
+          "source_url": "https://chroniques-architecture.com/wilmotte-metz-centre-congres/",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Wilmotte a conçu le bâtiment autour de quatre idées — matière, verticalité, lumière, espace — avec un « rideau sculpté » en pierre de Jaumont comme interprétation contemporaine du patrimoine messin.",
+        "evidence": [
+          {
+            "quote": "Interprétation contemporaine du patrimoine messin, le centre Metz Congrès Robert Schuman présente une composition inédite autour de la pierre de Jaumont et de la lumière. Symbole de l'architecture mosellane, la pierre de Jaumont est ici au cœur d'une mise en scène soigneusement pensée. Celle d'un bâtiment à l'architecture contemporaine paré d'un rideau sculpté.",
+            "source_url": "https://chroniques-architecture.com/wilmotte-metz-centre-congres/",
+            "date": "2019-05-13",
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "« Rideau sculpté » en pierre de Jaumont — 10 000 morceaux de pierre. La façade est un jeu de lames verticales dont la silhouette évolue avec la lumière. Fait la transition entre Pompidou et le centre historique. 15 300 m², auditorium 1 200 places.",
+      "photographic_advantages": [
+        "Rideau de pierre de Jaumont sculpté, verticalité contemporaine",
+        "Jeu de lames de pierre verticales dont la silhouette évolue avec la lumière",
+        "Composition 'matière/lumière/verticalité'"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Lumière rasante (matin est ou fin de journée ouest)",
+            "type": "from_doc",
+            "why": "Les lames de pierre créent des ombres portées différentes selon l'angle du soleil",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison",
+            "type": "hypothesis",
+            "why": "Façade en pierre peu affectée par la végétation",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale parvis Droits-de-l'Homme",
+            "where": "Depuis le parvis des Droits-de-l'Homme",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Façade complète du rideau sculpté, possibilité d'association avec Pompidou en arrière-plan",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail lames de pierre",
+            "where": "Rapproché, façade principale",
+            "lens_hint": "85-200 mm",
+            "why_it_works": "Texture et ombres des lames de Jaumont en lumière rasante",
+            "type": "from_doc"
+          },
+          {
+            "label": "Association Pompidou",
+            "where": "Recul depuis le sud-est",
+            "lens_hint": "35-70 mm",
+            "why_it_works": "Les deux bâtiments contemporains dans le même cadre = dialogue architectural",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Proximité immédiate de la gare = flux piétons",
+        "Façade principale côté voie ferrée (recul limité)",
+        "Privilégier côté parvis des Droits-de-l'Homme (plus dégagé)"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "\"Rideau sculpté\" en pierre de Jaumont — la façade est un jeu de lames de pierre verticales dont la silhouette évolue avec la lumière.",
+          "section_hint": "TIER 2 — 9. Metz Congrès Robert Schuman — 7.5/10"
+        }
+      ],
+      "notes": [],
+      "sources": [
+        "https://metz.fr/projets/metz-congres-robert-schuman.php",
+        "https://chroniques-architecture.com/wilmotte-metz-centre-congres/",
+        "https://fr.wikipedia.org/wiki/Metz_Congr%C3%A8s_Robert_Schuman"
+      ]
+    },
+    {
+      "id": "eglise-saint-pierre-borny",
+      "name": "Église Saint-Pierre de Borny",
+      "aliases": [
+        "Église Saint-Pierre Borny"
+      ],
+      "tier": 2,
+      "score": 7.5,
+      "type_usage": "Église catholique en activité, label Patrimoine XXe siècle",
+      "original_from_doc": {
+        "year_built": "1962",
+        "architect": "Georges-Henri Pingusson"
+      },
+      "location": {
+        "address_text": "2 rue de la Chabosse, 57070 Metz (Borny)",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1092,
+          "lng": 6.2239,
+          "source_url": "https://fr.wikipedia.org/wiki/%C3%89glise_Saint-Pierre_de_Metz",
+          "confidence": "high"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=%C3%A9glise+Saint-Pierre+Borny+Metz+Pingusson",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1959–1962 (construction 1959, consacrée 11 juil. 1960, fresques 1962)",
+        "source_url": "https://fr.wikipedia.org/wiki/Borny",
+        "confidence": "high",
+        "notes": "DIVERGENCE MINEURE : le draft indique 1962 (date des fresques de Rucki). L'église est construite en 1959 et consacrée le 11 juillet 1960 par Mgr Schmitt. Les fresques de Lambert Rucki datent de 1962."
+      },
+      "architect": [
+        {
+          "name": "Georges-Henri Pingusson",
+          "role": "architect",
+          "source_url": "https://metz.fr/lieux/lieu-213.php",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Pingusson réinterprète le plan classique de l'église en deux grands volumes : nef plongée dans la pénombre et sanctuaire baigné de lumière colorée. Une des 4 églises-halles mosellanes de l'architecte.",
+        "evidence": [
+          {
+            "quote": "L'aspect austère de l'édifice ne doit pas faire oublier la grande finesse apportée par Georges-Henri Pingusson quant à la réinterprétation des plans classique d'une église.",
+            "source_url": "https://metz.fr/lieux/lieu-213.php",
+            "date": null,
+            "type": "secondary"
+          },
+          {
+            "quote": "Pingusson conçoit l'église en deux volumes : la nef plongée dans la pénombre et le sanctuaire baigné de lumière colorée grâce aux verrières abstraites de Jacques Le Chevallier.",
+            "source_url": "https://fr.wikipedia.org/wiki/Borny",
+            "date": null,
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Plan non conventionnel (circulaire), clocher parallélépipédique sobre surmonté d'une fine croix. Façade blanche avec piliers pierre de Jaumont. Intérieur : nef sombre / sanctuaire lumineux avec vitraux abstraits de Jacques Le Chevallier et fresques de Lambert Rucki (1962). Une des 4 églises mosellanes de Pingusson. Label Patrimoine XXe siècle.",
+      "photographic_advantages": [
+        "Forme circulaire, clocher parallélépipédique, béton + pierre Jaumont",
+        "Grande sobriété extérieure",
+        "Béton rose + pierre locale = textures intéressantes",
+        "Label Patrimoine XXe siècle"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Fin d'après-midi",
+            "type": "hypothesis",
+            "why": "Lumière rasante sur le béton rose et la pierre de Jaumont accentue les textures",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Automne–hiver",
+            "type": "hypothesis",
+            "why": "Arbres dénudés, façade dégagée depuis la rue",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale rue de la Chabosse",
+            "where": "Depuis la rue de la Chabosse, face à l'entrée",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Vue de la sobriété frontale et du clocher",
+            "type": "from_doc"
+          },
+          {
+            "label": "Clocher isolé",
+            "where": "Recul latéral, cadrage vertical",
+            "lens_hint": "70-135 mm",
+            "why_it_works": "Le clocher parallélépipédique + fine croix contre le ciel = graphisme minimal",
+            "type": "from_doc"
+          },
+          {
+            "label": "Profil courbe",
+            "where": "Depuis le côté, montrant la courbe du plan circulaire",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Révèle le plan circulaire inhabituel pour une église",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Quartier résidentiel de Borny",
+        "Cimetière adjacent (pierres tombales dans le champ si mal cadré)",
+        "Arbres possibles"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Plan non conventionnel (circulaire), clocher parallélépipédique sobre surmonté d'une fine croix.",
+          "section_hint": "TIER 2 — 10. Église Saint-Pierre de Borny — 7.5/10"
+        }
+      ],
+      "notes": [
+        "Le draft indique year_built 1962, qui correspond aux fresques de Rucki. L'église elle-même a été construite en 1959 et consacrée le 11 juillet 1960."
+      ],
+      "sources": [
+        "https://metz.fr/lieux/lieu-213.php",
+        "https://fr.wikipedia.org/wiki/%C3%89glise_Saint-Pierre_de_Metz",
+        "https://fr.wikipedia.org/wiki/Borny"
+      ]
+    },
+    {
+      "id": "muse-metz",
+      "name": "MUSE",
+      "aliases": [
+        "MUSE Viguier",
+        "Immeuble First"
+      ],
+      "tier": 2,
+      "score": 7.5,
+      "type_usage": "Centre commercial + logements + bureaux (78 300 m²)",
+      "original_from_doc": {
+        "year_built": "2017",
+        "architect": "Jean-Paul Viguier et Associés"
+      },
+      "location": {
+        "address_text": "Quartier de l'Amphithéâtre, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.109,
+          "lng": 6.1835,
+          "source_url": "https://viguier.com/fr/projet/muse-metz/",
+          "confidence": "medium",
+          "method": "Estimé depuis quartier Amphithéâtre, face Pompidou"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=MUSE+Metz+Jean-Paul+Viguier+quartier+amphith%C3%A9%C3%A2tre+fa%C3%A7ade",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2014–2017 (chantier automne 2014, ouverture 2017)",
+        "source_url": "https://metz.fr/projets/muse.php",
+        "confidence": "high",
+        "notes": ""
+      },
+      "architect": [
+        {
+          "name": "Jean-Paul Viguier et Associés",
+          "role": "firm",
+          "source_url": "https://viguier.com/fr/projet/muse-metz/",
+          "confidence": "high"
+        },
+        {
+          "name": "Devanthéry-Lamunière",
+          "role": "architect",
+          "source_url": "https://viguier.com/fr/projet/muse-metz/",
+          "confidence": "high"
+        },
+        {
+          "name": "DND Architectes",
+          "role": "architect",
+          "source_url": "https://viguier.com/fr/projet/muse-metz/",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Viguier conçoit MUSE comme une « ville intense » : mixité urbaine verticale (commerces, logements, bureaux) avec porosité des espaces publics/privés. L'immeuble First se soulève sur des « arbres d'acier » (tripodes) pour inviter le public.",
+        "evidence": [
+          {
+            "quote": "Le bâtiment de logements, baptisé First, donnant sur la place avec sa façade revêtue de plaques de verre en damier, se soulève pour inviter le public à pénétrer dans la rue de commerces.",
+            "source_url": "https://viguier.com/fr/projet/muse-metz/",
+            "date": null,
+            "type": "secondary"
+          },
+          {
+            "quote": "Posé sur des tripodes spectaculaires, véritables arbres d'acier, First déploie son élégante façade en damier de verre face au Centre Pompidou-Metz.",
+            "source_url": "https://www.apsysgroup.com/portfolios/first/",
+            "date": null,
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "L'immeuble First avec sa façade en plaques de verre en damier se soulève sur des tripodes d'acier — effet de lévitation graphique. Conception dedans-dehors avec alternance pleins/vides. 78 300 m² de mixité urbaine face au Centre Pompidou-Metz.",
+      "photographic_advantages": [
+        "Façade damier verre, immeuble First soulevé sur pilotis",
+        "Effet de lévitation graphique",
+        "Alternance de pleins/vides"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Tôt le matin (avant 9h)",
+            "type": "from_doc",
+            "why": "Éviter fréquentation du centre commercial",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison",
+            "type": "hypothesis",
+            "why": "Façade en verre et acier, indépendante de la végétation",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Frontale face Pompidou",
+            "where": "Depuis la place face au Centre Pompidou-Metz",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Façade damier complète, tripodes d'acier visibles, effet de lévitation",
+            "type": "from_doc"
+          },
+          {
+            "label": "Sous les pilotis",
+            "where": "Sous l'immeuble First, entre les tripodes",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "Contre-plongée sous les pilotis, perspective ascendante, géométrie pure",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail damier verre",
+            "where": "Face à la façade, distance moyenne",
+            "lens_hint": "85-135 mm",
+            "why_it_works": "Damier de verre en gros plan, reflets et transparences",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Centre commercial = forte fréquentation, enseignes commerciales visibles",
+        "Façade en verre très réflective = surexposition en N&B si mal gérée"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "L'immeuble \"First\" avec sa façade en plaques de verre en damier se soulève sur pilotis — effet de lévitation graphique.",
+          "section_hint": "TIER 2 — 11. MUSE — 7.5/10"
+        }
+      ],
+      "notes": [],
+      "sources": [
+        "https://viguier.com/fr/projet/muse-metz/",
+        "https://metz.fr/projets/muse.php",
+        "https://www.apsysgroup.com/portfolios/first/"
+      ]
+    },
+    {
+      "id": "palais-omnisports-arenes",
+      "name": "Palais omnisports des Arènes",
+      "aliases": [
+        "Les Arènes de Metz"
+      ],
+      "tier": 2,
+      "score": 7.5,
+      "type_usage": "Salle omnisports / concerts (jusqu'à 5 458 personnes)",
+      "original_from_doc": {
+        "year_built": "2001",
+        "architect": "Paul Chemetov & Borja Huidobro"
+      },
+      "location": {
+        "address_text": "5 avenue Louis-le-Débonnaire, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1086,
+          "lng": 6.1842,
+          "source_url": "https://structurae.net/fr/ouvrages/palais-omnisports-les-arenes",
+          "confidence": "high"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=palais+omnisports+ar%C3%A8nes+Metz+Chemetov+Huidobro",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2000–2001 (travaux janv. 2000, inauguration 7 fév. 2002)",
+        "source_url": "https://fr.wikipedia.org/wiki/Palais_omnisports_Les_Ar%C3%A8nes",
+        "confidence": "high",
+        "notes": "Le draft indique 2001 (année de fin de construction). Inauguration le 7 février 2002."
+      },
+      "architect": [
+        {
+          "name": "Paul Chemetov",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Palais_omnisports_Les_Ar%C3%A8nes",
+          "confidence": "high"
+        },
+        {
+          "name": "Borja Huidobro",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Palais_omnisports_Les_Ar%C3%A8nes",
+          "confidence": "high"
+        },
+        {
+          "name": "Jean-Claude Cadoux",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Palais_omnisports_Les_Ar%C3%A8nes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Atelier Gaertner",
+          "role": "architect",
+          "source_url": "https://fr.wikipedia.org/wiki/Palais_omnisports_Les_Ar%C3%A8nes",
+          "confidence": "medium"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Chemetov et Huidobro ont conçu une salle polyvalente démonstrative en acier et verre, formant un signal architectural à l'entrée du nouveau quartier Amphithéâtre, en référence aux vestiges de l'amphithéâtre gallo-romain.",
+        "evidence": [
+          {
+            "quote": "Le nom évocateur de la salle est une référence aux vestiges de l'amphithéâtre gallo-romain tout proche.",
+            "source_url": "https://www.republicain-lorrain.fr/moselle/2022/09/13/savez-vous-en-quelle-annee-a-ete-construit-le-palais-omnisports-les-arenes",
+            "date": "2022-09-13",
+            "type": "interpretation"
+          }
+        ]
+      },
+      "description": "Structure acier/verre démonstrative, grandes baies vitrées, 17 000 m². Construit après l'incendie de l'ancien Palais des sports (1999). Fait le lien entre vieille ville et quartier Amphithéâtre. Capacité max 5 458 personnes.",
+      "photographic_advantages": [
+        "Structure acier/verre démonstrative, grandes baies",
+        "Élégance de l'acier et du verre",
+        "Reflets dans les baies vitrées (effet miroir en N&B)"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Fin de journée ou ciel couvert",
+            "type": "hypothesis",
+            "why": "Les baies vitrées réfléchissent le ciel et les environs ; un ciel couvert évite les reflets surexposés",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Automne–hiver",
+            "type": "hypothesis",
+            "why": "Arbres du Parc de la Seille dénudés, structure dégagée",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Depuis le Parc de la Seille",
+            "where": "Depuis les jardins Jean-Marie Pelt, recul 100 m+",
+            "lens_hint": "35-70 mm",
+            "why_it_works": "Vue dégagée, structure acier/verre en silhouette",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détails charpente métallique",
+            "where": "Rapproché, sous les avancées",
+            "lens_hint": "85-135 mm",
+            "why_it_works": "Rythme des structures métalliques, nœuds, boulonnage",
+            "type": "from_doc"
+          },
+          {
+            "label": "Reflets baies vitrées",
+            "where": "Face aux grandes baies",
+            "lens_hint": "50-100 mm",
+            "why_it_works": "Effets miroir : ciel, bâtiments voisins, arbres = compositions abstraites en N&B",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Événements sportifs = foule + véhicules",
+        "Arbres du Parc de la Seille en été"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Structure acier/verre démonstrative, grandes baies vitrées, esthétique singulière.",
+          "section_hint": "TIER 2 — 12. Palais omnisports des Arènes — 7.5/10"
+        }
+      ],
+      "notes": [],
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Palais_omnisports_Les_Ar%C3%A8nes",
+        "https://structurae.net/fr/ouvrages/palais-omnisports-les-arenes",
+        "https://www.republicain-lorrain.fr/moselle/2022/09/13/savez-vous-en-quelle-annee-a-ete-construit-le-palais-omnisports-les-arenes"
+      ]
+    },
+    {
+      "id": "puzzle-mediatheque-thionville",
+      "name": "Puzzle — Médiathèque de Thionville",
+      "aliases": [
+        "Le Puzzle",
+        "Médiathèque Puzzle Thionville"
+      ],
+      "tier": 3,
+      "score": 7.5,
+      "type_usage": "Médiathèque + centre d'art, label ACR",
+      "original_from_doc": {
+        "year_built": "2016",
+        "architect": "Dominique Coulon & associés"
+      },
+      "location": {
+        "address_text": "Est du centre-ville, Thionville, 57100",
+        "city": "Thionville",
+        "country": "France",
+        "gps": {
+          "lat": 49.3555,
+          "lng": 6.171,
+          "source_url": "https://coulon-architecte.fr/fr/projet/416/thionville",
+          "confidence": "medium",
+          "method": "Estimé depuis localisation Thionville est, à confirmer"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=Puzzle+m%C3%A9diath%C3%A8que+Thionville+Dominique+Coulon+architecture",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2014–2016 (concours 2010, inaugurée oct. 2016)",
+        "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001937",
+        "confidence": "high",
+        "notes": "La fiche ACR/POP mentionne 'livré en 2014' mais l'inauguration publique est en octobre 2016 selon Archistorm et le site de l'architecte."
+      },
+      "architect": [
+        {
+          "name": "Dominique Coulon & associés",
+          "role": "firm",
+          "source_url": "https://coulon-architecte.fr/fr/projet/416/thionville",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Coulon a imaginé un « nouveau modèle de médiathèque » — un troisième lieu où le public devient acteur. L'architecture organique (ruban sinueux) crée des espaces décloisonnés rompant avec l'austérité des bibliothèques traditionnelles.",
+        "evidence": [
+          {
+            "quote": "Ce projet porte l'ambition de devenir un nouveau modèle de médiathèque. Le programme réinterroge ses fonctions pour lui donner le contenu d'un troisième lieu, un lieu où le public devient acteur de sa propre condition.",
+            "source_url": "https://coulon-architecte.fr/fr/projet/416/thionville",
+            "date": null,
+            "type": "primary"
+          }
+        ]
+      },
+      "description": "Volumes sinueux en béton blanc, ondulations organiques, bandeau blanc continu fédérant 3 volumes distincts. « Ruban sinueux à géométrie variable ». 4 590 m², inscrit dans un carré de 72 m de côté. Béton blanc = gris lumineux en N&B. Label ACR. ≈ 30 km de Metz.",
+      "photographic_advantages": [
+        "Ondulations béton blanc, volumes sinueux, bandeau continu",
+        "Ruban sinueux à géométrie variable",
+        "Béton blanc = gris lumineux en N&B",
+        "Label ACR"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Milieu de matinée (lumière douce)",
+            "type": "hypothesis",
+            "why": "Le béton blanc est sensible à la surexposition ; une lumière douce préserve les nuances de gris",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Hiver",
+            "type": "from_doc",
+            "why": "Arbres nus — allées de platanes encadrant le bâtiment perdent leur feuillage",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Vue aérienne / élevée",
+            "where": "Depuis un point haut si disponible, ou drone",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Le carré de 72 m et les ondulations organiques sont mieux lisibles en vue plongeante",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Frontale entrée",
+            "where": "Depuis le parvis d'entrée, face au ruban",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Le bandeau blanc continu crée une ligne directrice forte",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Détail courbes béton",
+            "where": "Rapproché sur les ondulations",
+            "lens_hint": "50-85 mm",
+            "why_it_works": "Les courbes organiques du béton blanc créent des jeux d'ombre/lumière subtils",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Depuis la rampe-patio",
+            "where": "Depuis la rampe végétalisée vers le toit-terrasse",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "Perspective ascendante dans la géométrie courbe",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Allées de platanes encadrant le bâtiment = feuillage en été",
+        "≈ 30 km de Metz"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Puzzle à Thionville (Dominique Coulon, 2016) vaut le détour de 30 km : ondulations de béton blanc, volumétrie organique, label ACR.",
+          "section_hint": "1. Synthèse décisionnelle — point 12"
+        }
+      ],
+      "notes": [
+        "La fiche ACR/POP indique 'livré en 2014' mais l'inauguration publique est en octobre 2016. Possibilité que 2014 soit la date de livraison du chantier et 2016 l'ouverture au public."
+      ],
+      "sources": [
+        "https://coulon-architecte.fr/fr/projet/416/thionville",
+        "https://www.pop.culture.gouv.fr/notice/merimee/ACR0001937",
+        "https://www.archistorm.com/mediatheque-puzzle-troisieme-lieu-a-thionville-dominique-coulon-associes-architectes/"
+      ]
+    },
+    {
+      "id": "galeries-lafayette-metz",
+      "name": "Galeries Lafayette Metz",
+      "aliases": [
+        "Galeries Lafayette Gautrand"
+      ],
+      "tier": 3,
+      "score": 7.0,
+      "type_usage": "Grand magasin",
+      "original_from_doc": {
+        "year_built": "Façade 2015",
+        "architect": "Manuelle Gautrand"
+      },
+      "location": {
+        "address_text": "Rue Winston Churchill / Rue des Clercs, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1193,
+          "lng": 6.175,
+          "source_url": "https://www.archdaily.com/550754/galeries-lafayette-department-store-manuelle-gautrand-architecture",
+          "confidence": "medium",
+          "method": "Estimé depuis place de la République Metz"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=Galeries+Lafayette+Metz+Manuelle+Gautrand+fa%C3%A7ade",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "2014 (façade rénovée)",
+        "source_url": "https://www.archdaily.com/550754/galeries-lafayette-department-store-manuelle-gautrand-architecture",
+        "confidence": "high",
+        "notes": "ArchDaily date le projet de 2014. Le draft indique 'Façade 2015'. Le bâtiment d'origine date des années 1980."
+      },
+      "architect": [
+        {
+          "name": "Manuelle Gautrand",
+          "role": "architect",
+          "source_url": "https://www.archdaily.com/550754/galeries-lafayette-department-store-manuelle-gautrand-architecture",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Gautrand a voulu « renouer avec l'histoire des Galeries Lafayette » en créant une marquise extraordinaire rappelant les ouvrages verriers du début du XXe siècle. La marquise rouge en origami de verre (120 m de long) est le geste principal.",
+        "evidence": [
+          {
+            "quote": "Mon souhait a été de renouer avec l'histoire des Galeries Lafayette, en créant une marquise extraordinaire, à la hauteur des ouvrages verriers exceptionnels qui ont été construits au début du siècle.",
+            "source_url": "https://lion-star-b65h.squarespace.com/s/dossierdepressenouvellearchitecturedesgalerieslafayettedemetz.pdf",
+            "date": null,
+            "type": "primary"
+          }
+        ]
+      },
+      "description": "Façade immaculée verre/miroirs avec marquise rouge en verre plié (origami, 120 m de long sur 3 façades). Les miroirs reflètent le ciel et les bâtiments en pierre de Jaumont voisins. En N&B, la marquise rouge devient un dégradé de gris intéressant.",
+      "photographic_advantages": [
+        "Façade verre/miroirs immaculée, marquise rouge en escalier/origami",
+        "Miroirs reflètent le ciel et les bâtiments = effet de dédoublement",
+        "120 m de marquise en verre plié"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Matin tôt (avant 9h) ou nuit",
+            "type": "hypothesis",
+            "why": "Centre-ville désert le matin ; la nuit, l'éclairage spécifique (agence ON) fait respirer la marquise",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison",
+            "type": "hypothesis",
+            "why": "Façade urbaine, peu d'impact végétal",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Contre-plongée marquise",
+            "where": "Au pied de la façade, sous la marquise",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "L'origami de verre se déploie au-dessus, plis spectaculaires",
+            "type": "from_doc"
+          },
+          {
+            "label": "Reflets miroir",
+            "where": "Face aux vitrines, distance 3-10 m",
+            "lens_hint": "50-85 mm",
+            "why_it_works": "Les miroirs reflètent la pierre de Jaumont des bâtiments voisins = jeu de doubles",
+            "type": "from_doc"
+          },
+          {
+            "label": "Vue depuis place de la République",
+            "where": "Place de la République, recul ≈ 40 m",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Vue d'ensemble de l'angle du bâtiment où la marquise est la plus généreuse (porte-à-faux 7,40 m)",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Centre-ville très dense (piétons, enseignes, rue étroite)",
+        "Recul limité"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Façade immaculée verre/miroirs, marquise rouge en escalier (en N&B = dégradé intéressant).",
+          "section_hint": "TIER 3 — 14. Galeries Lafayette Metz — 7/10"
+        }
+      ],
+      "notes": [
+        "ArchDaily (sept 2014) et le dossier de presse datent le projet de 2014. Le draft indique 2015. L'écart est mineur et peut correspondre à la réception définitive."
+      ],
+      "sources": [
+        "https://www.archdaily.com/550754/galeries-lafayette-department-store-manuelle-gautrand-architecture",
+        "https://lion-star-b65h.squarespace.com/s/dossierdepressenouvellearchitecturedesgalerieslafayettedemetz.pdf",
+        "https://www.lightzoomlumiere.fr/realisation/marquise-des-galeries-lafayette-de-metz-par-agence-on/"
+      ]
+    },
+    {
+      "id": "parking-paixhans",
+      "name": "Parking Paixhans",
+      "aliases": [
+        "Parking Q-Park Paixhans"
+      ],
+      "tier": 3,
+      "score": 7.0,
+      "type_usage": "Parking aérien (410 places, 4 niveaux)",
+      "original_from_doc": {
+        "year_built": null,
+        "architect": "Paulin & Mariotti"
+      },
+      "location": {
+        "address_text": "Rue du Général Fournier / Boulevard Paixhans, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.115,
+          "lng": 6.187,
+          "source_url": "https://www.q-park.fr/fr-fr/villes/metz/mazelle/",
+          "confidence": "medium",
+          "method": "Estimé depuis Promenade des remparts / Boulevard Paixhans"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=parking+Paixhans+Metz+Paulin+Mariotti+remparts",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "~2010",
+        "source_url": "https://www.republicain-lorrain.fr/moselle/2010/07/06/quand-paixhans-s-habille-en-vert",
+        "confidence": "medium",
+        "notes": "Article du Républicain Lorrain de juillet 2010 mentionne 'le nouveau parking du boulevard Paixhans'. Year_built absent du draft, estimé ~2010 avec confiance medium."
+      },
+      "architect": [
+        {
+          "name": "Paulin & Mariotti",
+          "role": "architect",
+          "source_url": "https://maisondelarchi-lorraine.com/site1/wp-content/uploads/2015/11/2011-Metz-Depliant-720-final-Fulltext-20110917.pdf",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Le duo Paulin & Mariotti a conçu une insertion respectueuse de l'infrastructure contemporaine dans le tissu historique : bardage acier + mur végétalisé prenant appui sur un ancien mur de fortification.",
+        "evidence": [
+          {
+            "quote": "Le duo d'architectes a construit un autre parking apparenté (Parking Paixhans) le long de la promenade des remparts. Là, en plus du bardage d'acier, un mur végétalisé prend appui sur un ancien mur de fortification et l'objet architectural s'insère avec respect dans le site.",
+            "source_url": "https://maisondelarchi-lorraine.com/site1/wp-content/uploads/2015/11/2011-Metz-Depliant-720-final-Fulltext-20110917.pdf",
+            "date": "2011",
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Bardage acier (similaire Mazelle) + mur végétalisé prenant appui sur un ancien mur de fortification. 410 places sur 4 niveaux. L'insertion respectueuse ancien/contemporain est un sujet photographique en soi.",
+      "photographic_advantages": [
+        "Bardage acier + mur végétalisé sur fortification",
+        "Insertion respectueuse ancien/contemporain = sujet en soi"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Matin (lumière est sur le mur végétalisé)",
+            "type": "hypothesis",
+            "why": "Lumière rasante accentue la texture du mur végétalisé et la jonction avec la fortification ancienne",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Hiver",
+            "type": "from_doc",
+            "why": "Structure nue du mur — le mur végétalisé verdoyant en été donne un gris moyen uniforme en N&B, potentiellement plat",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Vue depuis la promenade des remparts",
+            "where": "Promenade des remparts, recul 30-50 m",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Juxtaposition acier contemporain / fortification ancienne / végétal",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Détail jonction ancien/nouveau",
+            "where": "Au point de contact mur fortification / bardage acier",
+            "lens_hint": "50-85 mm",
+            "why_it_works": "Dialogue de matières : pierre ancienne vs acier vs végétal",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Contre-plongée bardage",
+            "where": "Au pied du parking, côté boulevard",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Le bardage acier en perspective, rythme vertical",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Mur végétalisé verdoyant en été = gris moyen uniforme en N&B",
+        "État variable selon saison"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Bardage acier (similaire Mazelle) + mur végétalisé prenant appui sur un ancien mur de fortification.",
+          "section_hint": "TIER 3 — 15. Parking Paixhans — 7/10"
+        }
+      ],
+      "notes": [
+        "Year_built estimé ~2010 d'après l'article presse mentionnant 'le nouveau parking'. Confiance medium."
+      ],
+      "sources": [
+        "https://maisondelarchi-lorraine.com/site1/wp-content/uploads/2015/11/2011-Metz-Depliant-720-final-Fulltext-20110917.pdf",
+        "https://www.republicain-lorrain.fr/moselle/2010/07/06/quand-paixhans-s-habille-en-vert"
+      ]
+    },
+    {
+      "id": "internat-lycee-fabert",
+      "name": "Internat du Lycée Fabert",
+      "aliases": [
+        "Internat lycée Fabert"
+      ],
+      "tier": 3,
+      "score": 7.0,
+      "type_usage": "Internat scolaire (en activité), label ACR",
+      "original_from_doc": {
+        "year_built": "1934-1936",
+        "architect": "Robert Parisot + Paul Millochau"
+      },
+      "location": {
+        "address_text": "31 rue Saint-Marcel, 57000 Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.117,
+          "lng": 6.167,
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0000601",
+          "confidence": "medium",
+          "method": "Dérivé de l'adresse POP/Mérimée"
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=internat+lyc%C3%A9e+Fabert+Metz+briques+architecture",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1934–1936",
+        "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0000601",
+        "confidence": "high",
+        "notes": "Concours 1931, lauréat 1932, plans validés fév. 1934, travaux 1934-1936. Confirmé par POP/Mérimée et OpenEdition."
+      },
+      "architect": [
+        {
+          "name": "Robert Parisot",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0000601",
+          "confidence": "high"
+        },
+        {
+          "name": "Paul Millochau",
+          "role": "architect",
+          "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0000601",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Parisot (Nancéien) et Millochau (Parisien) ont fait un choix audacieux pour Metz : la brique polychrome au lieu de la traditionnelle pierre de Jaumont. L'appareillage soigné de briques jaunes, orangées et rouges crée un dynamisme contrebalançant la rigueur de la composition.",
+        "evidence": [
+          {
+            "quote": "Les architectes optent pour une construction en ossature métallique, créant des portiques habillés sur les faces extérieures du bâtiment par des murs de brique de parement. L'appareillage de briques en façade est remarquablement étudié et rythme les élévations.",
+            "source_url": "https://www.pop.culture.gouv.fr/notice/merimee/ACR0000601",
+            "date": "2020",
+            "type": "secondary"
+          },
+          {
+            "quote": "Un jeu entre des briques jaunes, orangées et rouges rend cette façade dynamique et contrebalance la rigueur de sa composition.",
+            "source_url": "https://journals.openedition.org/insitu/31654",
+            "date": "2021-04-28",
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Appareillage de briques polychromes (jaune/orange/rouge) « remarquablement étudié » rythmant les élévations. Ossature métallique habillée de briques de parement. Escalier hélicoïdal éclairé par parois en briques translucides. Mobilier Jean Prouvé. Label ACR. Style art déco.",
+      "photographic_advantages": [
+        "Briques polychromes rythmiques (jaune/orange/rouge)",
+        "Ossature métallique habillée de briques de parement",
+        "Escalier hélicoïdal éclairé par briques translucides",
+        "Mobilier Jean Prouvé",
+        "Label ACR"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Lumière rasante (matin ou fin de journée)",
+            "type": "from_doc",
+            "why": "Faire ressortir le relief des briques et les motifs en croisillon",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison (façade en brique)",
+            "type": "hypothesis",
+            "why": "La brique ne change pas avec les saisons",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Façade depuis la rue",
+            "where": "Depuis la rue Saint-Marcel, face à la façade",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Vue d'ensemble de l'appareillage de briques, rythme des élévations",
+            "type": "from_doc"
+          },
+          {
+            "label": "Détail briques lumière rasante",
+            "where": "Rapproché, lumière rasante",
+            "lens_hint": "85-135 mm",
+            "why_it_works": "Relief des briques et motifs en croisillon exaltés par la lumière rasante",
+            "type": "from_doc"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Bâtiment scolaire en activité = accès restreint (intérieur)",
+        "Rythme de briques subtil en N&B (perte des couleurs = perte d'un atout)",
+        "Accès intérieur nécessite autorisation"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Appareillage de briques polychromes (jaune/orange/rouge) \"remarquablement étudié\" qui rythme les élévations.",
+          "section_hint": "TIER 3 — 16. Internat du Lycée Fabert — 7/10"
+        }
+      ],
+      "notes": [
+        "En N&B, la perte des couleurs (jaune/orange/rouge) réduit un atout majeur. Compenser par la lumière rasante pour exalter le relief."
+      ],
+      "sources": [
+        "https://www.pop.culture.gouv.fr/notice/merimee/ACR0000601",
+        "https://journals.openedition.org/insitu/31654",
+        "https://maisondelarchi-lorraine.com/apero-visite-lycee-fabert/"
+      ]
+    },
+    {
+      "id": "passage-amphitheatre",
+      "name": "Passage de l'Amphithéâtre",
+      "aliases": [],
+      "tier": 3,
+      "score": 6.5,
+      "type_usage": "Passage urbain (piétons + véhicules)",
+      "original_from_doc": {
+        "year_built": "XIXe siècle",
+        "architect": null
+      },
+      "location": {
+        "address_text": "Sous les voies ferrées, entre quartier Amphithéâtre et rue Vauban, Metz",
+        "city": "Metz",
+        "country": "France",
+        "gps": {
+          "lat": 49.1095,
+          "lng": 6.18,
+          "source_url": null,
+          "confidence": "low",
+          "method": "Estimé depuis position gare / quartier Amphithéâtre. À confirmer sur place."
+        }
+      },
+      "out_of_scope": false,
+      "out_of_scope_distance_km_estimate": null,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=passage+amphith%C3%A9%C3%A2tre+Metz+vo%C3%BBtes+briques+voie+ferr%C3%A9e",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "XIXe siècle",
+        "source_url": null,
+        "confidence": "low",
+        "notes": "Probablement contemporain de la gare (1905-1908) ou antérieur. Aucune source précise trouvée."
+      },
+      "architect": [
+        {
+          "name": "Inconnu",
+          "role": "architect",
+          "source_url": null,
+          "confidence": "low"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Infrastructure ferroviaire utilitaire, sans intention architecturale formelle connue. L'appareillage de briques noires et blanches relève de la tradition constructive du XIXe siècle.",
+        "evidence": []
+      },
+      "description": "6 voûtes surbaissées en briques rouges sous les voies ferrées, appareillage briques noires et blanches. Qualité spatiale avec jeux de lumière entre les voûtes. Atmosphère « métro de Paris » — idéal pour des compositions en clair-obscur.",
+      "photographic_advantages": [
+        "6 voûtes surbaissées briques rouges/noires/blanches sous voies ferrées",
+        "Qualité spatiale avec jeux de lumière entre les voûtes",
+        "Atmosphère 'métro de Paris' = compositions en clair-obscur"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Dimanche matin très tôt",
+            "type": "from_doc",
+            "why": "Circulation minimale",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Toute saison (souterrain)",
+            "type": "hypothesis",
+            "why": "Passage couvert, indépendant de la météo et des saisons",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Perspective axiale",
+            "where": "À l'entrée du passage, centré dans l'axe",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Les 6 voûtes en enfilade créent une perspective fuyante dramatique, clair-obscur naturel",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Contre-plongée voûte",
+            "where": "Sous une voûte, centré",
+            "lens_hint": "16-24 mm",
+            "why_it_works": "L'appareillage de briques noires et blanches crée un motif géométrique en N&B natif",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Silhouette contre-jour",
+            "where": "Depuis l'intérieur vers une sortie éclairée",
+            "lens_hint": "50-85 mm",
+            "why_it_works": "Figure humaine en silhouette contre la lumière du jour = composition clair-obscur",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "Passage = circulation constante (voitures, piétons)",
+        "Éclairage artificiel perturbant la nuit"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "6 voûtes surbaissées en briques rouges, appareillage briques noires et blanches, qualité spatiale avec jeux de lumière entre les voûtes.",
+          "section_hint": "TIER 3 — 17. Passage de l'Amphithéâtre — 6.5/10"
+        }
+      ],
+      "notes": [
+        "GPS très approximatif (confidence: low). Architecte inconnu. Année XIXe siècle non vérifiable précisément."
+      ],
+      "sources": []
+    },
+    {
+      "id": "plan-incline-saint-louis-arzviller",
+      "name": "Plan incliné de Saint-Louis-Arzviller",
+      "aliases": [
+        "Plan incliné St-Louis-Arzviller"
+      ],
+      "tier": 3,
+      "score": 7.0,
+      "type_usage": "Ascenseur à bateaux (canal de la Marne au Rhin), Patrimoine XXe siècle",
+      "original_from_doc": {
+        "year_built": "1969",
+        "architect": "Robert Vadot (ingénieur)"
+      },
+      "location": {
+        "address_text": "Route du Plan-Incliné, 57820 Saint-Louis",
+        "city": "Saint-Louis",
+        "country": "France",
+        "gps": {
+          "lat": 48.7164,
+          "lng": 7.2192,
+          "source_url": "https://fr.wikipedia.org/wiki/Plan_inclin%C3%A9_de_Saint-Louis-Arzviller",
+          "confidence": "high"
+        }
+      },
+      "out_of_scope": true,
+      "out_of_scope_distance_km_estimate": 70,
+      "google_images_link": "https://www.google.com/search?tbm=isch&q=plan+inclin%C3%A9+Saint-Louis+Arzviller+canal+ascenseur+bateaux",
+      "google_images_link_alt": null,
+      "year_built": {
+        "value": "1965–1969 (travaux 1965, mise en service 27 janv. 1969)",
+        "source_url": "https://www.vnf.fr/vnf/points-d-interetss/le-plan-incline-de-saint-louis-arzviller/",
+        "confidence": "high",
+        "notes": "Travaux démarrés 1965, mis en service 27 janvier 1969 (VNF)."
+      },
+      "architect": [
+        {
+          "name": "Robert Vadot",
+          "role": "engineer",
+          "source_url": "https://fr.wikipedia.org/wiki/Plan_inclin%C3%A9_de_Saint-Louis-Arzviller",
+          "confidence": "high"
+        }
+      ],
+      "architect_intent": {
+        "summary": "Robert Vadot, ingénieur des Ponts et Chaussées, a conçu cet ascenseur transversal unique en Europe pour remplacer 17 écluses (4 km, 10h de navigation) par un ouvrage franchissant 44 m de dénivelé en 4 minutes.",
+        "evidence": [
+          {
+            "quote": "La construction de cet élévateur de type transversal est unique en son genre en Europe. L'installation fut conçue par l'ingénieur général des Ponts et Chaussées Robert Vadot.",
+            "source_url": "https://fr.wikipedia.org/wiki/Plan_inclin%C3%A9_de_Saint-Louis-Arzviller",
+            "date": null,
+            "type": "secondary"
+          }
+        ]
+      },
+      "description": "Ascenseur à bateaux unique en Europe : rampe de béton armé + rails acier, déplacement horizontal 108,6 m pour 44,5 m de dénivelé (pente 41°). Chariot-bac de 900 tonnes. Environnement forestier dans la vallée de la Zorn. Patrimoine XXe siècle. ≈ 70 km de Metz (hors rayon 45 km).",
+      "photographic_advantages": [
+        "Ascenseur à bateaux unique en Europe, dalle inclinée béton/métal",
+        "Géométrie pure, lignes convergentes",
+        "Structure transversale unique",
+        "Label Patrimoine XXe siècle"
+      ],
+      "best_shooting": {
+        "best_hour": [
+          {
+            "value": "Matin (lumière est sur la rampe)",
+            "type": "hypothesis",
+            "why": "La rampe est orientée est-ouest ; la lumière matinale éclaire le béton et crée des ombres portées sur les rails",
+            "source_url": null
+          }
+        ],
+        "best_season": [
+          {
+            "value": "Hiver",
+            "type": "from_doc",
+            "why": "Structure nue entre les arbres dénudés — environnement très boisé = feuillage omniprésent en été",
+            "source_url": null
+          }
+        ],
+        "best_angles": [
+          {
+            "label": "Vue depuis le bas",
+            "where": "Depuis le bief inférieur, au pied de la rampe",
+            "lens_hint": "24-35 mm",
+            "why_it_works": "Lignes convergentes spectaculaires de la rampe, chariot-bac en perspective",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Vue depuis le haut",
+            "where": "Depuis le bief supérieur, en plongée",
+            "lens_hint": "35-50 mm",
+            "why_it_works": "Vue plongeante sur la pente à 41%, profondeur vertigineuse, rails convergents",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Profil latéral",
+            "where": "Depuis le chemin latéral",
+            "lens_hint": "50-85 mm",
+            "why_it_works": "La section transversale unique de la rampe en béton, contraste avec la forêt",
+            "type": "hypothesis"
+          },
+          {
+            "label": "Détail mécanique",
+            "where": "Près du chariot-bac ou des mécanismes",
+            "lens_hint": "85-135 mm",
+            "why_it_works": "Rails, câbles, mécanismes = compositions industrielles abstraites",
+            "type": "hypothesis"
+          }
+        ]
+      },
+      "constraints_risks": [
+        "≈ 70 km de Metz (hors rayon 45 km)",
+        "Environnement très boisé = feuillage omniprésent en été",
+        "Avarie 2014, rouvert depuis — vérifier état actuel et restrictions"
+      ],
+      "doc_evidence": [
+        {
+          "quote": "Infrastructure de béton et métal, dalle inclinée franchissant 44 m de dénivelé — géométrie pure, lignes convergentes, environnement forestier.",
+          "section_hint": "TIER 3 — 18. Plan incliné — 7/10"
+        },
+        {
+          "quote": "Inclus malgré la distance (70 km) car l'infrastructure est unique en Europe et le potentiel graphique est exceptionnel.",
+          "section_hint": "TIER 3 — 18. Hypothèse"
+        }
+      ],
+      "notes": [
+        "Hors rayon 45 km mais conservé car explicitement dans le draft et unique en Europe.",
+        "A subi une avarie en 2014 puis rouvert. Vérifier l'état actuel avant déplacement."
+      ],
+      "sources": [
+        "https://fr.wikipedia.org/wiki/Plan_inclin%C3%A9_de_Saint-Louis-Arzviller",
+        "https://www.vnf.fr/vnf/points-d-interetss/le-plan-incline-de-saint-louis-arzviller/"
+      ]
+    }
+  ]
+}
