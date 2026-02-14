@@ -120,6 +120,42 @@ Ces fichiers ne sont pas consommés directement par l’app, mais servent de **r
 - `rennesarhi.json`
 - `metz_architecture_enriched.json`
 
+## Format JSON pour enrichir la base (IA codeur)
+Ce format est celui attendu pour générer ou enrichir les entrées qui finiront dans `data.js`, `coordsById.js` et `detailsById.js`.
+
+Exemple minimal :
+```json
+{
+  "id": 9001,
+  "city": "Rennes",
+  "type": "Culture",
+  "name": "Nom du bâtiment",
+  "architect": "Nom Architecte",
+  "year": "2012",
+  "address": "Adresse complète",
+  "location_display": "Quartier / repère",
+  "img": "https://exemple.com/image.jpg",
+  "coords": { "lat": 48.11, "lng": -1.68 },
+  "details": {
+    "why_shoot": "Pourquoi le photographier",
+    "story": "Contexte / histoire / description",
+    "concept": "Idée architecturale / concept",
+    "keywords": ["motclé1", "motclé2"],
+    "architect_bio": "Bio courte",
+    "photo_tips": "Conseils photo",
+    "photo_plans": ["Plan 1", "Plan 2"],
+    "moments": "Moments recommandés"
+  }
+}
+```
+
+Règles :
+- `id` doit être unique. Les IDs peuvent être numériques **ou** des strings.
+- `coords` alimente `coordsById.js` (`window.ARCHIQUEST_COORDS_BY_ID`).
+- `details` alimente `detailsById.js` (`window.ARCHIQUEST_DETAILS_BY_ID`).
+- Si `img` est un chemin local, utiliser un chemin relatif (ex: `images/mon_image.jpg`).
+- Les champs optionnels acceptés dans `data.js` incluent `regionId`, `regionName`, `departmentCode`, `time`, etc.
+
 ## Structure du projet
 ```
 repo/
@@ -144,6 +180,7 @@ repo/
 - Choix d’un frontend sans build : simplicité de déploiement, mais dépendance aux CDN (React/Babel/Tailwind/Leaflet).
 - La persistance passe **exclusivement** par l’API JSON (pas de base de données).
 - Le stockage est compatible backup/restauration par simple copie du volume `archiquest_state`.
+- L’application a été créée avec l’aide de Codex et Claude Code, en local sur le VPS.
 
 ## Mise à jour / backup
 Pour sauvegarder la version VPS dans GitHub :
