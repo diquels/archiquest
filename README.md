@@ -121,9 +121,9 @@ Ces fichiers ne sont pas consommés directement par l’app, mais servent de **r
 - `metz_architecture_enriched.json`
 
 ## Format JSON pour enrichir la base (IA codeur)
-Ce format est celui attendu pour générer ou enrichir les entrées qui finiront dans `data.js`, `coordsById.js` et `detailsById.js`.
+Ce format est celui attendu pour générer ou enrichir les entrées qui finiront dans `data.js`, `coordsById.js` et `detailsById.js`. Le JSON peut être un **objet unique** ou un **tableau d’objets**. L’IA codeur doit produire un JSON propre, cohérent, et sans doublons d’`id`.
 
-Exemple minimal :
+Exemple d’objet complet :
 ```json
 {
   "id": 9001,
@@ -135,6 +135,10 @@ Exemple minimal :
   "address": "Adresse complète",
   "location_display": "Quartier / repère",
   "img": "https://exemple.com/image.jpg",
+  "regionId": "Bretagne",
+  "regionName": "Bretagne",
+  "departmentCode": "35",
+  "time": "Matin",
   "coords": { "lat": 48.11, "lng": -1.68 },
   "details": {
     "why_shoot": "Pourquoi le photographier",
@@ -149,12 +153,79 @@ Exemple minimal :
 }
 ```
 
-Règles :
-- `id` doit être unique. Les IDs peuvent être numériques **ou** des strings.
+### Règles générales
+- `id` doit être **unique** dans tout le projet. Les IDs peuvent être numériques **ou** des strings (ex: pour Metz).
+- Les champs `city`, `type`, `name`, `address` doivent être renseignés (sinon la fiche est incomplète).
 - `coords` alimente `coordsById.js` (`window.ARCHIQUEST_COORDS_BY_ID`).
 - `details` alimente `detailsById.js` (`window.ARCHIQUEST_DETAILS_BY_ID`).
 - Si `img` est un chemin local, utiliser un chemin relatif (ex: `images/mon_image.jpg`).
 - Les champs optionnels acceptés dans `data.js` incluent `regionId`, `regionName`, `departmentCode`, `time`, etc.
+- L’IA ne doit pas inventer des coordonnées si la source est incertaine.
+
+### Schéma détaillé (par champ)
+Format : `champ` — type — obligatoire ? — règles
+
+- `id` — number|string — obligatoire — identifiant unique; utilisé comme clé pour `coords` et `details`.
+- `city` — string — obligatoire — nom de ville affiché et utilisé pour l’index des villes.
+- `type` — string — obligatoire — catégorie de bâtiment; doit rester cohérente (ex: Logement, Culture, Bureaux, Santé, Transport, Enseignement, Loisirs).
+- `name` — string — obligatoire — nom officiel ou usuel du bâtiment.
+- `architect` — string — recommandé — nom de l’architecte ou de l’agence (peut être “Inconnu”).
+- `year` — string — recommandé — année ou période (ex: `2012`, `Rénov. 2020`).
+- `address` — string — obligatoire — adresse complète (utile pour Google Maps).
+- `location_display` — string — recommandé — quartier, repère ou zone (affichage court).
+- `img` — string|null — optionnel — URL d’image ou chemin relatif local.
+- `regionId` — string|null — optionnel — identifiant interne de région (si utilisé).
+- `regionName` — string|null — optionnel — nom lisible de la région.
+- `departmentCode` — string|null — optionnel — code départemental (ex: `35`).
+- `time` — string|null — optionnel — moment conseillé (ex: `Matin`, `Golden Hour`).
+- `coords` — object|null — optionnel — `{ lat:number, lng:number }` si disponibles.
+- `details` — object|null — optionnel — enrichissements narratifs et photo.
+
+### Détails enrichis (`details`)
+- `why_shoot` — string — optionnel — raison principale de photographier.
+- `story` — string — optionnel — contexte historique, programme, description.
+- `concept` — string — optionnel — idée architecturale (intention, parti).
+- `keywords` — array[string] — optionnel — mots-clés courts.
+- `architect_bio` — string — optionnel — bio courte.
+- `photo_tips` — string — optionnel — conseils photo.
+- `photo_plans` — array[string] — optionnel — plans ou cadrages suggérés.
+- `moments` — string — optionnel — moments recommandés (météo/heure).
+
+### Mapping vers les fichiers du projet
+- `data.js` reçoit **le cœur de l’objet** (tous les champs sauf `coords` et `details`).
+- `coordsById.js` reçoit `coords` sous la clé `id`.
+- `detailsById.js` reçoit `details` sous la clé `id`.
+
+### Exemple de tableau JSON (plusieurs bâtiments)
+```json
+[
+  {
+    "id": 9001,
+    "city": "Rennes",
+    "type": "Culture",
+    "name": "Bâtiment A",
+    "architect": "Agence X",
+    "year": "2012",
+    "address": "Adresse A",
+    "location_display": "Centre",
+    "img": "images/a.jpg",
+    "coords": { "lat": 48.11, "lng": -1.68 },
+    "details": { "why_shoot": "Façade remarquable" }
+  },
+  {
+    "id": "buvette-park",
+    "city": "Metz",
+    "type": "Commerce",
+    "name": "Bâtiment B",
+    "architect": "Inconnu",
+    "year": "1950",
+    "address": "Adresse B",
+    "location_display": "Quartier B",
+    "img": null,
+    "coords": { "lat": 49.11, "lng": 6.17 }
+  }
+]
+```
 
 ## Structure du projet
 ```
