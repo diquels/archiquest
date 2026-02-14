@@ -1,117 +1,158 @@
 # ArchiQuest
 
-Application web interactive pour explorer l'architecture de Rennes.
+ArchiQuest est une application web interactive pour explorer des bâtiments remarquables (architecture) par ville, avec carte, fiches détaillées et outils de repérage photo. Elle fonctionne sans build (React UMD + Babel côté navigateur) et s’appuie sur une petite API Node pour la persistance et l’index des villes.
 
-## Technologies
-- React 18 (UMD)
-- Leaflet (cartographie)
-- Tailwind CSS
-- Nginx (pour le déploiement)
+## Fonctionnalités clés
+- Vue galerie + vue carte (Leaflet/OpenStreetMap)
+- Filtres : type, architecte, année, ville/région
+- Notes personnelles, étoiles, sélection, planification
+- Statuts photo : repéré / photographié
+- Ajout et édition de bâtiments (overrides)
+- Sélection de ville avec recherche rapide (API)
+- Export d’itinéraires Google Maps par ville
 
-## Déploiement sur VPS
+## Architecture (vue d’ensemble)
+- Frontend statique : `index.html` + `app.js` + `styles.css` + données JS
+- Pas de build : React 18 UMD + Babel Standalone en runtime
+- Backend API (Node/Express) : persistance JSON + index de villes
+- Déploiement recommandé : `docker-compose.yml` (Nginx + API)
 
-### Prérequis
-- Docker et Docker Compose installés sur votre VPS
-- Accès SSH à votre VPS Hostinger
-
-### Installation
-
-1. **Cloner le repository sur votre VPS :**
-```bash
-cd /var/www/
-git clone https://github.com/diquels/archiquest.git
-cd archiquest
-```
-
-2. **Lancer l'application avec Docker :**
-```bash
-docker-compose up -d
-```
-
-L'application sera accessible sur le port 8080.
-
-3. **Configuration Nginx reverse proxy (optionnel) :**
-
-Créez un fichier `/etc/nginx/sites-available/archiquest` :
-```nginx
-server {
-    listen 80;
-    server_name archiquest.votredomaine.com;
-
-    location / {
-        proxy_pass http://localhost:8080;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-```
-
-Activez le site :
-```bash
-sudo ln -s /etc/nginx/sites-available/archiquest /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
-```
-
-4. **SSL avec Certbot (optionnel) :**
-```bash
-sudo certbot --nginx -d archiquest.votredomaine.com
-```
-
-### Mise à jour
-
-Pour mettre à jour l'application :
+## Démarrage rapide (Docker)
 ```bash
 cd /var/www/archiquest
-git pull
-docker-compose restart
+docker-compose up -d
 ```
+- App : `http://<votre-hote>:8080`
+- API : `http://<votre-hote>:8080/api` (reverse proxy Nginx)
 
-### Commandes utiles
-
-- **Voir les logs :**
+Arrêt :
+```bash
+docker-compose down
+```
+Logs :
 ```bash
 docker-compose logs -f
 ```
 
-- **Arrêter l'application :**
+## Démarrage local (sans Docker)
+Option 1 : frontend seul (pas de persistance serveur)
 ```bash
-docker-compose down
+python -m http.server 8000
 ```
+Puis ouvrir `http://localhost:8000`. L’app tentera d’appeler `/api/*` ; si l’API n’est pas lancée, la persistance est simplement inactive.
 
-- **Redémarrer :**
+Option 2 : frontend + API local
 ```bash
-docker-compose restart
-```
-
-## Développement local
-
-Ouvrez simplement `index.html` dans votre navigateur, ou utilisez un serveur local :
-
-```bash
-# Avec Python
+# Terminal 1 (frontend statique)
 python -m http.server 8000
 
-# Avec Node.js
-npx http-server
+# Terminal 2 (API)
+cd api
+npm install
+DATA_JS_PATH=../data.js STATE_PATH=../.local/state.json CITIES_INDEX_PATH=../.local/cities.index.json npm start
 ```
+Dans ce mode, la persistance est stockée dans `.local/` (créé automatiquement).
+
+## Déploiement (Docker + Nginx)
+`docker-compose.yml` lance :
+- `archiquest` (Nginx) qui sert les fichiers statiques
+- `archiquest_api` (Node) pour `/api/*`
+
+Le reverse proxy interne est défini dans `nginx.conf`.
+
+## Données et stockage
+
+### Données “bâtiments”
+**Source principale** : `data.js`
+- Expose `window.ARCHIQUEST_RAW_DATA` (Array d’objets).
+- Chaque entrée représente un bâtiment.
+
+Exemple de schéma (champs principaux) :
+- `id` (nombre ou string unique)
+- `city` (ville)
+- `type` (Logement, Culture, etc.)
+- `name`
+- `architect`
+- `year`
+- `address`
+- `location_display`
+- `img` (URL d’image ou chemin local)
+- Champs optionnels possibles : `regionId`, `regionName`, `departmentCode`, `time`, etc.
+
+**Images**
+- L’app lit le champ `img` dans `data.js`.
+- Si vous mettez des images locales, placez-les dans un dossier du repo (ex: `images/`) et utilisez un chemin relatif : `"images/mon_image.jpg"`.
+- Les images externes (URL) fonctionnent aussi.
+
+### Coordonnées GPS
+**Fichier** : `coordsById.js`
+- Expose `window.ARCHIQUEST_COORDS_BY_ID`.
+- Map `{ id: { lat, lng } }`.
+- Utilisé pour éviter un geocoding externe.
+- Les `id` peuvent être des nombres **ou** des strings (ex: import Metz).
+
+### Détails narratifs / photo
+**Fichier** : `detailsById.js`
+- Expose `window.ARCHIQUEST_DETAILS_BY_ID`.
+- Map `{ id: { why_shoot, story, concept, keywords, architect_bio, photo_tips, photo_plans, moments } }`.
+- Utilisé pour enrichir les cartes (raison de shooter, conseils photo, etc.).
+
+### Index des villes (API)
+**Fichier généré** : `/data/cities.index.json` (dans le conteneur API)
+- Généré automatiquement à partir de `data.js` au premier lancement.
+- Peut être reconstruit avec `REBUILD_INDEX=1`.
+
+### Persistance utilisateur (API)
+**Fichier** : `/data/state.json` (dans le conteneur API).
+Stocké dans le volume Docker `archiquest_state`.
+Contient l’état utilisateur : `selectedIds`, `ratings`, `notesById`, `deletedIds`, `customBuildings`, `buildingOverrides`, `planStatus`, `spottedIds`, `shotIds`, et `ui` (`selectedCityId`, `selectedCityLabel`, `recentCities`, `lastCityChangeAt`).
+
+## Flux de données (important pour maintenance)
+1. `index.html` charge **dans cet ordre** : `data.js`, `coordsById.js`, `detailsById.js`, puis `app.js`.
+2. `app.js` lit les variables globales `window.ARCHIQUEST_*`.
+3. Au chargement, l’app tente de lire `/api/state`.
+4. Toute modification d’état est sauvée sur `/api/state` (debounce 400 ms).
+5. L’API peut reconstruire l’index villes depuis `data.js`.
+
+## Sources de données annexes
+Ces fichiers ne sont pas consommés directement par l’app, mais servent de **références** ou d’historique :
+- `archiquest_buildings_rennes.json`
+- `rennesarhi.json`
+- `metz_architecture_enriched.json`
 
 ## Structure du projet
-
 ```
-ArchiQuest/
-├── index.html          # Point d'entrée
-├── styles.css          # Styles personnalisés
-├── app.js              # Application React principale
-├── data.js             # Données des lieux
-├── coordsById.js       # Coordonnées géographiques
-├── detailsById.js      # Détails des lieux
-├── rennesarhi.json     # Données JSON
-└── docker-compose.yml  # Configuration Docker
+repo/
+├── index.html                # Entrée HTML
+├── styles.css                # Styles custom
+├── app.js                    # App React (UMD + JSX runtime)
+├── data.js                   # Données bâtiments (source principale)
+├── coordsById.js             # Coordonnées GPS par id
+├── detailsById.js            # Détails narratifs/photo par id
+├── api/                      # API Node/Express
+│   ├── server.js
+│   ├── citiesIndex.js
+│   ├── package.json
+│   └── Dockerfile
+├── docker-compose.yml        # Nginx + API
+├── nginx.conf                # Reverse proxy /api
+├── docs/                     # Notes internes
+└── *.json                    # Sources annexes
+```
+
+## Notes de conception
+- Choix d’un frontend sans build : simplicité de déploiement, mais dépendance aux CDN (React/Babel/Tailwind/Leaflet).
+- La persistance passe **exclusivement** par l’API JSON (pas de base de données).
+- Le stockage est compatible backup/restauration par simple copie du volume `archiquest_state`.
+
+## Mise à jour / backup
+Pour sauvegarder la version VPS dans GitHub :
+```bash
+cd /var/www/archiquest
+git add -A
+git commit -m "Sync VPS"
+git push
 ```
 
 ## Licence
-
 © Pierre Diquelou - Tous droits réservés

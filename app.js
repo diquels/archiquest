@@ -10,34 +10,83 @@
   const { useEffect, useMemo, useRef, useState } = React;
 
   // -----------------------------
-  // Sécurité / LocalStorage
+  // City to Region mapping
   // -----------------------------
-  const STORAGE_KEYS = {
-    selected: "archiquest_selected_ids",
-    ratings: "archiquest_ratings",
-    notes: "archiquest_notes",
-    deleted: "archiquest_deleted_ids",
-    customBuildings: "archiquest_custom_buildings_v1",
-    geoCache: "archiquest_geo_cache_v2",
-    planStatus: "archiquest_plan_status_v1",
-    buildingOverrides: "archiquest_building_overrides_v1",
+  const CITY_REGION_MAP = {
+    "Rennes": "Bretagne",
+    "Brest": "Bretagne",
+    "Lorient": "Bretagne",
+    "Quimper": "Bretagne",
+    "Saint-Brieuc": "Bretagne",
+    "Vannes": "Bretagne",
+    "Chantepie": "Bretagne",
+    "Nantes": "Pays de la Loire",
+    "Saint-Nazaire": "Pays de la Loire",
+    "Metz": "Grand Est",
+    "Thionville": "Grand Est",
+    "Uckange": "Grand Est",
+    "Saint-Louis": "Grand Est",
   };
 
-  const safeRead = (key, fallback) => {
+  // -----------------------------
+  // Persistance serveur (API)
+  // -----------------------------
+  const DEFAULT_STATE = {
+    selectedIds: [],
+    ratings: {},
+    notesById: {},
+    deletedIds: [],
+    planStatus: {},
+    customBuildings: [],
+    buildingOverrides: {},
+    spottedIds: [],
+    shotIds: [],
+    ui: {
+      selectedCityId: null,
+      selectedCityLabel: "",
+      recentCities: [],
+      lastCityChangeAt: null,
+    },
+  };
+
+  const API_BASE = "/api";
+
+  const fetchJson = async (url, options = {}) => {
     try {
-      const value = localStorage.getItem(key);
-      return value ? JSON.parse(value) : fallback;
-    } catch (e) {
-      console.error("Erreur lecture localStorage", key, e);
-      return fallback;
+      const res = await fetch(url, options);
+      const text = await res.text();
+      let data = null;
+      try {
+        data = text ? JSON.parse(text) : null;
+      } catch {
+        data = text;
+      }
+      return { ok: res.ok, status: res.status, data };
+    } catch (err) {
+      return { ok: false, status: 0, data: { error: "network_error", detail: String(err) } };
     }
   };
 
-  const safeWrite = (key, value) => {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch (e) {
-      console.error("Erreur écriture localStorage", key, e);
+  const loadState = async () => {
+    const { ok, status, data } = await fetchJson(`${API_BASE}/state`, {
+      headers: { Accept: "application/json" },
+    });
+    if (!ok) {
+      const msg = `API state load failed (${status}) ${JSON.stringify(data)}`;
+      throw new Error(msg);
+    }
+    return { ...DEFAULT_STATE, ...(data || {}) };
+  };
+
+  const saveState = async (state) => {
+    const { ok, status, data } = await fetchJson(`${API_BASE}/state`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(state),
+    });
+    if (!ok) {
+      const msg = `API state save failed (${status}) ${JSON.stringify(data)}`;
+      throw new Error(msg);
     }
   };
 
@@ -59,6 +108,35 @@
       if (typeof v === "string" && v.trim()) return v.trim();
     }
     return "";
+  };
+
+  const normalizeText = (value) => {
+    if (value == null) return "";
+    return String(value)
+      .normalize("NFD")
+      .replace(/\p{Diacritic}/gu, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  };
+
+  const slugifyCityId = (value) => {
+    const norm = normalizeText(value);
+    return norm.replace(/\s+/g, "-");
+  };
+
+  const updateRecentCities = (recent, nextId, max = 10) => {
+    const list = Array.isArray(recent) ? recent.slice() : [];
+    const filtered = list.filter((id) => id !== nextId);
+    filtered.unshift(nextId);
+    return filtered.slice(0, max);
+  };
+
+  const getNextActiveIndex = (key, current, length) => {
+    if (length <= 0) return -1;
+    if (key === "ArrowDown") return Math.min(current + 1, length - 1);
+    if (key === "ArrowUp") return Math.max(current - 1, 0);
+    return current;
   };
   
   const getWhyShoot = (id) => {
@@ -229,16 +307,249 @@
   };
 
   // -----------------------------
+  // CitySelect (combobox accessible)
+  // -----------------------------
+  const CitySelect = ({ selectedCityId, selectedCityLabel, onSelectCity, selectedRegion, onRegionChange }) => {
+    const [query, setQuery] = useState(selectedCityLabel || "");
+    const [items, setItems] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [regions, setRegions] = useState([]);
+    const listIdRef = useRef(
+      `city-list-${Math.random().toString(36).slice(2, 10)}`
+    );
+    const inputRef = useRef(null);
+    const debounceRef = useRef(null);
+    const cacheRef = useRef(new Map());
+
+    useEffect(() => {
+      fetchJson(`${API_BASE}/cities/regions`)
+        .then(({ ok, data }) => {
+          if (ok && Array.isArray(data.regions)) setRegions(data.regions);
+        })
+        .catch(() => {});
+    }, []);
+
+    useEffect(() => {
+      if (!open) setQuery(selectedCityLabel || "");
+    }, [selectedCityLabel, open]);
+
+    const formatOptionLabel = (opt) => {
+      const parts = [];
+      if (opt.departmentCode) parts.push(opt.departmentCode);
+      if (opt.regionName) parts.push(opt.regionName);
+      if (!parts.length) return opt.name;
+      return `${opt.name} — ${parts.join(" · ")}`;
+    };
+
+    const fetchOptions = (q, region) => {
+      const key = `${q}::30::${region || ""}`;
+      if (cacheRef.current.has(key)) {
+        setItems(cacheRef.current.get(key));
+        setLoading(false);
+        setError("");
+        return;
+      }
+      setLoading(true);
+      setError("");
+      const regionParam = region ? `&region=${encodeURIComponent(region)}` : "";
+      fetchJson(`${API_BASE}/cities/search?q=${encodeURIComponent(q)}&limit=30${regionParam}`)
+        .then(({ ok, status, data }) => {
+          if (!ok) {
+            throw new Error(
+              `API error ${status}`
+            );
+          }
+          const next = Array.isArray(data.items) ? data.items : [];
+          cacheRef.current.set(key, next);
+          if (cacheRef.current.size > 100) {
+            const firstKey = cacheRef.current.keys().next().value;
+            if (firstKey) cacheRef.current.delete(firstKey);
+          }
+          setItems(next);
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.error(err);
+          setLoading(false);
+          const msg = String(err && err.message ? err.message : err);
+          if (msg.includes("network_error")) {
+            setError("API indisponible (réseau)");
+          } else {
+            setError(`API erreur: ${msg}`);
+          }
+        });
+    };
+
+    useEffect(() => {
+      if (!open) return;
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+      debounceRef.current = setTimeout(() => {
+        fetchOptions(query.trim(), selectedRegion);
+      }, 250);
+    }, [query, open, selectedRegion]);
+
+    const closeList = () => {
+      setOpen(false);
+      setActiveIndex(-1);
+      setQuery(selectedCityLabel || "");
+    };
+
+    const handleSelect = (opt) => {
+      onSelectCity(opt);
+      setOpen(false);
+      setActiveIndex(-1);
+      setQuery(opt.name || "");
+    };
+
+    const handleKeyDown = (e) => {
+      if (!open && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
+        setOpen(true);
+        return;
+      }
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setActiveIndex((prev) => getNextActiveIndex(e.key, prev, items.length));
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setActiveIndex((prev) => getNextActiveIndex(e.key, prev, items.length));
+      } else if (e.key === "Enter") {
+        if (open && activeIndex >= 0 && items[activeIndex]) {
+          e.preventDefault();
+          handleSelect(items[activeIndex]);
+        }
+      } else if (e.key === "Escape") {
+        if (open) {
+          e.preventDefault();
+          closeList();
+        }
+      }
+    };
+
+    const activeOptionId =
+      activeIndex >= 0 && items[activeIndex]
+        ? `city-option-${items[activeIndex].id}`
+        : undefined;
+
+    return (
+      <div className="relative w-full">
+        <div className="flex items-center gap-3">
+          <label className="text-sm font-bold text-zinc-200 whitespace-nowrap">
+            Villes
+          </label>
+          {regions.length > 0 && (
+            <select
+              value={selectedRegion}
+              onChange={(e) => {
+                onRegionChange(e.target.value);
+              }}
+              className="bg-zinc-900 border border-zinc-700 text-xs text-zinc-300 rounded-full px-2.5 py-1 focus:outline-none focus:ring-1 focus:ring-amber-500"
+            >
+              <option value="">Toutes les régions</option>
+              {regions.map((r) => (
+                <option key={r} value={r}>{r}</option>
+              ))}
+            </select>
+          )}
+          <div className="relative w-48">
+            <input
+              ref={inputRef}
+              type="text"
+              role="combobox"
+              aria-expanded={open}
+              aria-controls={listIdRef.current}
+              aria-autocomplete="list"
+              aria-activedescendant={activeOptionId}
+              value={query}
+              onFocus={() => setOpen(true)}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setOpen(true);
+              }}
+              onKeyDown={handleKeyDown}
+              onBlur={() => {
+                setTimeout(() => {
+                  if (document.activeElement !== inputRef.current) closeList();
+                }, 0);
+              }}
+              placeholder="Rechercher…"
+              className="w-full bg-zinc-900 text-zinc-100 border border-zinc-700 rounded-lg px-2.5 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-amber-500"
+            />
+            {selectedCityId ? (
+              <button
+                type="button"
+                onClick={() => onSelectCity(null)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white text-xs"
+                aria-label="Réinitialiser la ville"
+              >
+                ✕
+              </button>
+            ) : null}
+            {open ? (
+              <div
+                id={listIdRef.current}
+                role="listbox"
+                className="absolute left-0 mt-2 w-72 bg-zinc-950 border border-zinc-800 rounded-lg shadow-xl z-50 max-h-80 overflow-auto"
+              >
+                {loading ? (
+                  <div className="px-3 py-2 text-xs text-zinc-500">Recherche…</div>
+                ) : error ? (
+                  <div className="px-3 py-2 text-xs text-red-400">{error}</div>
+                ) : items.length ? (
+                  items.slice(0, 30).map((opt, idx) => (
+                    <div
+                      key={opt.id}
+                      id={`city-option-${opt.id}`}
+                      role="option"
+                      aria-selected={selectedCityId === opt.id}
+                      onMouseDown={(e) => e.preventDefault()}
+                      onMouseEnter={() => setActiveIndex(idx)}
+                      onClick={() => handleSelect(opt)}
+                      className={
+                        "flex items-center justify-between gap-2 px-3 py-2 text-sm cursor-pointer " +
+                        (idx === activeIndex
+                          ? "bg-zinc-800 text-white"
+                          : "text-zinc-300 hover:bg-zinc-900")
+                      }
+                    >
+                      <span className="truncate">{formatOptionLabel(opt)}</span>
+                      {typeof opt.countBuildings === "number" ? (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700">
+                          {opt.countBuildings}
+                        </span>
+                      ) : null}
+                    </div>
+                  ))
+                ) : (
+                  <div className="px-3 py-2 text-xs text-zinc-500">
+                    Aucun résultat
+                  </div>
+                )}
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // -----------------------------
   // Carte bâtiment
   // -----------------------------
   const BuildingCard = ({
     item,
     isSelected,
+    isSpotted,
+    isShot,
     rating,
     onToggleSelection,
     onRate,
     onOpenInfos,
   }) => {
+    const showShotInner = isShot && isSpotted;
+
     return (
       <div
         className={
@@ -248,7 +559,18 @@
             : "border-zinc-800 hover:border-amber-400 hover:shadow-lg hover:shadow-amber-500/20")
         }
       >
-        <div className="relative h-44 w-full flex-shrink-0 overflow-hidden">
+        {isSpotted ? (
+          <div className="absolute inset-0 border-2 border-emerald-400 rounded-xl pointer-events-none z-30" />
+        ) : null}
+        {isShot ? (
+          <div
+            className={
+              "absolute border-2 border-violet-400 pointer-events-none z-30 " +
+              (showShotInner ? "inset-[4px] rounded-lg" : "inset-0 rounded-xl")
+            }
+          />
+        ) : null}
+        <div className="relative h-48 w-full flex-shrink-0 overflow-hidden">
           {item.img ? (
             <img
               src={item.img}
@@ -269,8 +591,8 @@
             />
           </div>
 
-          <div className="relative z-10 h-full flex flex-col items-center justify-center px-4">
-            <h3 className="text-zinc-200 text-center font-black text-[11px] uppercase tracking-[0.25em] opacity-90 max-w-[85%]">
+          <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 pt-12 pb-4">
+            <h3 className="text-zinc-200 text-center font-black text-[11px] uppercase tracking-[0.25em] opacity-90 max-w-[85%] mb-auto mt-auto">
               {item.name}
             </h3>
 
@@ -287,7 +609,7 @@
             </button>
           </div>
 
-          <div className="absolute top-2 right-2 bg-black/90 backdrop-blur px-2.5 py-1 rounded text-[10px] text-zinc-100 font-bold uppercase tracking-[0.18em] border border-white/10 shadow-sm z-20">
+          <div className="absolute top-2 right-2 bg-black/90 backdrop-blur px-2.5 py-1 rounded text-[10px] text-orange-500 font-bold uppercase tracking-[0.18em] border border-orange-500/20 shadow-sm z-20">
             {item.city}
           </div>
 
@@ -310,25 +632,42 @@
         </div>
 
         <div className="p-4 flex flex-col flex-grow bg-zinc-900 border-t border-zinc-800">
-          <div className="mb-auto">
-            <p className="text-amber-500 text-[9px] font-black uppercase tracking-[0.15em] mb-1.5">
+          <div className="mb-4 flex flex-col items-center">
+            <div className="w-full max-w-[160px]">
+              {item.img ? (
+                <div className="relative w-full rounded-lg overflow-hidden border-2 border-amber-500/50 shadow-lg" style={{ aspectRatio: '4/3' }}>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="w-full rounded-lg border-2 border-dashed border-zinc-700 bg-zinc-800/30 flex items-center justify-center"
+                  style={{ aspectRatio: '4/3' }}
+                >
+                  <span className="text-zinc-600 text-2xl">📷</span>
+                </div>
+              )}
+            </div>
+            <p className="text-amber-500 text-[9px] font-black uppercase tracking-[0.15em] mt-2 text-center">
               {item.type}
             </p>
-            <h3 className="text-base font-bold text-zinc-100 leading-tight">
-              {item.name}
-            </h3>
+            <a
+              href={googleImagesUrlFor(item.name, item.city)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="mt-2 inline-flex items-center gap-1.5 bg-zinc-900/80 hover:bg-zinc-100 text-zinc-100 hover:text-black px-2 py-1 rounded-full text-[9px] font-bold uppercase tracking-[0.14em] transition-all border border-zinc-700 hover:border-zinc-900 shadow-sm shadow-black/40"
+            >
+              <span className="text-[10px]">🖼️</span>
+              Google image
+            </a>
           </div>
 
-          <div className="mt-4 mb-4">
-            <p className="text-zinc-300 text-xs flex items-start leading-relaxed font-medium">
-              <span className="mr-1.5 mt-0.5 flex-shrink-0 text-amber-500/80">
-                📍
-              </span>
-              {item.location_display}
-            </p>
-          </div>
-
-          <div className="flex justify-between items-center pt-3 border-t border-zinc-800">
+          <div className="flex justify-between items-center pt-3 border-t border-zinc-800 mt-auto">
             <StarRating rating={rating} onRate={onRate} />
             <span className="text-[10px] font-bold text-zinc-300 bg-zinc-800 px-2 py-0.5 rounded font-mono border border-zinc-700">
               {item.year}
@@ -963,29 +1302,36 @@
       : [];
 
     const [view, setView] = useState("gallery");
-    const [activeCity, setActiveCity] = useState("All");
 
-    const [selectedIds, setSelectedIds] = useState(() =>
-      safeRead(STORAGE_KEYS.selected, [])
+    const [selectedIds, setSelectedIds] = useState(DEFAULT_STATE.selectedIds);
+    const [ratings, setRatings] = useState(DEFAULT_STATE.ratings);
+    const [notesById, setNotesById] = useState(DEFAULT_STATE.notesById);
+    const [deletedIds, setDeletedIds] = useState(DEFAULT_STATE.deletedIds);
+    const [customBuildings, setCustomBuildings] = useState(
+      DEFAULT_STATE.customBuildings
     );
-    const [ratings, setRatings] = useState(() =>
-      safeRead(STORAGE_KEYS.ratings, {})
+    const [planStatus, setPlanStatus] = useState(DEFAULT_STATE.planStatus);
+    const [buildingOverrides, setBuildingOverrides] = useState(
+      DEFAULT_STATE.buildingOverrides
     );
-    const [notesById, setNotesById] = useState(() =>
-      safeRead(STORAGE_KEYS.notes, {})
+    const [spottedIds, setSpottedIds] = useState(DEFAULT_STATE.spottedIds);
+    const [shotIds, setShotIds] = useState(DEFAULT_STATE.shotIds);
+    const [stateLoaded, setStateLoaded] = useState(false);
+    const saveTimerRef = useRef(null);
+
+    const [selectedCityId, setSelectedCityId] = useState(
+      DEFAULT_STATE.ui.selectedCityId
     );
-    const [deletedIds, setDeletedIds] = useState(() =>
-      safeRead(STORAGE_KEYS.deleted, [])
+    const [selectedCityLabel, setSelectedCityLabel] = useState(
+      DEFAULT_STATE.ui.selectedCityLabel
     );
-    const [customBuildings, setCustomBuildings] = useState(() =>
-      safeRead(STORAGE_KEYS.customBuildings, [])
+    const [recentCities, setRecentCities] = useState(
+      DEFAULT_STATE.ui.recentCities
     );
-    const [planStatus, setPlanStatus] = useState(() =>
-      safeRead(STORAGE_KEYS.planStatus, {})
+    const [lastCityChangeAt, setLastCityChangeAt] = useState(
+      DEFAULT_STATE.ui.lastCityChangeAt
     );
-    const [buildingOverrides, setBuildingOverrides] = useState(() =>
-      safeRead(STORAGE_KEYS.buildingOverrides, {})
-    );
+    const [selectedRegion, setSelectedRegion] = useState("");
 
     const [sortMode, setSortMode] = useState("default");
     const [minRating, setMinRating] = useState(0);
@@ -1001,13 +1347,79 @@
 
     const fileInputRef = useRef(null);
 
-    useEffect(() => safeWrite(STORAGE_KEYS.selected, selectedIds), [selectedIds]);
-    useEffect(() => safeWrite(STORAGE_KEYS.ratings, ratings), [ratings]);
-    useEffect(() => safeWrite(STORAGE_KEYS.notes, notesById), [notesById]);
-    useEffect(() => safeWrite(STORAGE_KEYS.deleted, deletedIds), [deletedIds]);
-    useEffect(() => safeWrite(STORAGE_KEYS.customBuildings, customBuildings), [customBuildings]);
-    useEffect(() => safeWrite(STORAGE_KEYS.planStatus, planStatus), [planStatus]);
-    useEffect(() => safeWrite(STORAGE_KEYS.buildingOverrides, buildingOverrides), [buildingOverrides]);
+    useEffect(() => {
+      let isMounted = true;
+      loadState()
+        .then((data) => {
+          if (!isMounted) return;
+          setSelectedIds(Array.isArray(data.selectedIds) ? data.selectedIds : []);
+          setRatings(typeof data.ratings === "object" ? data.ratings : {});
+          setNotesById(typeof data.notesById === "object" ? data.notesById : {});
+          setDeletedIds(Array.isArray(data.deletedIds) ? data.deletedIds : []);
+          setPlanStatus(typeof data.planStatus === "object" ? data.planStatus : {});
+          setCustomBuildings(
+            Array.isArray(data.customBuildings) ? data.customBuildings : []
+          );
+          setBuildingOverrides(
+            typeof data.buildingOverrides === "object" ? data.buildingOverrides : {}
+          );
+          setSpottedIds(Array.isArray(data.spottedIds) ? data.spottedIds : []);
+          setShotIds(Array.isArray(data.shotIds) ? data.shotIds : []);
+          const ui = typeof data.ui === "object" && data.ui ? data.ui : {};
+          setSelectedCityId(ui.selectedCityId || null);
+          setSelectedCityLabel(ui.selectedCityLabel || "");
+          setRecentCities(Array.isArray(ui.recentCities) ? ui.recentCities : []);
+          setLastCityChangeAt(ui.lastCityChangeAt || null);
+          setStateLoaded(true);
+        })
+        .catch((err) => {
+          console.error(err);
+          setStateLoaded(true);
+        });
+      return () => {
+        isMounted = false;
+      };
+    }, []);
+
+    useEffect(() => {
+      if (!stateLoaded) return;
+      const payload = {
+        selectedIds,
+        ratings,
+        notesById,
+        deletedIds,
+        planStatus,
+        customBuildings,
+        buildingOverrides,
+        spottedIds,
+        shotIds,
+        ui: {
+          selectedCityId,
+          selectedCityLabel,
+          recentCities,
+          lastCityChangeAt,
+        },
+      };
+      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+      saveTimerRef.current = setTimeout(() => {
+        saveState(payload).catch((err) => console.error(err));
+      }, 400);
+    }, [
+      stateLoaded,
+      selectedIds,
+      ratings,
+      notesById,
+      deletedIds,
+      planStatus,
+      customBuildings,
+      buildingOverrides,
+      spottedIds,
+      shotIds,
+      selectedCityId,
+      selectedCityLabel,
+      recentCities,
+      lastCityChangeAt,
+    ]);
 
     const toggleSelection = (id) => {
       setSelectedIds((prev) =>
@@ -1025,6 +1437,32 @@
 
     const handlePlanStatusChange = (planKey) => {
       setPlanStatus(prev => ({...prev, [planKey]: !prev[planKey]}));
+    };
+
+    const handleSelectCity = (opt) => {
+      if (!opt) {
+        setSelectedCityId(null);
+        setSelectedCityLabel("");
+        setLastCityChangeAt(null);
+        return;
+      }
+      setSelectedCityId(opt.id);
+      setSelectedCityLabel(opt.name || "");
+      setRecentCities((prev) => updateRecentCities(prev, opt.id));
+      setLastCityChangeAt(new Date().toISOString());
+      setSelectedRegion("");
+    };
+
+    const toggleSpotted = (id) => {
+      setSpottedIds((prev) =>
+        prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+      );
+    };
+
+    const toggleShot = (id) => {
+      setShotIds((prev) =>
+        prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+      );
     };
 
     const handleAddBuilding = (newBuildingData) => {
@@ -1121,11 +1559,6 @@
       return { ...window.ARCHIQUEST_COORDS_BY_ID, ...customCoords, ...overrideCoords };
     }, [customBuildings, buildingOverrides]);
 
-    const allCities = useMemo(() => {
-      const set = new Set(buildings.map((b) => b.city));
-      return ["All", ...Array.from(set)].sort((a, b) => a.localeCompare(b));
-    }, [buildings]);
-
     const allArchitects = useMemo(() => {
       const set = new Set(buildings.map((b) => b.architect).filter(Boolean));
       return ["All", ...Array.from(set).sort((a, b) => a.localeCompare(b))];
@@ -1143,7 +1576,11 @@
     const filtered = useMemo(() => {
       let items = buildings;
 
-      if (activeCity !== "All") items = items.filter((b) => b.city === activeCity);
+      if (selectedCityId) {
+        items = items.filter((b) => slugifyCityId(b.city) === selectedCityId);
+      } else if (selectedRegion) {
+        items = items.filter((b) => CITY_REGION_MAP[b.city] === selectedRegion);
+      }
       if (architectFilter !== "All")
         items = items.filter((b) => b.architect === architectFilter);
 
@@ -1165,7 +1602,7 @@
       }
 
       return items;
-    }, [buildings, activeCity, architectFilter, minRating, yearFrom, yearTo, ratings]);
+    }, [buildings, selectedCityId, selectedRegion, architectFilter, minRating, yearFrom, yearTo, ratings]);
 
     const displayed = useMemo(() => {
       const items = [...filtered];
@@ -1182,13 +1619,23 @@
 
     const handleExportSettings = () => {
       const payload = {
-        version: 3,
+        version: 4,
         exportedAt: new Date().toISOString(),
         selectedIds,
         ratings,
         notesById,
         deletedIds,
         planStatus,
+        spottedIds,
+        shotIds,
+        customBuildings,
+        buildingOverrides,
+        ui: {
+          selectedCityId,
+          selectedCityLabel,
+          recentCities,
+          lastCityChangeAt: new Date().toISOString(),
+        },
       };
 
       const blob = new Blob([JSON.stringify(payload, null, 2)], {
@@ -1219,18 +1666,36 @@
           const importedNotes = data.notesById || {};
           const importedDeleted = data.deletedIds || [];
           const importedPlanStatus = data.planStatus || {};
+          const importedSpotted = data.spottedIds || [];
+          const importedShot = data.shotIds || [];
+          const importedCustom = data.customBuildings || [];
+          const importedOverrides = data.buildingOverrides || {};
+          const importedUi = data.ui || {};
 
           if (!Array.isArray(importedSelected)) throw new Error("selectedIds invalide");
           if (typeof importedRatings !== "object") throw new Error("ratings invalide");
           if (typeof importedNotes !== "object") throw new Error("notes invalide");
           if (!Array.isArray(importedDeleted)) throw new Error("deletedIds invalide");
           if (typeof importedPlanStatus !== "object") throw new Error("planStatus invalide");
+          if (!Array.isArray(importedSpotted)) throw new Error("spottedIds invalide");
+          if (!Array.isArray(importedShot)) throw new Error("shotIds invalide");
+          if (!Array.isArray(importedCustom)) throw new Error("customBuildings invalide");
+          if (typeof importedOverrides !== "object") throw new Error("buildingOverrides invalide");
+          if (typeof importedUi !== "object") throw new Error("ui invalide");
 
           setSelectedIds(importedSelected);
           setRatings(importedRatings);
           setNotesById(importedNotes);
           setDeletedIds(importedDeleted);
           setPlanStatus(importedPlanStatus);
+          setSpottedIds(importedSpotted);
+          setShotIds(importedShot);
+          setCustomBuildings(importedCustom);
+          setBuildingOverrides(importedOverrides);
+          setSelectedCityId(importedUi.selectedCityId || null);
+          setSelectedCityLabel(importedUi.selectedCityLabel || "");
+          setRecentCities(Array.isArray(importedUi.recentCities) ? importedUi.recentCities : []);
+          setLastCityChangeAt(importedUi.lastCityChangeAt || null);
 
           alert("Configuration restaurée avec succès.");
         } catch (err) {
@@ -1243,13 +1708,25 @@
     };
 
     const handleResetAll = () => {
-      if (!confirm("Tout réinitialiser (notes, étoiles, sélection, plans, suppressions) ?"))
+      if (
+        !confirm(
+          "Tout réinitialiser (notes, étoiles, sélection, plans, repérés, déjà shootés, ville, bâtiments personnalisés, suppressions) ?"
+        )
+      )
         return;
       setRatings({});
       setNotesById({});
       setSelectedIds([]);
       setDeletedIds([]);
       setPlanStatus({});
+      setSpottedIds([]);
+      setShotIds([]);
+      setCustomBuildings([]);
+      setBuildingOverrides({});
+      setSelectedCityId(null);
+      setSelectedCityLabel("");
+      setRecentCities([]);
+      setLastCityChangeAt(null);
     };
 
     const clearFilters = () => {
@@ -1270,6 +1747,8 @@
       const photoTips = getPhotoTips(infoItem.id);
       const photoPlans = getPhotoPlans(infoItem.id);
       const moments = getMoments(infoItem.id);
+      const isSpotted = spottedIds.includes(infoItem.id);
+      const isShot = shotIds.includes(infoItem.id);
 
       const journalSection = (
         <div className="space-y-3">
@@ -1369,6 +1848,35 @@
 
       const shootingModeContent = (
         <>
+          <CollapsibleSection title="Statut" defaultOpen={true} shootingMode={true}>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => toggleSpotted(infoItem.id)}
+                className={
+                  "text-xs font-bold uppercase tracking-wider px-3 py-2 rounded-lg border transition-all " +
+                  (isSpotted
+                    ? "bg-emerald-500 text-black border-emerald-400"
+                    : "bg-zinc-900 text-zinc-200 border-zinc-700 hover:border-emerald-400 hover:text-emerald-300")
+                }
+              >
+                Repéré
+              </button>
+              <button
+                type="button"
+                onClick={() => toggleShot(infoItem.id)}
+                className={
+                  "text-xs font-bold uppercase tracking-wider px-3 py-2 rounded-lg border transition-all " +
+                  (isShot
+                    ? "bg-violet-500 text-black border-violet-400"
+                    : "bg-zinc-900 text-zinc-200 border-zinc-700 hover:border-violet-400 hover:text-violet-300")
+                }
+              >
+                Déjà shooté
+              </button>
+            </div>
+          </CollapsibleSection>
+
           <CollapsibleSection title="Photo" defaultOpen={true}>
             {photoSection}
           </CollapsibleSection>
@@ -1390,8 +1898,8 @@
     return (
       <div className="min-h-screen bg-[#050505] text-zinc-200 font-sans selection:bg-amber-500 selection:text-black">
         <header className="fixed top-0 w-full z-50 bg-[#050505]/90 backdrop-blur-xl border-b border-zinc-800">
-          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-3">
+          <div className="container mx-auto px-4 py-3 sm:py-0 sm:h-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-3 w-full sm:w-auto">
               <div className="w-10 h-10 bg-zinc-100 rounded flex items-center justify-center font-black text-black text-l border border-zinc-300 shadow-lg shadow-white/5">
                 AQ
               </div>
@@ -1405,13 +1913,13 @@
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="flex bg-zinc-900 rounded-lg p-1 border border-zinc-800">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
+              <div className="flex bg-zinc-900 rounded-lg p-1 border border-zinc-800 w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={() => setView("gallery")}
                   className={
-                    "px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-widest transition-all " +
+                    "flex-1 min-w-0 px-3 sm:px-4 py-1 sm:py-1.5 rounded-md text-[9px] sm:text-[10px] font-bold uppercase tracking-widest transition-all text-center whitespace-normal leading-tight sm:whitespace-nowrap " +
                     (view === "gallery"
                       ? "bg-zinc-100 text-black shadow-md"
                       : "text-zinc-500 hover:text-white")
@@ -1423,7 +1931,7 @@
                   type="button"
                   onClick={() => setView("plan")}
                   className={
-                    "px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-widest transition-all flex items-center gap-1.5 " +
+                    "flex-1 min-w-0 px-3 sm:px-4 py-1 sm:py-1.5 rounded-md text-[9px] sm:text-[10px] font-bold uppercase tracking-widest transition-all flex items-center justify-center gap-1.5 flex-wrap sm:flex-nowrap text-center whitespace-normal leading-tight sm:whitespace-nowrap " +
                     (view === "plan"
                       ? "bg-amber-500 text-black shadow-md"
                       : "text-zinc-500 hover:text-white")
@@ -1440,7 +1948,7 @@
                   type="button"
                   onClick={() => setView("map")}
                   className={
-                    "px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-widest transition-all " +
+                    "flex-1 min-w-0 px-3 sm:px-4 py-1 sm:py-1.5 rounded-md text-[9px] sm:text-[10px] font-bold uppercase tracking-widest transition-all text-center whitespace-normal leading-tight sm:whitespace-nowrap " +
                     (view === "map"
                       ? "bg-blue-500 text-black shadow-md"
                       : "text-zinc-500 hover:text-white")
@@ -1450,44 +1958,38 @@
                 </button>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setShowSettings(true)}
-                className="flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400 hover:text-white bg-zinc-900 border border-zinc-800 rounded-full px-3 py-1.5 shadow-sm hover:border-amber-500/60 transition-all"
-              >
-                <span className="text-xs">⚙</span>
-                <span>Paramètres</span>
-              </button>
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 w-full sm:w-auto">
+                <button
+                  type="button"
+                  onClick={() => setShowSettings(true)}
+                  className="flex-1 sm:flex-none flex items-center justify-center gap-1 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold text-zinc-400 hover:text-white bg-zinc-900 border border-zinc-800 rounded-full px-2.5 sm:px-3 py-1 sm:py-1.5 shadow-sm hover:border-amber-500/60 transition-all"
+                >
+                  <span className="text-xs">⚙</span>
+                  <span>Paramètres</span>
+                </button>
 
-              <button
-                type="button"
-                onClick={() => setShowAddModal(true)}
-                className="flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] font-bold text-black hover:text-black bg-amber-500 border border-amber-400 rounded-full px-3 py-1.5 shadow-sm hover:bg-amber-400 transition-all"
-              >
-                <span className="text-xs">➕</span>
-                <span>Ajouter un lieu</span>
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setShowAddModal(true)}
+                  className="flex-1 sm:flex-none flex items-center justify-center gap-1 text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold text-black hover:text-black bg-amber-500 border border-amber-400 rounded-full px-2.5 sm:px-3 py-1 sm:py-1.5 shadow-sm hover:bg-amber-400 transition-all"
+                >
+                  <span className="text-xs">➕</span>
+                  <span>Ajouter un lieu</span>
+                </button>
+              </div>
             </div>
           </div>
 
           {view === "gallery" ? (
-            <div className="border-t border-zinc-800/50 bg-[#050505]/50 overflow-x-auto no-scrollbar mt-2">
-              <div className="container mx-auto px-4 flex gap-2 items-center min-w-max py-3">
-                {allCities.map((city) => (
-                  <button
-                    key={city}
-                    type="button"
-                    onClick={() => setActiveCity(city)}
-                    className={
-                      "text-[11px] uppercase font-bold tracking-wider px-4 py-1.5 rounded-full transition-all border " +
-                      (activeCity === city
-                        ? "bg-zinc-100 text-black border-zinc-100 shadow"
-                        : "text-white border-transparent hover:border-zinc-700")
-                    }
-                  >
-                    {city}
-                  </button>
-                ))}
+            <div className="border-t border-zinc-800/50 bg-[#050505]/50 mt-2">
+              <div className="container mx-auto px-4 py-3">
+                <CitySelect
+                  selectedCityId={selectedCityId}
+                  selectedCityLabel={selectedCityLabel}
+                  onSelectCity={handleSelectCity}
+                  selectedRegion={selectedRegion}
+                  onRegionChange={setSelectedRegion}
+                />
               </div>
             </div>
           ) : null}
@@ -1512,7 +2014,7 @@
         {showSettings ? (
           <ModalShell
             title="Paramètres"
-            subtitle="Sauvegarde / restauration + actions utiles. Tout est local (navigateur + fichiers)."
+            subtitle="Sauvegarde / restauration + actions utiles. État synchronisé via l'API."
             onClose={() => setShowSettings(false)}
           >
             <div className="space-y-3">
@@ -1549,7 +2051,7 @@
               />
 
               <p className="text-[10px] text-zinc-500">
-                Le fichier contient : sélection, étoiles, notes, plans cochés, bâtiments supprimés.
+                Le fichier contient : sélection, étoiles, notes, plans cochés, repérés, déjà shootés, ville, bâtiments supprimés, bâtiments personnalisés.
               </p>
             </div>
 
@@ -1761,6 +2263,8 @@
                     key={item.id}
                     item={item}
                     isSelected={selectedIds.includes(item.id)}
+                    isSpotted={spottedIds.includes(item.id)}
+                    isShot={shotIds.includes(item.id)}
                     rating={ratings[item.id] || 0}
                     onToggleSelection={toggleSelection}
                     onRate={(score) => handleRate(item.id, score)}

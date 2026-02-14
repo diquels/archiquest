@@ -6,6 +6,25 @@ services:
       - "8080:80"
     volumes:
       - ./:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
+    networks:
+      - web
+    depends_on:
+      - api
+
+  api:
+    build: ./api
+    container_name: archiquest_api
+    ports:
+      - "3001:3001"
+    environment:
+      - STATE_PATH=/data/state.json
+      - CITIES_INDEX_PATH=/data/cities.index.json
+      - DATA_JS_PATH=/app_data/data.js
+    volumes:
+      - archiquest_state:/data
+      - ./:/app_data:ro
     restart: unless-stopped
     networks:
       - web
@@ -13,3 +32,6 @@ services:
 networks:
   web:
     external: false
+
+volumes:
+  archiquest_state:
